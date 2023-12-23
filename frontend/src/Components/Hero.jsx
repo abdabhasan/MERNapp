@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import bgImage from "../assets/hero-bg.jpg";
 import Searchbar from "./Searchbar";
 
 const Hero = () => {
@@ -31,7 +32,7 @@ const Wrapper = styled.section`
 
     .hero-bg {
       position: absolute;
-      background-image: url("https://img.freepik.com/free-photo/illuminated-ancient-corridor-leads-modern-spirituality-generated-by-ai_188544-13359.jpg?w=1380&t=st=1702301586~exp=1702302186~hmac=10b7aabaf66ebc37ddfaaca482608bd532f5d3bf0f7908c08a88aaba4b04bc50");
+      background: url(${bgImage});
       background-size: cover;
       background-position: center;
 

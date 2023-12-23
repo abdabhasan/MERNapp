@@ -1,60 +1,82 @@
 import { useState } from "react";
-import styled from "styled-components";
-import FormField from "./FormField";
 import axios from "axios";
+import styled from "styled-components";
+import { API_ENDPOINT } from "../utils/constants";
 import { ToastContainer, toast } from "react-toastify";
+import { useBusinessContext } from "../context/business_context";
 import "react-toastify/dist/ReactToastify.css";
 
-const AddBusinessForm = () => {
-  const [formData, setFormData] = useState({
-    businessName: "",
-    ownerFirstName: "",
-    ownerLastName: "",
-    email: "",
-    phone: "",
-    businessType: "",
-    city: "",
-    state: "",
-    image: null,
-    subscribe: false,
-  });
+import businessValidationSchema from "../validation/businessValidation";
+import FormField from "./FormField";
+import SubmitBtn from "./SubmitBtn";
+import AddressFields from "./Address/AddressFields";
+import LoadingSpinner from "./LoadingSpinner";
 
-  const resetFormData = () => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      businessName: "",
-      ownerFirstName: "",
-      ownerLastName: "",
-      email: "",
-      phone: "",
-      businessType: "",
-      city: "",
-      state: "",
-      image: null,
-      subscribe: false,
-    }));
+const AddBusinessForm = () => {
+  const { businessData, setBusinessData, initialBusinessData } =
+    useBusinessContext();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const renderFields = (fields) => {
+    return fields.map(({ name, className, label, type, required, accept }) => (
+      <FormField
+        key={name}
+        className={className}
+        label={label}
+        type={type}
+        name={name}
+        required={required}
+        accept={accept}
+        value={businessData[name]}
+        onChange={handleChange}
+      />
+    ));
+  };
+
+  const clearBusinessData = () => {
+    setBusinessData(initialBusinessData);
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setBusinessData({ ...businessData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/add-business",
-        formData,
-        { withCredentials: true }
-      );
+      setIsLoading(true);
 
-      toast.success("Business Submitted");
-      console.log(response.data);
-      resetFormData();
+      await businessValidationSchema.validate(businessData, {
+        abortEarly: false,
+      });
+
+      const response = await axios.post(API_ENDPOINT, businessData, {
+        withCredentials: true,
+      });
+
+      if (response.status === 200) {
+        toast.success("Business Submitted");
+        console.log(response.data);
+        // clear fields
+        clearBusinessData();
+        e.target.reset();
+      } else {
+        // Handle unexpected response status
+        toast.error("Unexpected response status: " + response.status);
+      }
     } catch (error) {
-      // Handle error, e.g., show an error message
-      console.error("Error submitting form:", error);
+      console.error("Error Adding Business:", error.message);
+
+      error.inner.forEach((err) => {
+        toast.error(err.message);
+      });
+
+      toast.error(
+        "An error occurred while Adding the business. Please try again later."
+      );
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -62,89 +84,65 @@ const AddBusinessForm = () => {
     <Wrapper>
       <div className="container">
         <form className="form" onSubmit={handleSubmit}>
-          <FormField
-            label="Business Name"
-            type="text"
-            name="businessName"
-            required={true}
-            value={formData.businessName}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Owner First Name"
-            type="text"
-            name="ownerFirstName"
-            required={true}
-            value={formData.ownerFirstName}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Owner Last Name"
-            type="text"
-            name="ownerLastName"
-            required={true}
-            value={formData.ownerLastName}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Email"
-            type="email"
-            name="email"
-            required={true}
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Phone (optional)"
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Business Type"
-            type="text"
-            name="businessType"
-            required={true}
-            value={formData.businessType}
-            onChange={handleChange}
-          />
-          <FormField
-            label="City"
-            type="text"
-            name="city"
-            required={true}
-            value={formData.city}
-            onChange={handleChange}
-          />
-          <FormField
-            label="State"
-            type="text"
-            name="state"
-            required={true}
-            value={formData.state}
-            onChange={handleChange}
-          />
-
-          <FormField
-            label="Upload Image"
-            type="file"
-            name="image"
-            required={true}
-            accept="image/*"
-            onChange={handleChange}
-          />
-          <FormField
-            label="Subscribe"
-            type="checkbox"
-            name="subscribe"
-            className="checkbox"
-            value={formData.subscribe}
-            onChange={handleChange}
-          />
-          <button type="submit" className="btn">
-            Submit
-          </button>
+          {renderFields([
+            {
+              label: "Business Name",
+              type: "text",
+              name: "businessName",
+              required: true,
+            },
+            {
+              label: "Business Type",
+              type: "text",
+              name: "businessType",
+              required: true,
+            },
+            {
+              label: "Owner First Name",
+              type: "text",
+              name: "ownerFirstName",
+              required: true,
+            },
+            {
+              label: "Owner Last Name",
+              type: "text",
+              name: "ownerLastName",
+              required: true,
+            },
+            {
+              label: "Email",
+              type: "email",
+              name: "email",
+              required: true,
+            },
+            {
+              label: "Phone",
+              type: "tel",
+              name: "phone",
+              required: true,
+            },
+          ])}
+          {/* address fields */}
+          <>
+            <AddressFields />
+          </>
+          {/* img and subcrb fields */}
+          {renderFields([
+            {
+              label: "Upload Image",
+              type: "file",
+              name: "image",
+              required: true,
+              accept: "image/*",
+            },
+            {
+              label: "Subscribe",
+              type: "checkbox",
+              name: "subscribe",
+              className: "checkbox",
+            },
+          ])}
+          {isLoading ? <LoadingSpinner /> : <SubmitBtn />}
         </form>
         <ToastContainer />
       </div>
@@ -173,10 +171,9 @@ const Wrapper = styled.section`
           margin: 0 0.5rem;
         }
       }
-      button {
-        margin-top: 1rem;
-        padding: 0.5rem;
-      }
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 70vw;
     }
   }
 `;

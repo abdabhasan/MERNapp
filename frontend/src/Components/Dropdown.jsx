@@ -32,7 +32,7 @@ const Dropdown = () => {
   return (
     <DropdownContainer ref={dropdownRef}>
       <DropdownButton onClick={handleToggle}>
-        <DropdownArrow isOpen={isOpen} />
+        <DropdownArrow className={isOpen ? "opend" : "closed"} />
       </DropdownButton>
       <DropdownContent open={isOpen}>
         {dropdown_options.map((option, index) => (
@@ -73,8 +73,14 @@ const DropdownArrow = styled.span`
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  transform: ${({ isOpen }) => (isOpen ? "rotate(-135deg)" : "rotate(45deg)")};
   transition: transform 0.3s ease;
+
+  &.opend {
+    transform: rotate(-135deg);
+  }
+  &.closed {
+    transform: rotate(45deg);
+  }
 `;
 
 const DropdownContent = styled.div`

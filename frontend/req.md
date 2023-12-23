@@ -4,8 +4,14 @@
 3 Products to avoid (page link)
 4 Drop down menu: About us, shop local, add a business, add a professional, pricing, products to avoid
 
-ABOUT US
-1 Video with written transcript -->
+
+<!--! NOTES
+
+
+
+
+
+ -->
 
 SHOP LOCAL   
 1 Featured businesses  
@@ -21,8 +27,9 @@ SHOP LOCAL 
 
 ADD A BUSINESS  
 1 Questionnaire (name of business, owner first name, owner last name, email, phone, business type, address [results as they type], upload image).   
-2 Subscribe check box  
-3 After submitting, option to share and link to “support us”
+2 Subscribe check box
+
+ <!-- ! After submitting, option to share #### share what? ##### and link to “support us” -->
 
 ADD A PROFESSIONAL   
 1 Questionnaire (title/profession, first name, last name, email, phone number [optional], city, state, years in profession, upload image).   
