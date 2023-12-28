@@ -7,6 +7,7 @@ import Searchbar from "./Searchbar";
 import Logo from "./Logo";
 import AddProfessionalForm from "./AddProfessionalForm";
 import AddBusinessForm from "./AddBusinessForm";
+import FormField from "./FormField";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   Logo,
   AddProfessionalForm,
   AddBusinessForm,
+  FormField,
 };

@@ -1,4 +1,5 @@
 import { Hero } from "../Components";
+
 const HomePage = () => {
   return (
     <main className="page">

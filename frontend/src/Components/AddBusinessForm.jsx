@@ -2,9 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { API_ENDPOINT } from "../utils/constants";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { useBusinessContext } from "../context/business_context";
-import "react-toastify/dist/ReactToastify.css";
 
 import businessValidationSchema from "../validation/businessValidation";
 import FormField from "./FormField";
@@ -144,7 +143,6 @@ const AddBusinessForm = () => {
           ])}
           {isLoading ? <LoadingSpinner /> : <SubmitBtn />}
         </form>
-        <ToastContainer />
       </div>
     </Wrapper>
   );

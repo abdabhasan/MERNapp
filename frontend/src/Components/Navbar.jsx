@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import Dropdown from "./Dropdown";
 import Logo from "./Logo";
+import LoginBtn from "./Btns/LoginBtn";
 
 const Navbar = () => {
   const { openSidebar } = useSidebar();
@@ -33,7 +34,9 @@ const Navbar = () => {
             <Dropdown />
           </div>
         </div>
-        <h3 className="nav-login">Login</h3>
+        <div className="nav-login">
+          <LoginBtn />
+        </div>
       </div>
     </NavContainer>
   );
@@ -79,8 +82,8 @@ const NavContainer = styled.nav`
       display: none;
     }
     .nav-center {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
     .nav-links {

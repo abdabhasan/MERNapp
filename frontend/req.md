@@ -9,11 +9,10 @@
 
 
 
-
-
  -->
 
-SHOP LOCAL   
+SHOP LOCAL
+
 1 Featured businesses  
 2 Search bar  
 3 Map (with locator)  

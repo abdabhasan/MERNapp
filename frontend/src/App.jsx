@@ -1,59 +1,78 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { Layout, HomeLayout, PrivateRoute } from "./Pages/Layouts";
 import {
   Home,
-  HomeLayout,
   ShopLocal,
   About,
   ProductsToAvoid,
   AddProfessional,
   AddBusiness,
   Pricing,
+  Register,
 } from "./Pages";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomeLayout />,
+    element: <Layout />,
     children: [
       {
-        index: true,
-        element: <Home />,
+        element: <PrivateRoute />,
+        children: [
+          {
+            element: <HomeLayout />,
+            children: [
+              {
+                index: true,
+                element: <Home />,
+              },
+              {
+                path: "about",
+                element: <About />,
+              },
+              {
+                path: "shop-local",
+                element: <ShopLocal />,
+              },
+              {
+                path: "products-to-avoid",
+                element: <ProductsToAvoid />,
+              },
+              {
+                path: "add-professional",
+                element: <AddProfessional />,
+              },
+              {
+                path: "add-business",
+                element: <AddBusiness />,
+              },
+              {
+                path: "pricing",
+                element: <Pricing />,
+              },
+            ],
+          },
+        ],
       },
       {
-        path: "about",
-        element: <About />,
+        path: "/register",
+        element: <Register />,
       },
-      {
-        path: "shop-local",
-        element: <ShopLocal />,
-      },
-      {
-        path: "products-to-avoid",
-        element: <ProductsToAvoid />,
-      },
-      {
-        path: "add-professional",
-        element: <AddProfessional />,
-      },
-      {
-        path: "add-business",
-        element: <AddBusiness />,
-      },
-      {
-        path: "pricing",
-        element: <Pricing />,
-      },
+      // {
+      //   path: "*",
+      //   element: <Error />,
+      // },
+
       // {
       //   path: "checkout",
       //   element: <PrivateRoute />,
       //   children: [{ index: true, element: <Checkout /> }],
       // },
       // {
-      //   path: "*",
-      //   element: <Error />,
-      // },
     ],
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 
