@@ -1,6 +1,9 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Searchbar from "../Components/Searchbar";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import ProductsToAvoidSearchbar from "../Components/Searchbars/ProductsToAvoidSearchbar";
 
 const ProductsToAvoidPage = () => {
   return (
@@ -27,10 +30,12 @@ const ProductsToAvoidPage = () => {
           target="_blank"
           className="btn"
         >
+        
           View Full Document
         </Link> */}
         {/* Search bar */}
-        <Searchbar className="searchbar" placeholder="search a product" />
+        {/* <Searchbar className="searchbar" placeholder="search a product" /> */}
+        <ProductsToAvoidSearchbar />
       </section>
     </Wrapper>
   );
@@ -116,3 +121,5 @@ const Wrapper = styled.main`
     }
   }
 `;
+
+// ! 1dcO8HVytXAS_PPCGRDXRZ82msXJpm6nX
