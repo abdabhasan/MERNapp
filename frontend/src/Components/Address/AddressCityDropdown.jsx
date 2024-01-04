@@ -16,7 +16,7 @@ const AddressCityDropdown = ({ cities }) => {
 
   return (
     <Wrapper>
-      <label htmlFor="city">City</label>
+      <label htmlFor="city">City:</label>
       <select
         id="city"
         name="city"
@@ -56,6 +56,9 @@ const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
     input {
       min-width: 50%;
+    }
+    option {
+      font-size: 10px;
     }
   }
 `;

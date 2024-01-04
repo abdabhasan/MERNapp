@@ -12,7 +12,7 @@ const AddressStateDropdown = ({ selectedState, onStateChange, states }) => {
 
   return (
     <Wrapper>
-      <label htmlFor="state">State</label>
+      <label htmlFor="state">State:</label>
       <select
         id="state"
         name="state"
@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   }
   @media screen and (max-width: 768px) {
     option {
-      font-size: 1rem;
+      font-size: 10px;
     }
   }
 `;

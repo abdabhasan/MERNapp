@@ -1,40 +1,29 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
-import Searchbar from "../Components/Searchbar";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import ProductsToAvoidSearchbar from "../Components/Searchbars/ProductsToAvoidSearchbar";
 
 const ProductsToAvoidPage = () => {
   return (
     <Wrapper className="page-100 products-to-avoid">
       <section className="container">
-        <h2 className="title">products to avoid</h2>
+        <div className="title">
+          <h2>products to avoid</h2>
+          <div className="underline"></div>
+        </div>
         <div className="desc">
-          <h5 className="custom">
-            Considering purchasing something, but not sure if you should?
-          </h5>
           <h5>
-            Use to search box to find out if it's on the list of products to
-            avoid.
+            Use the search box below to check if a product/company is actively
+            contributing to the occupation of Palestine.
           </h5>
           <br />
           <p>
             You can also find the reasons for avoiding certain products and
-            companies by visiting the following site :
-            <a href="https://boycott.thewitness.news/browse/1"> The Witness.</a>
+            companies by visiting.
+            <a target="_blank" href="https://boycott.thewitness.news/browse/1">
+              The Witness.
+            </a>
           </p>
         </div>
-        {/* <Link
-          href="https://img1.wsimg.com/blobby/go/e8c203fc-8c49-4d99-9270-badde08d2f65/Products%20to%20Avoid-278a355.pdf"
-          target="_blank"
-          className="btn"
-        >
-        
-          View Full Document
-        </Link> */}
         {/* Search bar */}
-        {/* <Searchbar className="searchbar" placeholder="search a product" /> */}
         <ProductsToAvoidSearchbar />
       </section>
     </Wrapper>
@@ -58,9 +47,11 @@ const Wrapper = styled.main`
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    .custom {
-      font-size: 1.05rem;
+    max-width: 750px;
+    h5 {
+      text-transform: none;
     }
+
     p {
       font-size: 0.75rem;
       line-height: 1.5rem;
@@ -75,13 +66,7 @@ const Wrapper = styled.main`
       }
     }
   }
-  .title {
-    text-align: center;
-    padding-top: 1.5rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.25;
-    color: var(--clr-primary-5);
-  }
+
   .searchbar {
     input {
       border: 2px solid #d9c59b;
@@ -121,5 +106,3 @@ const Wrapper = styled.main`
     }
   }
 `;
-
-// ! 1dcO8HVytXAS_PPCGRDXRZ82msXJpm6nX

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bgImage from "../assets/hero-bg.jpg";
-import Searchbar from "./Searchbar";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -8,12 +8,16 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-bg"></div>
         <h1 className="hero-title">
-          Uniting Faith and Commerce
-          <br />
+          Connecting Faith with Commerce <br />
           The Marketplace for Muslims
         </h1>
-        <div className="hero-searchbar">
-          <Searchbar placeholder="search..." />
+        <div className="btns">
+          <Link to="/shop-local">
+            <button className="btn custom"> shop local </button>
+          </Link>
+          <Link to="/products-to-avoid">
+            <button className="btn">Products to avoid</button>
+          </Link>
         </div>
       </div>
     </Wrapper>
@@ -64,9 +68,25 @@ const Wrapper = styled.section`
 
   .hero-title {
     text-align: center;
-    padding-top: 15%;
+    padding-top: 10%;
     line-height: 1.25;
     color: var(--clr-primary-5);
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 1rem;
+    button {
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .custom {
+      padding-left: 2.85rem;
+      padding-right: 2.85rem;
+    }
   }
 
   @media (max-width: 992px) {

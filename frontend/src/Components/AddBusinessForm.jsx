@@ -10,6 +10,7 @@ import FormField from "./FormField";
 import SubmitBtn from "./SubmitBtn";
 import AddressFields from "./Address/AddressFields";
 import LoadingSpinner from "./LoadingSpinner";
+import TypesDropdown from "./TypesDropdown";
 
 const AddBusinessForm = () => {
   const { businessData, setBusinessData, initialBusinessData } =
@@ -90,12 +91,14 @@ const AddBusinessForm = () => {
               name: "businessName",
               required: true,
             },
-            {
-              label: "Business Type",
-              type: "text",
-              name: "businessType",
-              required: true,
-            },
+          ])}
+          {/* types of business */}
+          <TypesDropdown
+            label="Business Type"
+            name="businessType"
+            onChange={handleChange}
+          />
+          {renderFields([
             {
               label: "Owner First Name",
               type: "text",

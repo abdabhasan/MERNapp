@@ -8,7 +8,10 @@ import Logo from "./Logo";
 import AddProfessionalForm from "./AddProfessionalForm";
 import AddBusinessForm from "./AddBusinessForm";
 import FormField from "./FormField";
-
+import FeaturedProducts from "./FeaturedProducts";
+import Filters from "./Filters";
+import ProductList from "./ProductList";
+import Sort from "./Sort";
 export {
   Navbar,
   Sidebar,
@@ -20,4 +23,8 @@ export {
   AddProfessionalForm,
   AddBusinessForm,
   FormField,
+  FeaturedProducts,
+  Filters,
+  ProductList,
+  Sort,
 };

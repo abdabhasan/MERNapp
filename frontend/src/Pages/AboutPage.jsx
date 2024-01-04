@@ -5,7 +5,10 @@ const AboutPage = () => {
   return (
     <Wrapper className="page  section-center">
       <div className="video-container">
-        <h1 className="title">About us</h1>
+        <div className="title">
+          <h2>About us</h2>
+          <div className="underline"></div>
+        </div>
         <video controls>
           <source src={aboutVedio} type="video/mp4" />
           Your browser does not support the video tag.
@@ -48,13 +51,8 @@ export default AboutPage;
 
 const Wrapper = styled.section`
   max-width: 800px;
-  padding: 1.5rem 0 5rem;
+  padding-bottom: 5rem;
 
-  .title {
-    padding: 0 0 2.5rem;
-    line-height: 1.25;
-    color: var(--clr-primary-5);
-  }
   .video-container {
     video {
       width: 100%;

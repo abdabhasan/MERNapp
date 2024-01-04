@@ -1,80 +1,68 @@
-import { useState, useEffect } from "react";
 import styled from "styled-components";
-import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL;
+import { useProductsToAvoidContext } from "../../context/products_to_avoid_context";
+import CompaniesContainer from "../Containers/CompaniesContainer";
 
 const ProductsToAvoidSearchbar = () => {
-  const [data, setData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${API_URL}/products-to-avoid`);
-        const jsonData = response.data.companies;
-        console.log(jsonData);
-        setData(jsonData);
-        setFilteredData(jsonData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const {
+    data,
+    setFilteredData,
+    isCompaniesContainerOpen,
+    setIsCompaniesContainerOpen,
+    searchQuery,
+    setSearchQuery,
+  } = useProductsToAvoidContext();
 
   const handleSearch = () => {
-    const lowerCaseQuery = searchQuery.toLowerCase();
-    const filtered = data.filter((item) =>
-      item.name.toLowerCase().includes(lowerCaseQuery)
+    const filteredResults = data.filter((item) =>
+      item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Ensure filtered is always an array
-    const filteredArray = Array.isArray(filtered) ? filtered : [];
-    setFilteredData(filteredArray);
+    setFilteredData(filteredResults);
+  };
+
+  const handelChange = (e) => {
+    setSearchQuery(e.target.value);
+    handleSearch();
   };
 
   return (
-    <Wrapper className="form-control searchbar">
-      <div>
-        <input
-          type="text"
-          placeholder="search a product"
-          className="search-input search-bar"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button className="btn" onClick={handleSearch}>
-          Search
-        </button>
-        <ul>
-          {filteredData.map((item, index) => (
-            <li key={index}>{item.name}</li>
-          ))}
-        </ul>
-      </div>
+    <Wrapper
+      className="form-control searchbar"
+      onSubmit={(e) => e.preventDefault()}
+    >
+      <input
+        type="text"
+        placeholder="search a product"
+        className="search-input search-bar"
+        value={searchQuery}
+        onChange={handelChange}
+        onClick={() => setIsCompaniesContainerOpen(true)}
+      />
+      {isCompaniesContainerOpen && <CompaniesContainer />}
     </Wrapper>
   );
 };
 
 export default ProductsToAvoidSearchbar;
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   .search-input {
     display: block;
+    text-align: start !important;
     min-width: 45vw;
+
     padding: 0.6rem;
-    margin: 2rem 1rem 1.25rem;
+    margin: 2rem 1.25rem 0;
 
     border: none;
     border-radius: var(--radius);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: var(--light-shadow);
     transition: box-shadow 0.3s ease-in-out;
     letter-spacing: var(--spacing);
     background: var(--clr-grey-10);

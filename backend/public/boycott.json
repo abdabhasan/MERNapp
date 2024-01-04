@@ -34,12 +34,10 @@
       "name": "Arwa"
     },
     {
-      "name": "Associated British Foods",
-      "subsidiaries": [
-        {
-          "name": "Primark"
-        }
-      ]
+      "name": "Associated British Foods"
+    },
+    {
+      "name": "Primark"
     },
     {
       "name": "Aviva"
@@ -93,21 +91,19 @@
       "name": "Bomaja"
     },
     {
-      "name": "Booking.com",
-      "subsidiaries": [
-        {
-          "name": "Priceline"
-        },
-        {
-          "name": "Kayak"
-        },
-        {
-          "name": "Agoda"
-        },
-        {
-          "name": "Rentalcars.com"
-        }
-      ]
+      "name": "Booking.com"
+    },
+    {
+      "name": "Priceline"
+    },
+    {
+      "name": "Kayak"
+    },
+    {
+      "name": "Agoda"
+    },
+    {
+      "name": "Rentalcars.com"
     },
     {
       "name": "BP (British Petroleum)"
@@ -158,12 +154,10 @@
       "name": "Cheapflights"
     },
     {
-      "name": "Chevron",
-      "subsidiaries": [
-        {
-          "name": "Texaco"
-        }
-      ]
+      "name": "Chevron"
+    },
+    {
+      "name": "Texaco"
     },
     {
       "name": "Cif"
@@ -175,270 +169,268 @@
       "name": "Clinique"
     },
     {
-      "name": "Coca Cola",
-      "products": [
-        {
-          "name": "Appletiser"
-        },
-        {
-          "name": "Aquapure"
-        },
-        {
-          "name": "Aquarius"
-        },
-        {
-          "name": "Ayataka green tea"
-        },
-        {
-          "name": "Barq's"
-        },
-        {
-          "name": "BlackFire"
-        },
-        {
-          "name": "Blue Sky"
-        },
-        {
-          "name": "Bodyarmor SuperDrink"
-        },
-        {
-          "name": "Bon Aqua"
-        },
-        {
-          "name": "Bright And Early"
-        },
-        {
-          "name": "Calypso"
-        },
-        {
-          "name": "Cappy"
-        },
-        {
-          "name": "Capri Sun"
-        },
-        {
-          "name": "Caprice"
-        },
-        {
-          "name": "Club"
-        },
-        {
-          "name": "Coca-Cola"
-        },
-        {
-          "name": "Cocoteen"
-        },
-        {
-          "name": "Costa Coffee"
-        },
-        {
-          "name": "Cresta"
-        },
-        {
-          "name": "Crush"
-        },
-        {
-          "name": "Cumberland Gap"
-        },
-        {
-          "name": "Dasani"
-        },
-        {
-          "name": "Diva"
-        },
-        {
-          "name": "Drim"
-        },
-        {
-          "name": "Escuis light"
-        },
-        {
-          "name": "Eva Water"
-        },
-        {
-          "name": "Fairlife"
-        },
-        {
-          "name": "Fanta"
-        },
-        {
-          "name": "Five Alive"
-        },
-        {
-          "name": "Flavor Rage"
-        },
-        {
-          "name": "Floatz"
-        },
-        {
-          "name": "Fontana"
-        },
-        {
-          "name": "Freezits"
-        },
-        {
-          "name": "Fresca"
-        },
-        {
-          "name": "Fruitopia"
-        },
-        {
-          "name": "Full Throttle"
-        },
-        {
-          "name": "Fuze"
-        },
-        {
-          "name": "Gold Peak Tea"
-        },
-        {
-          "name": "Gold Spot"
-        },
-        {
-          "name": "H2OK"
-        },
-        {
-          "name": "Hansen's"
-        },
-        {
-          "name": "Happy Valley"
-        },
-        {
-          "name": "Healthworks"
-        },
-        {
-          "name": "Hi-C"
-        },
-        {
-          "name": "Honest Tea"
-        },
-        {
-          "name": "Horizon"
-        },
-        {
-          "name": "Ice mountain"
-        },
-        {
-          "name": "Innocent Drinks"
-        },
-        {
-          "name": "Jet Tonic"
-        },
-        {
-          "name": "Jolly Juice"
-        },
-        {
-          "name": "Joy"
-        },
-        {
-          "name": "Jurassic Well"
-        },
-        {
-          "name": "Just Juice"
-        },
-        {
-          "name": "Keringet Mineral water"
-        },
-        {
-          "name": "Kidsfruitz"
-        },
-        {
-          "name": "Kinley"
-        },
-        {
-          "name": "Lift"
-        },
-        {
-          "name": "Limelite"
-        },
-        {
-          "name": "Mello Yello"
-        },
-        {
-          "name": "Minute Maid"
-        },
-        {
-          "name": "Monster Energy"
-        },
-        {
-          "name": "Mountain Creed"
-        },
-        {
-          "name": "Mr Pibb"
-        },
-        {
-          "name": "N-Juice"
-        },
-        {
-          "name": "Nada"
-        },
-        {
-          "name": "Naturaqua"
-        },
-        {
-          "name": "Nestea"
-        },
-        {
-          "name": "NeXstep"
-        },
-        {
-          "name": "Next"
-        },
-        {
-          "name": "NOS"
-        },
-        {
-          "name": "Odwalla"
-        },
-        {
-          "name": "Pibb Xtra"
-        },
-        {
-          "name": "Powerade"
-        },
-        {
-          "name": "Ramblin' Root Beer"
-        },
-        {
-          "name": "Schweppes"
-        },
-        {
-          "name": "Seagram's"
-        },
-        {
-          "name": "Shock"
-        },
-        {
-          "name": "Simply Apple/Lemonade/Limeade/Orange"
-        },
-        {
-          "name": "Smart Water"
-        },
-        {
-          "name": "Sparkle"
-        },
-        {
-          "name": "Splice"
-        },
-        {
-          "name": "Spring! by Dannon"
-        },
-        {
-          "name": "Sprite"
-        },
-        {
-          "name": "Squirt"
-        },
-        {
-          "name": "Stoney Ginger Beer"
-        },
-        {
-          "name": "Sun Valley"
-        },
-        {
-          "name": "Vitamin Water"
-        }
-      ]
+      "name": "Coca Cola"
+    },
+    {
+      "name": "Appletiser"
+    },
+    {
+      "name": "Aquapure"
+    },
+    {
+      "name": "Aquarius"
+    },
+    {
+      "name": "Ayataka green tea"
+    },
+    {
+      "name": "Barq's"
+    },
+    {
+      "name": "BlackFire"
+    },
+    {
+      "name": "Blue Sky"
+    },
+    {
+      "name": "Bodyarmor SuperDrink"
+    },
+    {
+      "name": "Bon Aqua"
+    },
+    {
+      "name": "Bright And Early"
+    },
+    {
+      "name": "Calypso"
+    },
+    {
+      "name": "Cappy"
+    },
+    {
+      "name": "Capri Sun"
+    },
+    {
+      "name": "Caprice"
+    },
+    {
+      "name": "Club"
+    },
+    {
+      "name": "Coca-Cola"
+    },
+    {
+      "name": "Cocoteen"
+    },
+    {
+      "name": "Costa Coffee"
+    },
+    {
+      "name": "Cresta"
+    },
+    {
+      "name": "Crush"
+    },
+    {
+      "name": "Cumberland Gap"
+    },
+    {
+      "name": "Dasani"
+    },
+    {
+      "name": "Diva"
+    },
+    {
+      "name": "Drim"
+    },
+    {
+      "name": "Escuis light"
+    },
+    {
+      "name": "Eva Water"
+    },
+    {
+      "name": "Fairlife"
+    },
+    {
+      "name": "Fanta"
+    },
+    {
+      "name": "Five Alive"
+    },
+    {
+      "name": "Flavor Rage"
+    },
+    {
+      "name": "Floatz"
+    },
+    {
+      "name": "Fontana"
+    },
+    {
+      "name": "Freezits"
+    },
+    {
+      "name": "Fresca"
+    },
+    {
+      "name": "Fruitopia"
+    },
+    {
+      "name": "Full Throttle"
+    },
+    {
+      "name": "Fuze"
+    },
+    {
+      "name": "Gold Peak Tea"
+    },
+    {
+      "name": "Gold Spot"
+    },
+    {
+      "name": "H2OK"
+    },
+    {
+      "name": "Hansen's"
+    },
+    {
+      "name": "Happy Valley"
+    },
+    {
+      "name": "Healthworks"
+    },
+    {
+      "name": "Hi-C"
+    },
+    {
+      "name": "Honest Tea"
+    },
+    {
+      "name": "Horizon"
+    },
+    {
+      "name": "Ice mountain"
+    },
+    {
+      "name": "Innocent Drinks"
+    },
+    {
+      "name": "Jet Tonic"
+    },
+    {
+      "name": "Jolly Juice"
+    },
+    {
+      "name": "Joy"
+    },
+    {
+      "name": "Jurassic Well"
+    },
+    {
+      "name": "Just Juice"
+    },
+    {
+      "name": "Keringet Mineral water"
+    },
+    {
+      "name": "Kidsfruitz"
+    },
+    {
+      "name": "Kinley"
+    },
+    {
+      "name": "Lift"
+    },
+    {
+      "name": "Limelite"
+    },
+    {
+      "name": "Mello Yello"
+    },
+    {
+      "name": "Minute Maid"
+    },
+    {
+      "name": "Monster Energy"
+    },
+    {
+      "name": "Mountain Creed"
+    },
+    {
+      "name": "Mr Pibb"
+    },
+    {
+      "name": "N-Juice"
+    },
+    {
+      "name": "Nada"
+    },
+    {
+      "name": "Naturaqua"
+    },
+    {
+      "name": "Nestea"
+    },
+    {
+      "name": "NeXstep"
+    },
+    {
+      "name": "Next"
+    },
+    {
+      "name": "NOS"
+    },
+    {
+      "name": "Odwalla"
+    },
+    {
+      "name": "Pibb Xtra"
+    },
+    {
+      "name": "Powerade"
+    },
+    {
+      "name": "Ramblin' Root Beer"
+    },
+    {
+      "name": "Schweppes"
+    },
+    {
+      "name": "Seagram's"
+    },
+    {
+      "name": "Shock"
+    },
+    {
+      "name": "Simply Apple/Lemonade/Limeade/Orange"
+    },
+    {
+      "name": "Smart Water"
+    },
+    {
+      "name": "Sparkle"
+    },
+    {
+      "name": "Splice"
+    },
+    {
+      "name": "Spring! by Dannon"
+    },
+    {
+      "name": "Sprite"
+    },
+    {
+      "name": "Squirt"
+    },
+    {
+      "name": "Stoney Ginger Beer"
+    },
+    {
+      "name": "Sun Valley"
+    },
+    {
+      "name": "Vitamin Water"
     },
     {
       "name": "Cornetto"
@@ -456,32 +448,32 @@
       "name": "Daim"
     },
     {
-      "name": "Danone",
-      "products": [
-        { "name": "Actimel" },
-        { "name": "Activia" },
-        { "name": "Alpro" },
-        { "name": "Aptamil" },
-        { "name": "DanActive" },
-        { "name": "Danimals" },
-        { "name": "Dannon" },
-        { "name": "Danonino" },
-        { "name": "Evian" },
-        { "name": "Follow Your Heart" },
-        { "name": "Happy Baby" },
-        { "name": "Happy Tot" },
-        { "name": "Horizon Organic" },
-        { "name": "International Delight" },
-        { "name": "Light + Fit" },
-        { "name": "Nutricia" },
-        { "name": "Oikos" },
-        { "name": "Silk" },
-        { "name": "So Delicious Dairy Free" },
-        { "name": "Two Good" },
-        { "name": "Wallaby Organic" },
-        { "name": "YoCrunch" }
-      ]
+      "name": "Danone"
     },
+    { "name": "Actimel" },
+    { "name": "Activia" },
+    { "name": "Alpro" },
+    { "name": "Aptamil" },
+    { "name": "DanActive" },
+    { "name": "Danimals" },
+    { "name": "Dannon" },
+    { "name": "Danonino" },
+    { "name": "Evian" },
+    { "name": "Follow Your Heart" },
+    { "name": "Happy Baby" },
+    { "name": "Happy Tot" },
+    { "name": "Horizon Organic" },
+    { "name": "International Delight" },
+    { "name": "Light + Fit" },
+    { "name": "Nutricia" },
+    { "name": "Oikos" },
+    { "name": "Silk" },
+    { "name": "So Delicious Dairy Free" },
+    { "name": "Two Good" },
+    {
+      "name": "Wallaby Organic"
+    },
+    { "name": "YoCrunch" },
     {
       "name": "Delilah"
     },
@@ -519,24 +511,22 @@
       "name": "Domino’s Pizza"
     },
     {
-      "name": "Dunkin Donuts",
-      "subsidiaries": [
-        {
-          "name": "Arby's"
-        },
-        {
-          "name": "Buffalo Wild Wings"
-        },
-        {
-          "name": "Jimmy John's"
-        },
-        {
-          "name": "Sonic"
-        },
-        {
-          "name": "Baskin-Robbins"
-        }
-      ]
+      "name": "Dunkin Donuts"
+    },
+    {
+      "name": "Arby's"
+    },
+    {
+      "name": "Buffalo Wild Wings"
+    },
+    {
+      "name": "Jimmy John's"
+    },
+    {
+      "name": "Sonic"
+    },
+    {
+      "name": "Baskin-Robbins"
     },
     {
       "name": "Elbit Systems"
@@ -548,17 +538,15 @@
       "name": "eToro"
     },
     {
-      "name": "Expedia",
-      "subsidiaries": [
-        { "name": "Hotels.com" },
-        { "name": "Orbitz" },
-        { "name": "Travelocity" },
-        { "name": "Hotwire" },
-        { "name": "Wotif" },
-        { "name": "Trivago" },
-        { "name": "ebookers" }
-      ]
+      "name": "Expedia"
     },
+    { "name": "Hotels.com" },
+    { "name": "Orbitz" },
+    { "name": "Travelocity" },
+    { "name": "Hotwire" },
+    { "name": "Wotif" },
+    { "name": "Trivago" },
+    { "name": "ebookers" },
     {
       "name": "Express VPN"
     },
@@ -587,54 +575,52 @@
       "name": "Garnier"
     },
     {
-      "name": "General Mills",
-      "products": [
-        { "name": "Annie's" },
-        { "name": "Autumn's Gold" },
-        { "name": "Betty Crocker" },
-        { "name": "Bisquick" },
-        { "name": "Bugles" },
-        { "name": "Cascadian Farm" },
-        { "name": "Cheerios" },
-        { "name": "Chex Cereal" },
-        { "name": "Chex Mix" },
-        { "name": "Cinnamon Toast Crunch" },
-        { "name": "Cocoa Puffs" },
-        { "name": "Cookie Crisp" },
-        { "name": "Dunkaroos" },
-        { "name": "EPIC" },
-        { "name": "Fiber One" },
-        { "name": "Gardetto’s" },
-        { "name": "Gold Medal" },
-        { "name": "Golden Grahams" },
-        { "name": "Good Measure" },
-        { "name": "Green Giant" },
-        { "name": "Häagen-Dazs" },
-        { "name": "Jus-Rol" },
-        { "name": "Kix" },
-        { "name": "Larabar" },
-        { "name": "Latina Fresh" },
-        { "name": "Liberté" },
-        { "name": "Lucky Charms" },
-        { "name": "Monster Cereals" },
-        { "name": "Muir Glen" },
-        { "name": "Nature Valley" },
-        { "name": "Old El Paso" },
-        { "name": "Oui" },
-        { "name": "Pillsbury" },
-        { "name": "Progresso" },
-        { "name": "Raisin Nut Bran" },
-        { "name": "Ratio Food" },
-        { "name": "Reese's Puffs" },
-        { "name": "Total" },
-        { "name": "Totino’s / Jeno’s" },
-        { "name": "Trix" },
-        { "name": "Wanchai Ferry" },
-        { "name": "Wheaties" },
-        { "name": "Yoki" },
-        { "name": "Yoplait" }
-      ]
+      "name": "General Mills"
     },
+    { "name": "Annie's" },
+    { "name": "Autumn's Gold" },
+    { "name": "Betty Crocker" },
+    { "name": "Bisquick" },
+    { "name": "Bugles" },
+    { "name": "Cascadian Farm" },
+    { "name": "Cheerios" },
+    { "name": "Chex Cereal" },
+    { "name": "Chex Mix" },
+    { "name": "Cinnamon Toast Crunch" },
+    { "name": "Cocoa Puffs" },
+    { "name": "Cookie Crisp" },
+    { "name": "Dunkaroos" },
+    { "name": "EPIC" },
+    { "name": "Fiber One" },
+    { "name": "Gardetto’s" },
+    { "name": "Gold Medal" },
+    { "name": "Golden Grahams" },
+    { "name": "Good Measure" },
+    { "name": "Green Giant" },
+    { "name": "Häagen-Dazs" },
+    { "name": "Jus-Rol" },
+    { "name": "Kix" },
+    { "name": "Larabar" },
+    { "name": "Latina Fresh" },
+    { "name": "Liberté" },
+    { "name": "Lucky Charms" },
+    { "name": "Monster Cereals" },
+    { "name": "Muir Glen" },
+    { "name": "Nature Valley" },
+    { "name": "Old El Paso" },
+    { "name": "Oui" },
+    { "name": "Pillsbury" },
+    { "name": "Progresso" },
+    { "name": "Raisin Nut Bran" },
+    { "name": "Ratio Food" },
+    { "name": "Reese's Puffs" },
+    { "name": "Total" },
+    { "name": "Totino’s / Jeno’s" },
+    { "name": "Trix" },
+    { "name": "Wanchai Ferry" },
+    { "name": "Wheaties" },
+    { "name": "Yoki" },
+    { "name": "Yoplait" },
     {
       "name": "Giorgio Armani Beauty"
     },
@@ -664,64 +650,62 @@
     { "name": "Jo Malone" },
 
     {
-      "name": "Kellogg’s",
-      "products": [
-        { "name": "Apple Jacks" },
-        { "name": "Baby Shark cereal" },
-        { "name": "Bear Naked granola" },
-        { "name": "Breakfast Mates" },
-        { "name": "Carr's Crackers" },
-        { "name": "Cereal Snack Pack" },
-        { "name": "Cereal Straws" },
-        { "name": "Cheez-It" },
-        { "name": "Chocos" },
-        { "name": "Coco Pops" },
-        { "name": "Corn Flakes" },
-        { "name": "Corn Pops" },
-        { "name": "Crispix" },
-        { "name": "Crunchers" },
-        { "name": "Crunchy Nut" },
-        { "name": "Eggo" },
-        { "name": "Extra" },
-        { "name": "Froot Loops" },
-        { "name": "Frosties" },
-        { "name": "Fruit 'n' Fibre" },
-        { "name": "Fun Pack" },
-        { "name": "Fundo Ball" },
-        { "name": "Guardian" },
-        { "name": "Happy Inside" },
-        { "name": "Honey Pops" },
-        { "name": "Just Right" },
-        { "name": "Kashi cereals" },
-        { "name": "Keebler" },
-        { "name": "Krave" },
-        { "name": "Krave Break" },
-        { "name": "LCM's" },
-        { "name": "Mini-Wheats" },
-        { "name": "Morning Star farms" },
-        { "name": "Mueslix" },
-        { "name": "Multi-Grain Start" },
-        { "name": "Nutri-Grain" },
-        { "name": "Nutri-Grain Bars" },
-        { "name": "Pop Tarts" },
-        { "name": "Pringles" },
-        { "name": "Pumpkin Pete's" },
-        { "name": "Pure Organic (fruit bars)" },
-        { "name": "Rice Bubbles" },
-        { "name": "RXBAR" },
-        { "name": "Scooby-Doo cereal" },
-        { "name": "Smacks" },
-        { "name": "Smart Start" },
-        { "name": "Smorz" },
-        { "name": "Special K" },
-        { "name": "Special K Bars" },
-        { "name": "Sultana Bran" },
-        { "name": "Sustain" },
-        { "name": "Tasty MilK" },
-        { "name": "Vanilla Pops" },
-        { "name": "Variety Pack" }
-      ]
+      "name": "Kellogg’s"
     },
+    { "name": "Apple Jacks" },
+    { "name": "Baby Shark cereal" },
+    { "name": "Bear Naked granola" },
+    { "name": "Breakfast Mates" },
+    { "name": "Carr's Crackers" },
+    { "name": "Cereal Snack Pack" },
+    { "name": "Cereal Straws" },
+    { "name": "Cheez-It" },
+    { "name": "Chocos" },
+    { "name": "Coco Pops" },
+    { "name": "Corn Flakes" },
+    { "name": "Corn Pops" },
+    { "name": "Crispix" },
+    { "name": "Crunchers" },
+    { "name": "Crunchy Nut" },
+    { "name": "Eggo" },
+    { "name": "Extra" },
+    { "name": "Froot Loops" },
+    { "name": "Frosties" },
+    { "name": "Fruit 'n' Fibre" },
+    { "name": "Fun Pack" },
+    { "name": "Fundo Ball" },
+    { "name": "Guardian" },
+    { "name": "Happy Inside" },
+    { "name": "Honey Pops" },
+    { "name": "Just Right" },
+    { "name": "Kashi cereals" },
+    { "name": "Keebler" },
+    { "name": "Krave" },
+    { "name": "Krave Break" },
+    { "name": "LCM's" },
+    { "name": "Mini-Wheats" },
+    { "name": "Morning Star farms" },
+    { "name": "Mueslix" },
+    { "name": "Multi-Grain Start" },
+    { "name": "Nutri-Grain" },
+    { "name": "Nutri-Grain Bars" },
+    { "name": "Pop Tarts" },
+    { "name": "Pringles" },
+    { "name": "Pumpkin Pete's" },
+    { "name": "Pure Organic (fruit bars)" },
+    { "name": "Rice Bubbles" },
+    { "name": "RXBAR" },
+    { "name": "Scooby-Doo cereal" },
+    { "name": "Smacks" },
+    { "name": "Smart Start" },
+    { "name": "Smorz" },
+    { "name": "Special K" },
+    { "name": "Special K Bars" },
+    { "name": "Sultana Bran" },
+    { "name": "Sustain" },
+    { "name": "Tasty MilK" },
+    { "name": "Vanilla Pops" },
+    { "name": "Variety Pack" },
     { "name": "Kenzo" },
     { "name": "Kerastase" },
     { "name": "Keter" },
@@ -756,358 +740,353 @@
     { "name": "Marc Jacobs" },
     { "name": "Marks and Spencer / M&S" },
     {
-      "name": "Mars",
-      "products": [
-        { "name": "3 Musketeers" },
-        { "name": "5 (gum)" },
-        { "name": "Airwaves" },
-        { "name": "Alert" },
-        { "name": "Alpine" },
-        { "name": "Altoids" },
-        { "name": "American Heritage Chocolate" },
-        { "name": "Amicelli" },
-        { "name": "Balisto" },
-        { "name": "Ben's Originals" },
-        { "name": "Big Red" },
-        { "name": "Bounty" },
-        { "name": "Bubble Tape" },
-        { "name": "Celebrations" },
-        { "name": "Cirku" },
-        { "name": "CocoaVia" },
-        { "name": "Combos" },
-        { "name": "Doublemint" },
-        { "name": "Dove Bar" },
-        { "name": "Eclipse" },
-        { "name": "Ethel M Chocolates" },
-        { "name": "Excel" },
-        { "name": "Extra" },
-        { "name": "FLAVIA" },
-        { "name": "Fling" },
-        { "name": "Flyte" },
-        { "name": "Forever Yours" },
-        { "name": "Freedent" },
-        { "name": "Galaxy" },
-        { "name": "Galaxy Bubbles" },
-        { "name": "Galaxy Honeycomb Crisp" },
-        { "name": "Galaxy Minstrels" },
-        { "name": "Hubba Bubba" },
-        { "name": "Juicy Fruit" },
-        { "name": "Kudos" },
-        { "name": "Life Savers" },
-        { "name": "Lockets" },
-        { "name": "M&M's" },
-        { "name": "M-Azing" },
-        { "name": "Malteasers" },
-        { "name": "Marathon" },
-        { "name": "Mars" },
-        { "name": "Milky Way" },
-        { "name": "Munch" },
-        { "name": "Orbit" },
-        { "name": "Pedigree" },
-        { "name": "Promite" },
-        { "name": "Revels" },
-        { "name": "Rondo" },
-        { "name": "Skittles" },
-        { "name": "Snickers" },
-        { "name": "Starburst" },
-        { "name": "Sugus" },
-        { "name": "Surpass" },
-        { "name": "Topic" },
-        { "name": "Tracker" },
-        { "name": "Treets" },
-        { "name": "Tunes" },
-        { "name": "Twix" },
-        { "name": "Whiskas" },
-        { "name": "Winterfresh" },
-        { "name": "Wrigley's" }
-      ]
+      "name": "Mars"
     },
+    { "name": "3 Musketeers" },
+    { "name": "5 (gum)" },
+    { "name": "Airwaves" },
+    { "name": "Alert" },
+    { "name": "Alpine" },
+    { "name": "Altoids" },
+    { "name": "American Heritage Chocolate" },
+    { "name": "Amicelli" },
+    { "name": "Balisto" },
+    { "name": "Ben's Originals" },
+    { "name": "Big Red" },
+    { "name": "Bounty" },
+    { "name": "Bubble Tape" },
+    { "name": "Celebrations" },
+    { "name": "Cirku" },
+    { "name": "CocoaVia" },
+    { "name": "Combos" },
+    { "name": "Doublemint" },
+    { "name": "Dove Bar" },
+    { "name": "Eclipse" },
+    { "name": "Ethel M Chocolates" },
+    { "name": "Excel" },
+    { "name": "Extra" },
+    { "name": "FLAVIA" },
+    { "name": "Fling" },
+    { "name": "Flyte" },
+    { "name": "Forever Yours" },
+    { "name": "Freedent" },
+    { "name": "Galaxy" },
+    { "name": "Galaxy Bubbles" },
+    { "name": "Galaxy Honeycomb Crisp" },
+    { "name": "Galaxy Minstrels" },
+    { "name": "Hubba Bubba" },
+    { "name": "Juicy Fruit" },
+    { "name": "Kudos" },
+    { "name": "Life Savers" },
+    { "name": "Lockets" },
+    { "name": "M&M's" },
+    { "name": "M-Azing" },
+    { "name": "Malteasers" },
+    { "name": "Marathon" },
+    { "name": "Mars" },
+    { "name": "Milky Way" },
+    { "name": "Munch" },
+    { "name": "Orbit" },
+    { "name": "Pedigree" },
+    { "name": "Promite" },
+    { "name": "Revels" },
+    { "name": "Rondo" },
+    { "name": "Skittles" },
+    { "name": "Snickers" },
+    { "name": "Starburst" },
+    { "name": "Sugus" },
+    { "name": "Surpass" },
+    { "name": "Topic" },
+    { "name": "Tracker" },
+    { "name": "Treets" },
+    { "name": "Tunes" },
+    { "name": "Twix" },
+    { "name": "Whiskas" },
+    { "name": "Winterfresh" },
+    { "name": "Wrigley's" },
     { "name": "Maybelline" },
     { "name": "MBDA" },
     { "name": "McDonalds" },
     { "name": "Mercedes Benz" },
     { "name": "Microsoft" },
     { "name": "Monday.com" },
+    { "name": "Kraft Food" },
+    { "name": "Nabisco" },
     {
-      "name": "Mondelez",
-      "subsidiaries": [{ "name": "Kraft Food" }, { "name": "Nabisco" }],
-      "products": [
-        { "name": "5 Star" },
-        { "name": "7DAYS" },
-        { "name": "A.1." },
-        { "name": "Alpen Gold" },
-        { "name": "Back to Nature" },
-        { "name": "Bagel Bites" },
-        { "name": "Barnums Animals Crackers" },
-        { "name": "Barny" },
-        { "name": "Belvita" },
-        { "name": "Benihana" },
-        { "name": "Bournvita" },
-        { "name": "Cadbury" },
-        { "name": "Capri Sun" },
-        { "name": "Cheese Nips" },
-        { "name": "Chips Ahoy!" },
-        { "name": "Classico" },
-        { "name": "Clif Bar" },
-        { "name": "Clorets" },
-        { "name": "Club Social" },
-        { "name": "Cool Whip" },
-        { "name": "Country Time" },
-        { "name": "Crystal Light" },
-        { "name": "Côte d'Or" },
-        { "name": "Delimex" },
-        { "name": "DiGorno" },
-        { "name": "Easy Cheese" },
-        { "name": "Enjoy Life Foods" },
-        { "name": "Freia" },
-        { "name": "Gevalia" },
-        { "name": "Ginger Snaps" },
-        { "name": "Grey Poupon" },
-        { "name": "Halls" },
-        { "name": "Heinz" },
-        { "name": "Honey Maid" },
-        { "name": "Jacob's" },
-        { "name": "Jell-O" },
-        { "name": "Jet-Puffed" },
-        { "name": "Just Crack an Egg" },
-        { "name": "Kool-Aid" },
-        { "name": "Kraft" },
-        { "name": "Lacta" },
-        { "name": "Lea & Perrins" },
-        { "name": "Lunchables" },
-        { "name": "Marabou" },
-        { "name": "Maxwell House" },
-        { "name": "Maynards Bassetts" },
-        { "name": "Mikado" },
-        { "name": "Milka" },
-        { "name": "Mio" },
-        { "name": "Miracle Whip" },
-        { "name": "Mr. Yoshida's" },
-        { "name": "My Heinz" },
-        { "name": "Nancy's" },
-        { "name": "Nilla" },
-        { "name": "Nussbeisser" },
-        { "name": "Nutter Butter" },
-        { "name": "Ore-Ida" },
-        { "name": "Oreo" },
-        { "name": "Oscar Mayer" },
-        { "name": "Perfect Snacks" },
-        { "name": "Philadelphia" },
-        { "name": "Philadelphia Cream Cheese" },
-        { "name": "Premium Saltine Crackers" },
-        { "name": "Primal Kitchen" },
-        { "name": "Prince Polo" },
-        { "name": "Ritz" },
-        { "name": "Royal" },
-        { "name": "Shake N Bake" },
-        { "name": "Smart Ones" },
-        { "name": "Sour Patch Kids" },
-        { "name": "Stove Top" },
-        { "name": "Stride" },
-        { "name": "Sure-Jell" },
-        { "name": "Tang" },
-        { "name": "Tassimo" },
-        { "name": "Tate's Bake Shop" },
-        { "name": "Teddy Grahams" },
-        { "name": "TGI Fridays" },
-        { "name": "Toblerone" },
-        { "name": "Triscuit" },
-        { "name": "Twisties" },
-        { "name": "Velveeta" },
-        { "name": "Wheat Thins" },
-        { "name": "Wyler's" }
-      ]
+      "name": "Mondelez"
     },
+    { "name": "5 Star" },
+    { "name": "7DAYS" },
+    { "name": "A.1." },
+    { "name": "Alpen Gold" },
+    { "name": "Back to Nature" },
+    { "name": "Bagel Bites" },
+    { "name": "Barnums Animals Crackers" },
+    { "name": "Barny" },
+    { "name": "Belvita" },
+    { "name": "Benihana" },
+    { "name": "Bournvita" },
+    { "name": "Cadbury" },
+    { "name": "Capri Sun" },
+    { "name": "Cheese Nips" },
+    { "name": "Chips Ahoy!" },
+    { "name": "Classico" },
+    { "name": "Clif Bar" },
+    { "name": "Clorets" },
+    { "name": "Club Social" },
+    { "name": "Cool Whip" },
+    { "name": "Country Time" },
+    { "name": "Crystal Light" },
+    { "name": "Côte d'Or" },
+    { "name": "Delimex" },
+    { "name": "DiGorno" },
+    { "name": "Easy Cheese" },
+    { "name": "Enjoy Life Foods" },
+    { "name": "Freia" },
+    { "name": "Gevalia" },
+    { "name": "Ginger Snaps" },
+    { "name": "Grey Poupon" },
+    { "name": "Halls" },
+    { "name": "Heinz" },
+    { "name": "Honey Maid" },
+    { "name": "Jacob's" },
+    { "name": "Jell-O" },
+    { "name": "Jet-Puffed" },
+    { "name": "Just Crack an Egg" },
+    { "name": "Kool-Aid" },
+    { "name": "Kraft" },
+    { "name": "Lacta" },
+    { "name": "Lea & Perrins" },
+    { "name": "Lunchables" },
+    { "name": "Marabou" },
+    { "name": "Maxwell House" },
+    { "name": "Maynards Bassetts" },
+    { "name": "Mikado" },
+    { "name": "Milka" },
+    { "name": "Mio" },
+    { "name": "Miracle Whip" },
+    { "name": "Mr. Yoshida's" },
+    { "name": "My Heinz" },
+    { "name": "Nancy's" },
+    { "name": "Nilla" },
+    { "name": "Nussbeisser" },
+    { "name": "Nutter Butter" },
+    { "name": "Ore-Ida" },
+    { "name": "Oreo" },
+    { "name": "Oscar Mayer" },
+    { "name": "Perfect Snacks" },
+    { "name": "Philadelphia" },
+    { "name": "Philadelphia Cream Cheese" },
+    { "name": "Premium Saltine Crackers" },
+    { "name": "Primal Kitchen" },
+    { "name": "Prince Polo" },
+    { "name": "Ritz" },
+    { "name": "Royal" },
+    { "name": "Shake N Bake" },
+    { "name": "Smart Ones" },
+    { "name": "Sour Patch Kids" },
+    { "name": "Stove Top" },
+    { "name": "Stride" },
+    { "name": "Sure-Jell" },
+    { "name": "Tang" },
+    { "name": "Tassimo" },
+    { "name": "Tate's Bake Shop" },
+    { "name": "Teddy Grahams" },
+    { "name": "TGI Fridays" },
+    { "name": "Toblerone" },
+    { "name": "Triscuit" },
+    { "name": "Twisties" },
+    { "name": "Velveeta" },
+    { "name": "Wheat Thins" },
+    { "name": "Wyler's" },
     { "name": "Moovit" },
     { "name": "MoroccanOil" },
     { "name": "Motorola" },
     { "name": "Mugler Beauty" },
     {
-      "name": "Nestle",
-      "products": [
-        { "name": "Abuelita" },
-        { "name": "Acqua Panna" },
-        { "name": "After Eight" },
-        { "name": "Allen’s Lollies" },
-        { "name": "Alpino" },
-        { "name": "Anchor" },
-        { "name": "Aquarel" },
-        { "name": "Ascenda" },
-        { "name": "Bar-One" },
-        { "name": "Blue Bottle Coffee" },
-        { "name": "Bobo Frut" },
-        { "name": "Bolero" },
-        { "name": "Bonjorno" },
-        { "name": "Boost" },
-        { "name": "Brite" },
-        { "name": "Buitoni" },
-        { "name": "Cailler" },
-        { "name": "California Pizza Kitchen" },
-        { "name": "Calipso" },
-        { "name": "Carnation" },
-        { "name": "Carnation Breakfast Essentials" },
-        { "name": "Celltrient" },
-        { "name": "Centella" },
-        { "name": "Ceregrow" },
-        { "name": "Cerelac" },
-        { "name": "Cerevita" },
-        { "name": "Chamonix" },
-        { "name": "Charge" },
-        { "name": "Chef-Mate" },
-        { "name": "Chocofans" },
-        { "name": "Ciego Montero" },
-        { "name": "Cini Minis" },
-        { "name": "Clusters" },
-        { "name": "Coffee Crisp" },
-        { "name": "Coffee Mate" },
-        { "name": "Cognita Gold" },
-        { "name": "Contrex" },
-        { "name": "Country Corn Flakes" },
-        { "name": "Creme de Leite" },
-        { "name": "Cremositas" },
-        { "name": "Crispy Shark Wafers" },
-        { "name": "Crosse & Blackwell" },
-        { "name": "Curiously Cinnamon" },
-        { "name": "Dairy Farm" },
-        { "name": "Del Monte Frozen Bars" },
-        { "name": "Delissio Pizza" },
-        { "name": "DiGiorno" },
-        { "name": "Dreyer’s" },
-        { "name": "Drumstick" },
-        { "name": "EasyWhip" },
-        { "name": "El Mundo del Dulce" },
-        { "name": "Eskimo" },
-        { "name": "Essentia" },
-        { "name": "Estrelitas" },
-        { "name": "Every Day" },
-        { "name": "Excella Gold" },
-        { "name": "Fiber Choice" },
-        { "name": "Fruitips" },
-        { "name": "Fun Fruit" },
-        { "name": "G-Balance" },
-        { "name": "Garoto" },
-        { "name": "Gerber" },
-        { "name": "Glaciar" },
-        { "name": "Glutasolve" },
-        { "name": "GoFree Cereal" },
-        { "name": "Golden Morn" },
-        { "name": "Good Care" },
-        { "name": "Good Host" },
-        { "name": "Green Butterfly" },
-        { "name": "Honey Gold Flakes" },
-        { "name": "Honey Stars" },
-        { "name": "Hot Pockets" },
-        { "name": "Häagen-Dazs" },
-        { "name": "Ideal" },
-        { "name": "Illuma 3" },
-        { "name": "Jack’s Pizza" },
-        { "name": "K.Quik" },
-        { "name": "KitKat" },
-        { "name": "Klean" },
-        { "name": "Koko Krunch" },
-        { "name": "Lactalis" },
-        { "name": "Lactogen" },
-        { "name": "Lactogrow" },
-        { "name": "Lactokid" },
-        { "name": "Lean Cuisine" },
-        { "name": "Libby’s Pumpkin" },
-        { "name": "Life Cuisine" },
-        { "name": "LollyPop" },
-        { "name": "Mabel’s Wafers" },
-        { "name": "Mackintosh’s" },
-        { "name": "Maggi" },
-        { "name": "Margo" },
-        { "name": "Mater-Plus" },
-        { "name": "Materna" },
-        { "name": "Milkmaid" },
-        { "name": "Milkybar" },
-        { "name": "Milo" },
-        { "name": "Mirage" },
-        { "name": "Mixxpro" },
-        { "name": "Morochas" },
-        { "name": "Mucilon" },
-        { "name": "Munch" },
-        { "name": "Munchies" },
-        { "name": "Mövenpick" },
-        { "name": "Nangrow" },
-        { "name": "Nanlac" },
-        { "name": "Nativa" },
-        { "name": "NatureNes" },
-        { "name": "Nature’s Bounty" },
-        { "name": "Nature’s Heart" },
-        { "name": "NaturNes" },
-        { "name": "Nescafé" },
-        { "name": "Nesfit" },
-        { "name": "Neslac" },
-        { "name": "NesPlus" },
-        { "name": "Nespresso" },
-        { "name": "Nesquik" },
-        { "name": "Nestea" },
-        { "name": "Nestogen" },
-        { "name": "Neston" },
-        { "name": "Nestum" },
-        { "name": "Novasource" },
-        { "name": "Nutren" },
-        { "name": "Oats & More" },
-        { "name": "Opti-Lac" },
-        { "name": "Optifast" },
-        { "name": "OptiFibre" },
-        { "name": "Optisource" },
-        { "name": "Orchard" },
-        { "name": "Original Wagner Pizza" },
-        { "name": "Orion" },
-        { "name": "Orzoro" },
-        { "name": "OsteoBi-Flex" },
-        { "name": "Outsider’s Pizza Company" },
-        { "name": "Ovaltine" },
-        { "name": "Passions" },
-        { "name": "Peppermint Crisp" },
-        { "name": "Perrier" },
-        { "name": "Presto" },
-        { "name": "Promise PE Gold" },
-        { "name": "Purina" },
-        { "name": "Puritan’s Pride" },
-        { "name": "Quality Street" },
-        { "name": "Quick Eze" },
-        { "name": "Replete" },
-        { "name": "Rowntree’s" },
-        { "name": "S. Pellegrino" },
-        { "name": "Sabra" },
-        { "name": "Sanbitter" },
-        { "name": "Scoops" },
-        { "name": "Seattle’s Best" },
-        { "name": "Shredded Wheat" },
-        { "name": "Shreddies" },
-        { "name": "Sinlac" },
-        { "name": "Smarties" },
-        { "name": "Snow Flakes" },
-        { "name": "Sta. María" },
-        { "name": "Stalden" },
-        { "name": "Stouffer’s" },
-        { "name": "Sublime" },
-        { "name": "Sundae Swirlz" },
-        { "name": "Sunkist" },
-        { "name": "Super 8" },
-        { "name": "Sustagen" },
-        { "name": "Sweet Earth" },
-        { "name": "Sweet Leaf Tea Company" },
-        { "name": "Tango" },
-        { "name": "Toffee Crisp" },
-        { "name": "Toll House" },
-        { "name": "Tombstone Pizza" },
-        { "name": "Tostines" },
-        { "name": "Uncle Tobys" },
-        { "name": "Valvert" },
-        { "name": "Viladrau" },
-        { "name": "Vitaflo" },
-        { "name": "Vitality" },
-        { "name": "Wildscape Food" },
-        { "name": "Yes!" },
-        { "name": "Yogolino" },
-        { "name": "Yorkie" },
-        { "name": "Zoorpresa" }
-      ]
+      "name": "Nestle"
     },
+    { "name": "Abuelita" },
+    { "name": "Acqua Panna" },
+    { "name": "After Eight" },
+    { "name": "Allen’s Lollies" },
+    { "name": "Alpino" },
+    { "name": "Anchor" },
+    { "name": "Aquarel" },
+    { "name": "Ascenda" },
+    { "name": "Bar-One" },
+    { "name": "Blue Bottle Coffee" },
+    { "name": "Bobo Frut" },
+    { "name": "Bolero" },
+    { "name": "Bonjorno" },
+    { "name": "Boost" },
+    { "name": "Brite" },
+    { "name": "Buitoni" },
+    { "name": "Cailler" },
+    { "name": "California Pizza Kitchen" },
+    { "name": "Calipso" },
+    { "name": "Carnation" },
+    { "name": "Carnation Breakfast Essentials" },
+    { "name": "Celltrient" },
+    { "name": "Centella" },
+    { "name": "Ceregrow" },
+    { "name": "Cerelac" },
+    { "name": "Cerevita" },
+    { "name": "Chamonix" },
+    { "name": "Charge" },
+    { "name": "Chef-Mate" },
+    { "name": "Chocofans" },
+    { "name": "Ciego Montero" },
+    { "name": "Cini Minis" },
+    { "name": "Clusters" },
+    { "name": "Coffee Crisp" },
+    { "name": "Coffee Mate" },
+    { "name": "Cognita Gold" },
+    { "name": "Contrex" },
+    { "name": "Country Corn Flakes" },
+    { "name": "Creme de Leite" },
+    { "name": "Cremositas" },
+    { "name": "Crispy Shark Wafers" },
+    { "name": "Crosse & Blackwell" },
+    { "name": "Curiously Cinnamon" },
+    { "name": "Dairy Farm" },
+    { "name": "Del Monte Frozen Bars" },
+    { "name": "Delissio Pizza" },
+    { "name": "DiGiorno" },
+    { "name": "Dreyer’s" },
+    { "name": "Drumstick" },
+    { "name": "EasyWhip" },
+    { "name": "El Mundo del Dulce" },
+    { "name": "Eskimo" },
+    { "name": "Essentia" },
+    { "name": "Estrelitas" },
+    { "name": "Every Day" },
+    { "name": "Excella Gold" },
+    { "name": "Fiber Choice" },
+    { "name": "Fruitips" },
+    { "name": "Fun Fruit" },
+    { "name": "G-Balance" },
+    { "name": "Garoto" },
+    { "name": "Gerber" },
+    { "name": "Glaciar" },
+    { "name": "Glutasolve" },
+    { "name": "GoFree Cereal" },
+    { "name": "Golden Morn" },
+    { "name": "Good Care" },
+    { "name": "Good Host" },
+    { "name": "Green Butterfly" },
+    { "name": "Honey Gold Flakes" },
+    { "name": "Honey Stars" },
+    { "name": "Hot Pockets" },
+    { "name": "Häagen-Dazs" },
+    { "name": "Ideal" },
+    { "name": "Illuma 3" },
+    { "name": "Jack’s Pizza" },
+    { "name": "K.Quik" },
+    { "name": "KitKat" },
+    { "name": "Klean" },
+    { "name": "Koko Krunch" },
+    { "name": "Lactalis" },
+    { "name": "Lactogen" },
+    { "name": "Lactogrow" },
+    { "name": "Lactokid" },
+    { "name": "Lean Cuisine" },
+    { "name": "Libby’s Pumpkin" },
+    { "name": "Life Cuisine" },
+    { "name": "LollyPop" },
+    { "name": "Mabel’s Wafers" },
+    { "name": "Mackintosh’s" },
+    { "name": "Maggi" },
+    { "name": "Margo" },
+    { "name": "Mater-Plus" },
+    { "name": "Materna" },
+    { "name": "Milkmaid" },
+    { "name": "Milkybar" },
+    { "name": "Milo" },
+    { "name": "Mirage" },
+    { "name": "Mixxpro" },
+    { "name": "Morochas" },
+    { "name": "Mucilon" },
+    { "name": "Munch" },
+    { "name": "Munchies" },
+    { "name": "Mövenpick" },
+    { "name": "Nangrow" },
+    { "name": "Nanlac" },
+    { "name": "Nativa" },
+    { "name": "NatureNes" },
+    { "name": "Nature’s Bounty" },
+    { "name": "Nature’s Heart" },
+    { "name": "NaturNes" },
+    { "name": "Nescafé" },
+    { "name": "Nesfit" },
+    { "name": "Neslac" },
+    { "name": "NesPlus" },
+    { "name": "Nespresso" },
+    { "name": "Nesquik" },
+    { "name": "Nestea" },
+    { "name": "Nestogen" },
+    { "name": "Neston" },
+    { "name": "Nestum" },
+    { "name": "Novasource" },
+    { "name": "Nutren" },
+    { "name": "Oats & More" },
+    { "name": "Opti-Lac" },
+    { "name": "Optifast" },
+    { "name": "OptiFibre" },
+    { "name": "Optisource" },
+    { "name": "Orchard" },
+    { "name": "Original Wagner Pizza" },
+    { "name": "Orion" },
+    { "name": "Orzoro" },
+    { "name": "OsteoBi-Flex" },
+    { "name": "Outsider’s Pizza Company" },
+    { "name": "Ovaltine" },
+    { "name": "Passions" },
+    { "name": "Peppermint Crisp" },
+    { "name": "Perrier" },
+    { "name": "Presto" },
+    { "name": "Promise PE Gold" },
+    { "name": "Purina" },
+    { "name": "Puritan’s Pride" },
+    { "name": "Quality Street" },
+    { "name": "Quick Eze" },
+    { "name": "Replete" },
+    { "name": "Rowntree’s" },
+    { "name": "S. Pellegrino" },
+    { "name": "Sabra" },
+    { "name": "Sanbitter" },
+    { "name": "Scoops" },
+    { "name": "Seattle’s Best" },
+    { "name": "Shredded Wheat" },
+    { "name": "Shreddies" },
+    { "name": "Sinlac" },
+    { "name": "Smarties" },
+    { "name": "Snow Flakes" },
+    { "name": "Sta. María" },
+    { "name": "Stalden" },
+    { "name": "Stouffer’s" },
+    { "name": "Sublime" },
+    { "name": "Sundae Swirlz" },
+    { "name": "Sunkist" },
+    { "name": "Super 8" },
+    { "name": "Sustagen" },
+    { "name": "Sweet Earth" },
+    { "name": "Sweet Leaf Tea Company" },
+    { "name": "Tango" },
+    { "name": "Toffee Crisp" },
+    { "name": "Toll House" },
+    { "name": "Tombstone Pizza" },
+    { "name": "Tostines" },
+    { "name": "Uncle Tobys" },
+    { "name": "Valvert" },
+    { "name": "Viladrau" },
+    { "name": "Vitaflo" },
+    { "name": "Vitality" },
+    { "name": "Wildscape Food" },
+    { "name": "Yes!" },
+    { "name": "Yogolino" },
+    { "name": "Yorkie" },
+    { "name": "Zoorpresa" },
     { "name": "NIOD" },
     { "name": "Noon.com" },
     { "name": "Nvidia" },
@@ -1123,119 +1102,115 @@
     { "name": "Payoneer" },
     { "name": "Peet's Coffee" },
     {
-      "name": "Pepsico",
-      "products": [
-        { "name": "7up" },
-        { "name": "AMP" },
-        { "name": "Aquafina" },
-        { "name": "Bang" },
-        { "name": "Brisk" },
-        { "name": "bubly Sparkling Water" },
-        { "name": "Bundaberg" },
-        { "name": "Cheetos" },
-        { "name": "Crush" },
-        { "name": "Dole Juice" },
-        { "name": "Doritos" },
-        { "name": "Dr. Pepper" },
-        { "name": "Game Fuel" },
-        { "name": "Gatorade" },
-        { "name": "Kevita" },
-        { "name": "Lay's" },
-        { "name": "LifeWater" },
-        { "name": "Lipton" },
-        { "name": "Manzanita Sol" },
-        { "name": "Mountain Dew" },
-        { "name": "Mug Root Beer" },
-        { "name": "Muscle Milk" },
-        { "name": "Naked Juice" },
-        { "name": "Not Too Sweet Green Tea" },
-        { "name": "Ocean Spray Juice" },
-        { "name": "Pepsi" },
-        { "name": "Propel Vitamin Water" },
-        { "name": "Pure Leaf" },
-        { "name": "Quaker Oats" },
-        { "name": "Robinson’s Fruit Shoots" },
-        { "name": "Rockstar" },
-        { "name": "Sabra" },
-        { "name": "Schweppes Ginger Ale" },
-        { "name": "Schweppes Seltzer" },
-        { "name": "Siberian Chill" },
-        { "name": "Sierra Mist" },
-        { "name": "Sobe" },
-        { "name": "Sodastream" },
-        { "name": "Stubborn" },
-        { "name": "Tropicana Juice" },
-        { "name": "Twister" },
-        { "name": "Voss" },
-        { "name": "Yachak Yerba Mate" }
-      ]
+      "name": "Pepsico"
     },
+    { "name": "7up" },
+    { "name": "AMP" },
+    { "name": "Aquafina" },
+    { "name": "Bang" },
+    { "name": "Brisk" },
+    { "name": "bubly Sparkling Water" },
+    { "name": "Bundaberg" },
+    { "name": "Cheetos" },
+    { "name": "Crush" },
+    { "name": "Dole Juice" },
+    { "name": "Doritos" },
+    { "name": "Dr. Pepper" },
+    { "name": "Game Fuel" },
+    { "name": "Gatorade" },
+    { "name": "Kevita" },
+    { "name": "Lay's" },
+    { "name": "LifeWater" },
+    { "name": "Lipton" },
+    { "name": "Manzanita Sol" },
+    { "name": "Mountain Dew" },
+    { "name": "Mug Root Beer" },
+    { "name": "Muscle Milk" },
+    { "name": "Naked Juice" },
+    { "name": "Not Too Sweet Green Tea" },
+    { "name": "Ocean Spray Juice" },
+    { "name": "Pepsi" },
+    { "name": "Propel Vitamin Water" },
+    { "name": "Pure Leaf" },
+    { "name": "Quaker Oats" },
+    { "name": "Robinson’s Fruit Shoots" },
+    { "name": "Rockstar" },
+    { "name": "Sabra" },
+    { "name": "Schweppes Ginger Ale" },
+    { "name": "Schweppes Seltzer" },
+    { "name": "Siberian Chill" },
+    { "name": "Sierra Mist" },
+    { "name": "Sobe" },
+    { "name": "Sodastream" },
+    { "name": "Stubborn" },
+    { "name": "Tropicana Juice" },
+    { "name": "Twister" },
+    { "name": "Voss" },
+    { "name": "Yachak Yerba Mate" },
     { "name": "Persil" },
     { "name": "Power Action" },
     { "name": "Prada Beauty" },
     { "name": "Pret-a-manger" },
     {
-      "name": "Procter & Gamble",
-      "products": [
-        { "name": "Align Probiotic" },
-        { "name": "Always" },
-        { "name": "Ambipur" },
-        { "name": "Ariel" },
-        { "name": "Ascend" },
-        { "name": "Aussie" },
-        { "name": "Bounce" },
-        { "name": "Bounty" },
-        { "name": "Braun" },
-        { "name": "Cascade" },
-        { "name": "Charlie Banana" },
-        { "name": "Charmin" },
-        { "name": "Cheer" },
-        { "name": "Clearblue" },
-        { "name": "Crest" },
-        { "name": "Dawn" },
-        { "name": "Downy" },
-        { "name": "Dreft" },
-        { "name": "Era" },
-        { "name": "Febreze" },
-        { "name": "Fixodent" },
-        { "name": "Gain" },
-        { "name": "Gillette" },
-        { "name": "Head & Shoulders" },
-        { "name": "Herbal Essences" },
-        { "name": "Ivory" },
-        { "name": "Joy + Glee" },
-        { "name": "Just" },
-        { "name": "Luvs" },
-        { "name": "Metamucil" },
-        { "name": "Microban" },
-        { "name": "Mr. Clean" },
-        { "name": "My Black is Beautiful" },
-        { "name": "Native" },
-        { "name": "Ninjamas" },
-        { "name": "Olay" },
-        { "name": "Old Spice" },
-        { "name": "Oral B" },
-        { "name": "Pantene" },
-        { "name": "Pampers" },
-        { "name": "Pepto Bismol" },
-        { "name": "Prilosec OTC" },
-        { "name": "Puffs" },
-        { "name": "Rindex" },
-        { "name": "Safeguard" },
-        { "name": "Salvo" },
-        { "name": "Scope" },
-        { "name": "Secret" },
-        { "name": "SK-II" },
-        { "name": "Swiffer" },
-        { "name": "Tampax" },
-        { "name": "The Art of Shaving" },
-        { "name": "Tide" },
-        { "name": "Venus" },
-        { "name": "Vicks" },
-        { "name": "Zevo" },
-        { "name": "ZzzQuil" }
-      ]
+      "name": "Procter & Gamble"
     },
+    { "name": "Align Probiotic" },
+    { "name": "Always" },
+    { "name": "Ambipur" },
+    { "name": "Ariel" },
+    { "name": "Ascend" },
+    { "name": "Aussie" },
+    { "name": "Bounce" },
+    { "name": "Bounty" },
+    { "name": "Braun" },
+    { "name": "Cascade" },
+    { "name": "Charlie Banana" },
+    { "name": "Charmin" },
+    { "name": "Cheer" },
+    { "name": "Clearblue" },
+    { "name": "Crest" },
+    { "name": "Dawn" },
+    { "name": "Downy" },
+    { "name": "Dreft" },
+    { "name": "Era" },
+    { "name": "Febreze" },
+    { "name": "Fixodent" },
+    { "name": "Gain" },
+    { "name": "Gillette" },
+    { "name": "Head & Shoulders" },
+    { "name": "Herbal Essences" },
+    { "name": "Ivory" },
+    { "name": "Joy + Glee" },
+    { "name": "Just" },
+    { "name": "Luvs" },
+    { "name": "Metamucil" },
+    { "name": "Microban" },
+    { "name": "Mr. Clean" },
+    { "name": "My Black is Beautiful" },
+    { "name": "Native" },
+    { "name": "Ninjamas" },
+    { "name": "Olay" },
+    { "name": "Old Spice" },
+    { "name": "Oral B" },
+    { "name": "Pantene" },
+    { "name": "Pampers" },
+    { "name": "Pepto Bismol" },
+    { "name": "Prilosec OTC" },
+    { "name": "Puffs" },
+    { "name": "Rindex" },
+    { "name": "Safeguard" },
+    { "name": "Salvo" },
+    { "name": "Scope" },
+    { "name": "Secret" },
+    { "name": "SK-II" },
+    { "name": "Swiffer" },
+    { "name": "Tampax" },
+    { "name": "The Art of Shaving" },
+    { "name": "Tide" },
+    { "name": "Venus" },
+    { "name": "Vicks" },
+    { "name": "Zevo" },
+    { "name": "ZzzQuil" },
     { "name": "Puma" },
     { "name": "Pure Life" },
     { "name": "Ralph Lauren Frangrances" },
@@ -1245,14 +1220,12 @@
     { "name": "Rare Beauty by Selena Gomez" },
     { "name": "Raytheon" },
     {
-      "name": "RBI",
-      "subsidiaries": [
-        { "name": "Tim Hortons" },
-        { "name": "Burger King" },
-        { "name": "Popeyes" },
-        { "name": "Firehouse Subs" }
-      ]
+      "name": "RBI"
     },
+    { "name": "Tim Hortons" },
+    { "name": "Burger King" },
+    { "name": "Popeyes" },
+    { "name": "Firehouse Subs" },
     { "name": "RBS" },
     { "name": "RE/MAX" },
     { "name": "Rexona" },
@@ -1271,15 +1244,13 @@
     { "name": "Spyglass Media Group" },
     { "name": "Standard Life" },
     {
-      "name": "Starbucks",
-      "subsidiaries": [
-        { "name": "Teavana" },
-        { "name": "La Boulange" },
-        { "name": "Seattle Coffee" },
-        { "name": "Evolution Fresh" },
-        { "name": "Ethos" }
-      ]
+      "name": "Starbucks"
     },
+    { "name": "Teavana" },
+    { "name": "La Boulange" },
+    { "name": "Seattle Coffee" },
+    { "name": "Evolution Fresh" },
+    { "name": "Ethos" },
     { "name": "STELLA by Stella McCartney" },
     { "name": "Sudocrem" },
     { "name": "Surf" },
@@ -1298,22 +1269,20 @@
     { "name": "Tresemme" },
     { "name": "Unicef" },
     {
-      "name": "Unilever",
-      "subsidiaries": [
-        { "name": "AXE" },
-        { "name": "Ben & Jerry's" },
-        { "name": "Comfort" },
-        { "name": "Dove" },
-        { "name": "Hellman’s" },
-        { "name": "Lux" },
-        { "name": "Magnum" },
-        { "name": "Olly" },
-        { "name": "Seventh Generation" },
-        { "name": "Smartypants Vitamins" },
-        { "name": "Vaseline" },
-        { "name": "Wall’s" }
-      ]
+      "name": "Unilever"
     },
+    { "name": "AXE" },
+    { "name": "Ben & Jerry's" },
+    { "name": "Comfort" },
+    { "name": "Dove" },
+    { "name": "Hellman’s" },
+    { "name": "Lux" },
+    { "name": "Magnum" },
+    { "name": "Olly" },
+    { "name": "Seventh Generation" },
+    { "name": "Smartypants Vitamins" },
+    { "name": "Vaseline" },
+    { "name": "Wall’s" },
     { "name": "Urban Decay" },
     { "name": "Valentino Beauty" },
     { "name": "Venus" },
@@ -1331,13 +1300,11 @@
     { "name": "Wells Fargo" },
     { "name": "Wix" },
     {
-      "name": "Yum Brands",
-      "subsidiaries": [
-        { "name": "Kentucky Fried Chicken (KFC)" },
-        { "name": "Pizza Hut" },
-        { "name": "Taco Bell" }
-      ]
+      "name": "Yum Brands"
     },
+    { "name": "Kentucky Fried Chicken (KFC)" },
+    { "name": "Pizza Hut" },
+    { "name": "Taco Bell" },
     { "name": "Yves Saint Laurent Beauty / YSL Beauty" },
     { "name": "Zara" }
   ]

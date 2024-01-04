@@ -10,7 +10,7 @@ const Spinner = styled.div`
   border-top: 4px solid var(--clr-primary-5);
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
   margin: auto;
 
   @keyframes spin {

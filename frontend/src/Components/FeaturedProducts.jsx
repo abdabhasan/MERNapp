@@ -1,7 +1,7 @@
-import { useProductsContext } from "../context/businesses_context";
+import { useProductsContext } from "../context/products_context";
 import styled from "styled-components";
 import Error from "./Error";
-import Loading from "./Loading";
+import LoadingSpinner from "./LoadingSpinner";
 import Product from "./Product";
 
 const FeaturedProducts = () => {
@@ -11,13 +11,13 @@ const FeaturedProducts = () => {
     products_error: error,
   } = useProductsContext();
   if (loading) {
-    return <Loading />;
+    return <LoadingSpinner />;
   }
   if (error) {
     return <Error />;
   }
   return (
-    <Wrapper className="section">
+    <Wrapper>
       <div className="title">
         <h2>featured products</h2>
         <div className="underline"></div>

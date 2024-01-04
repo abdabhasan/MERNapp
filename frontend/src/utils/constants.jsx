@@ -14,8 +14,8 @@ export const links = [
   },
   {
     id: 3,
-    text: "Products to avoid",
-    url: "/products-to-avoid",
+    text: "About us",
+    url: "/about",
   },
 ];
 
@@ -58,16 +58,6 @@ export const sidebar_links = [
 ];
 
 export const dropdown_options = [
-  {
-    id: 1,
-    text: "About us",
-    url: "/about",
-  },
-  {
-    id: 2,
-    text: "shop local",
-    url: "/shop-local",
-  },
   {
     id: 3,
     text: "add a business",
@@ -221,6 +211,28 @@ export const citiesByState = {
   Wisconsin: ["Milwaukee", "Madison", "Green Bay", "Kenosha"],
   Wyoming: ["Cheyenne", "Casper", "Laramie", "Gillette"],
 };
+
+export const businessTypes = [
+  "Convenience Store",
+  "Clothing/Apparel",
+  "Entertainment",
+  "Event Hall",
+  "Food/Drink",
+  "Restaurant",
+  "Catering",
+  "Cafe/Drinks",
+  "Furniture",
+  "Gas Station",
+  "Grocery",
+  "Health/Beauty",
+  "Salon/Boutique",
+  "Barbershop",
+  "Gym",
+  "Jewelry",
+  "Religious/Non-Profit",
+  "Travel",
+  "Other",
+];
 
 export const API_ENDPOINT = "http://localhost:5000/add-business";
 

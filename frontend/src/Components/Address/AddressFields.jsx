@@ -32,9 +32,10 @@ const AddressFields = () => {
         cities={citiesByState[businessData.state] || []}
       />
       <FormField
-        label="Street (optional)"
+        label="Street"
         type="text"
         name="street"
+        required={true}
         value={businessData.street}
         onChange={handleChange}
       />
