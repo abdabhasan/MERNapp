@@ -1,11 +1,12 @@
-import { FeaturedProducts } from "../Components";
+import { FeaturedProducts, Title } from "../Components";
+import ShopsContainer from "../Components/Containers/ShopsContainer";
 
 const ShopLocalPage = () => {
   return (
     <>
+      <Title name="shop local" />
       <FeaturedProducts />
-      <h1>Searchbar</h1>
-      <h1>MENU</h1>
+      <ShopsContainer />
     </>
   );
 };

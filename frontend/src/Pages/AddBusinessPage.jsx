@@ -1,12 +1,9 @@
-import { AddBusinessForm } from "../Components";
+import { AddBusinessForm, Title } from "../Components";
 
 const AddBusinessPage = () => {
   return (
     <main className="page">
-      <div className="title">
-        <h2>Add a business</h2>
-        <div className="underline"></div>
-      </div>
+      <Title name="add business" />
       <AddBusinessForm />
     </main>
   );

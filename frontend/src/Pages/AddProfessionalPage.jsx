@@ -1,12 +1,9 @@
-import { AddProfessionalForm } from "../Components";
+import { AddProfessionalForm, Title } from "../Components";
 
 const AddProfessionalPage = () => {
   return (
     <main className="page">
-      <div className="title">
-        <h2>Add a Professional</h2>
-        <div className="underline"></div>
-      </div>
+      <Title name="add rofessional" />
       <AddProfessionalForm />
     </main>
   );

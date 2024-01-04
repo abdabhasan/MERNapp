@@ -10,8 +10,9 @@ import AddBusinessForm from "./AddBusinessForm";
 import FormField from "./FormField";
 import FeaturedProducts from "./FeaturedProducts";
 import Filters from "./Filters";
-import ProductList from "./ProductList";
+import ShopList from "./ShopList";
 import Sort from "./Sort";
+import Title from "./Title";
 export {
   Navbar,
   Sidebar,
@@ -25,6 +26,7 @@ export {
   FormField,
   FeaturedProducts,
   Filters,
-  ProductList,
+  ShopList,
   Sort,
+  Title,
 };

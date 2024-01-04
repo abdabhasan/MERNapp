@@ -1,9 +1,8 @@
-import React from "react";
 import { useFilterContext } from "../context/filter_context";
 import GridView from "./GridView";
 import ListView from "./ListView";
 
-const ProductList = () => {
+const ShopList = () => {
   const { filtered_products: products, grid_view } = useFilterContext();
 
   if (products.length < 1) {
@@ -16,4 +15,4 @@ const ProductList = () => {
   return <GridView products={products}>product list</GridView>;
 };
 
-export default ProductList;
+export default ShopList;

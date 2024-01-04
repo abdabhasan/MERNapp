@@ -1,16 +1,15 @@
 import styled from "styled-components";
-import { Filters, ProductList, Sort, PageHero } from "../components";
+import { Filters, ShopList, Sort } from "..";
 
-const ProductsPage = () => {
+const ShopsContainer = () => {
   return (
     <main>
-      <PageHero title="products" />
       <Wrapper className="page">
-        <section className="section-center products">
+        <section className="section-center shops">
           <Filters />
           <div>
             <Sort />
-            <ProductList />
+            <ShopList />
           </div>
         </section>
       </Wrapper>
@@ -19,16 +18,16 @@ const ProductsPage = () => {
 };
 
 const Wrapper = styled.div`
-  .products {
+  .shops {
     display: grid;
     gap: 3rem 1.5rem;
     margin: 4rem auto;
   }
   @media (min-width: 768px) {
-    .products {
+    .shops {
       grid-template-columns: 200px 1fr;
     }
   }
 `;
 
-export default ProductsPage;
+export default ShopsContainer;

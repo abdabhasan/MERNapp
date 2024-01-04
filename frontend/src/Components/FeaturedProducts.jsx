@@ -17,11 +17,7 @@ const FeaturedProducts = () => {
     return <Error />;
   }
   return (
-    <Wrapper>
-      <div className="title">
-        <h2>featured products</h2>
-        <div className="underline"></div>
-      </div>
+    <Wrapper className="section">
       <div className="section-center featured">
         {products.slice(0, 3).map((product) => {
           return <Product key={product.id} {...product} />;
@@ -33,6 +29,8 @@ const FeaturedProducts = () => {
 
 const Wrapper = styled.section`
   background: var(--clr-grey-10);
+  padding-top: 3rem;
+
   .featured {
     margin: 4rem auto;
     display: grid;

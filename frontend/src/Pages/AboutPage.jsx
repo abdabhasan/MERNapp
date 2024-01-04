@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import aboutVedio from "../assets/aboutVideo.mp4";
+import { Title } from "../Components";
 
 const AboutPage = () => {
   return (
     <Wrapper className="page  section-center">
       <div className="video-container">
-        <div className="title">
-          <h2>About us</h2>
-          <div className="underline"></div>
-        </div>
+        <Title name="about us" />
         <video controls>
           <source src={aboutVedio} type="video/mp4" />
           Your browser does not support the video tag.
