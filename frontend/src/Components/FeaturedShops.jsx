@@ -1,15 +1,15 @@
-import { useProductsContext } from "../context/products_context";
+import { useShopsContext } from "../context/shops_context";
 import styled from "styled-components";
 import Error from "./Error";
 import LoadingSpinner from "./LoadingSpinner";
-import Product from "./Product";
+import Shop from "./Shop";
 
-const FeaturedProducts = () => {
+const FeaturedShops = () => {
   const {
-    products_loading: loading,
-    featured_products: products,
-    products_error: error,
-  } = useProductsContext();
+    shops_loading: loading,
+    featured_shops: shops,
+    shops_error: error,
+  } = useShopsContext();
   if (loading) {
     return <LoadingSpinner />;
   }
@@ -19,8 +19,8 @@ const FeaturedProducts = () => {
   return (
     <Wrapper className="section">
       <div className="section-center featured">
-        {products.slice(0, 3).map((product) => {
-          return <Product key={product.id} {...product} />;
+        {shops.slice(0, 3).map((shop) => {
+          return <Shop key={shop.id} {...shop} />;
         })}
       </div>
     </Wrapper>
@@ -52,4 +52,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default FeaturedProducts;
+export default FeaturedShops;

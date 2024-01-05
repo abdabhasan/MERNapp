@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Product = ({ image, name, id }) => {
+const Shop = ({ image, name, id }) => {
   return (
     <Wrapper>
       <div className="container">
@@ -65,4 +65,4 @@ const Wrapper = styled.article`
     }
   }
 `;
-export default Product;
+export default Shop;

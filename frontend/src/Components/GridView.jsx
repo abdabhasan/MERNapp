@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Product from "./Product";
+import Shop from "./Shop";
 
-const GridView = ({ products }) => {
+const GridView = ({ shops }) => {
   return (
     <Wrapper>
-      <div className="products-container">
-        {products.map((product) => {
-          return <Product key={product.id} {...product} />;
+      <div className="shops-container">
+        {shops.map((shop) => {
+          return <Shop key={shop.id} {...shop} />;
         })}
       </div>
     </Wrapper>
@@ -18,18 +18,18 @@ const Wrapper = styled.section`
     height: 175px;
   }
 
-  .products-container {
+  .shops-container {
     display: grid;
     gap: 2rem 1.5rem;
   }
 
   @media (min-width: 992px) {
-    .products-container {
+    .shops-container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   @media (min-width: 1170px) {
-    .products-container {
+    .shops-container {
       grid-template-columns: repeat(3, 1fr);
     }
   }

@@ -1,20 +1,20 @@
 import React, { useEffect, useContext, useReducer } from "react";
 import reducer from "../reducers/filter_reducer";
-import { useProductsContext } from "./products_context";
+import { useShopsContext } from "./shops_context";
 import {
-  LOAD_PRODUCTS,
+  LOAD_SHOPS,
   SET_GRIDVIEW,
   SET_LISTVIEW,
   UPDATE_SORT,
-  SORT_PRODUCTS,
+  SORT_SHOPS,
   UPDATE_FILTERS,
-  FILTER_PRODUCTS,
+  FILTER_SHOPS,
   CLEAR_FILTERS,
 } from "../actions";
 
 const initialState = {
-  filtered_products: [],
-  all_products: [],
+  filtered_shops: [],
+  all_shops: [],
   grid_view: true,
   sort: "name-lowest",
   filters: {
@@ -33,16 +33,16 @@ const FilterContext = React.createContext();
 
 export const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { products } = useProductsContext();
+  const { shops } = useShopsContext();
 
   useEffect(() => {
-    dispatch({ type: LOAD_PRODUCTS, payload: products });
-  }, [products]);
+    dispatch({ type: LOAD_SHOPS, payload: shops });
+  }, [shops]);
 
   useEffect(() => {
-    dispatch({ type: FILTER_PRODUCTS });
-    dispatch({ type: SORT_PRODUCTS });
-  }, [products, state.sort, state.filters]);
+    dispatch({ type: FILTER_SHOPS });
+    dispatch({ type: SORT_SHOPS });
+  }, [shops, state.sort, state.filters]);
 
   const setGridView = () => {
     dispatch({ type: SET_GRIDVIEW });
@@ -64,15 +64,11 @@ export const FilterProvider = ({ children }) => {
     if (name === "category") {
       value = e.target.textContent;
     }
-    if (name === "color") {
-      value = e.target.dataset.color;
-    }
+
     if (name === "price") {
       value = Number(value);
     }
-    if (name === "shipping") {
-      value = e.target.checked;
-    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
   const clearFilters = () => {

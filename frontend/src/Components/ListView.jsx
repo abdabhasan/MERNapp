@@ -1,13 +1,12 @@
-import React from "react";
 import styled from "styled-components";
 import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
-import products_reducer from "../reducers/products_reducer";
-const ListView = ({ products }) => {
+
+const ListView = ({ shops }) => {
   return (
     <Wrapper>
-      {products.map((product) => {
-        const { id, image, name, price, description } = product;
+      {shops.map((shop) => {
+        const { id, image, name, price, description } = shop;
         return (
           <article key={id}>
             <img src={image} alt={name} />

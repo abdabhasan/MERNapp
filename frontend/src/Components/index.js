@@ -8,7 +8,7 @@ import Logo from "./Logo";
 import AddProfessionalForm from "./AddProfessionalForm";
 import AddBusinessForm from "./AddBusinessForm";
 import FormField from "./FormField";
-import FeaturedProducts from "./FeaturedProducts";
+import FeaturedShops from "./FeaturedShops";
 import Filters from "./Filters";
 import ShopList from "./ShopList";
 import Sort from "./Sort";
@@ -24,7 +24,7 @@ export {
   AddProfessionalForm,
   AddBusinessForm,
   FormField,
-  FeaturedProducts,
+  FeaturedShops,
   Filters,
   ShopList,
   Sort,

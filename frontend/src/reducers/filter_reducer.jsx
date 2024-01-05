@@ -1,27 +1,25 @@
-import React from "react";
-
 import {
-  LOAD_PRODUCTS,
+  LOAD_SHOPS,
   SET_LISTVIEW,
   SET_GRIDVIEW,
   UPDATE_SORT,
-  SORT_PRODUCTS,
+  SORT_SHOPS,
   UPDATE_FILTERS,
-  FILTER_PRODUCTS,
+  FILTER_SHOPS,
   CLEAR_FILTERS,
 } from "../actions";
 
 const filter_reducer = (state, action) => {
   // Loading start
 
-  if (action.type === LOAD_PRODUCTS) {
-    let maxPrice = action.payload.map((product) => product.price);
+  if (action.type === LOAD_SHOPS) {
+    let maxPrice = action.payload.map((shop) => shop.price);
     maxPrice = Math.max(...maxPrice);
 
     return {
       ...state,
-      all_products: [...action.payload],
-      filtered_products: [...action.payload],
+      all_shops: [...action.payload],
+      filtered_shops: [...action.payload],
       filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
     };
   }
@@ -41,24 +39,24 @@ const filter_reducer = (state, action) => {
     return { ...state, sort: action.payload };
   }
 
-  if (action.type === SORT_PRODUCTS) {
-    const { sort, filtered_products } = state;
-    let tempProducts = [...filtered_products];
+  if (action.type === SORT_SHOPS) {
+    const { sort, filtered_shops } = state;
+    let tempShops = [...filtered_shops];
 
     if (sort === "price-lowest") {
-      tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+      tempShops = tempShops.sort((a, b) => a.price - b.price);
     }
     if (sort === "price-highest") {
-      tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+      tempShops = tempShops.sort((a, b) => b.price - a.price);
     }
     if (sort === "name-a") {
-      tempProducts = tempProducts.sort((a, b) => a.name.localeCompare(b.name));
+      tempShops = tempShops.sort((a, b) => a.name.localeCompare(b.name));
     }
     if (sort === "name-z") {
-      tempProducts = tempProducts.sort((a, b) => b.name.localeCompare(a.name));
+      tempShops = tempShops.sort((a, b) => b.name.localeCompare(a.name));
     }
 
-    return { ...state, filtered_products: tempProducts };
+    return { ...state, filtered_shops: tempShops };
   }
 
   // Sorting end
@@ -69,45 +67,39 @@ const filter_reducer = (state, action) => {
     return { ...state, filters: { ...state.filters, [name]: value } };
   }
 
-  if (action.type === FILTER_PRODUCTS) {
-    const { all_products } = state;
+  if (action.type === FILTER_SHOPS) {
+    const { all_shops } = state;
     const { text, category, company, color, price, shipping } = state.filters;
 
-    let tempProducts = [...all_products];
+    let tempShops = [...all_shops];
     // text
     if (text) {
-      tempProducts = tempProducts.filter((product) => {
-        return product.name.toLowerCase().startsWith(text);
+      tempShops = tempShops.filter((shop) => {
+        return shop.name.toLowerCase().startsWith(text);
       });
     }
     // category
     if (category !== "all") {
-      tempProducts = tempProducts.filter(
-        (product) => product.category === category
-      );
+      tempShops = tempShops.filter((shop) => shop.category === category);
     }
     // company
     if (company !== "all") {
-      tempProducts = tempProducts.filter(
-        (product) => product.company === company
-      );
+      tempShops = tempShops.filter((shop) => shop.company === company);
     }
     // colors
     if (color !== "all") {
-      tempProducts = tempProducts.filter((product) => {
-        return product.colors.find((c) => c === color);
+      tempShops = tempShops.filter((shop) => {
+        return shop.colors.find((c) => c === color);
       });
     }
     // price
-    tempProducts = tempProducts.filter((product) => product.price <= price);
+    tempShops = tempShops.filter((shop) => shop.price <= price);
     // shipping
     if (shipping) {
-      tempProducts = tempProducts.filter(
-        (product) => product.shipping === true
-      );
+      tempShops = tempShops.filter((shop) => shop.shipping === true);
     }
 
-    return { ...state, filtered_products: tempProducts };
+    return { ...state, filtered_shops: tempShops };
   }
   if (action.type === CLEAR_FILTERS) {
     return {
