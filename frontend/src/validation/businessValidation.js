@@ -16,7 +16,7 @@ const businessValidationSchema = Yup.object().shape({
   businessType: Yup.string()
     .required("Business Type is required")
     .min(3, "Business Type must be at least 3 characters")
-    .max(15, "Business Type must be at most 15 characters"),
+    .max(25, "Business Type must be at most 15 characters"),
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),

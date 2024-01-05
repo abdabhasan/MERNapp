@@ -51,9 +51,13 @@ const AddBusinessForm = () => {
         abortEarly: false,
       });
 
-      const response = await axios.post(API_ENDPOINT, businessData, {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        `${API_ENDPOINT}/add-business`,
+        businessData,
+        {
+          withCredentials: true,
+        }
+      );
 
       if (response.status === 200) {
         toast.success("Business Submitted");
@@ -145,6 +149,7 @@ const AddBusinessForm = () => {
             },
           ])}
           {isLoading ? <LoadingSpinner /> : <SubmitBtn />}
+          {}
         </form>
       </div>
     </Wrapper>

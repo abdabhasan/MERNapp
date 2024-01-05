@@ -1,10 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const BusinessModel = require("./models/BusinessModel");
-const productsToAvoidRoute = require("./routes/productsToAvoidRoute");
 const errorHandler = require("./middlewares/errorHandler");
 const databaseConfig = require("./config/database");
+
+// MODELS
+const BusinessModel = require("./models/businessModel");
+
+// ROUTES
+const productsToAvoidRoute = require("./routes/productsToAvoidRoute");
+const businessRoute = require("./routes/businessRoute");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,24 +19,12 @@ const corsOptions = {
   credentials: true,
 };
 
+// MIDLEWARES
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+
 app.use("/api/v1/", productsToAvoidRoute);
-
-app.post("/add-business", (req, res) => {
-  const formData = req.body;
-  const newFormData = new BusinessModel(formData);
-
-  newFormData
-    .save()
-    .then(() => {
-      res.status(200).send("Form data saved successfully");
-    })
-    .catch((err) => {
-      console.error("Error saving to database:", err);
-      res.status(500).send("Error saving to database");
-    });
-});
+app.use("/api/v1/", businessRoute);
 
 // Error handling middleware
 app.use(errorHandler);

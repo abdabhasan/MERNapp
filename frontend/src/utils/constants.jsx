@@ -234,7 +234,7 @@ export const businessTypes = [
   "Other",
 ];
 
-export const API_ENDPOINT = "http://localhost:5000/add-business";
+export const API_ENDPOINT = "http://localhost:5000/api/v1";
 
 export const shops_url = "https://course-api.com/react-store-products";
 
