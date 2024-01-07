@@ -39,9 +39,9 @@ const BusinessSchema = new mongoose.Schema({
     default: "",
   },
   image: {
-    type: Buffer,
-    required: true,
-    default: null,
+    type: String,
+    default:
+      "https://deih43ym53wif.cloudfront.net/large_shutterstock_212292862.jpg_c15c6a1832.jpg",
   },
   bio: {
     type: String,

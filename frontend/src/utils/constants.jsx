@@ -236,6 +236,6 @@ export const businessTypes = [
 
 export const API_ENDPOINT = "http://localhost:5000/api/v1";
 
-export const shops_url = "https://course-api.com/react-store-products";
+// export const shops_url = "https://course-api.com/react-store-products";
 
 export const single_shop_url = `https://course-api.com/react-store-single-product?id=`;

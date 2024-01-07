@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/shops_reducer";
-import { shops_url as url } from "../utils/constants";
+import { API_ENDPOINT } from "../utils/constants";
 
 import {
   GET_SHOPS_BEGIN,
@@ -32,6 +32,7 @@ export const ShopsProvider = ({ children }) => {
     try {
       const response = await axios(url);
       const shops = response.data;
+      console.log("shops", shops);
       dispatch({ type: GET_SHOPS_SUCCESS, payload: shops });
     } catch (error) {
       dispatch({ type: GET_SHOPS_ERROR });
@@ -50,7 +51,7 @@ export const ShopsProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchShops(url);
+    fetchShops(`${API_ENDPOINT}/businesses`);
   }, []);
 
   return (

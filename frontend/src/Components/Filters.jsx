@@ -4,13 +4,14 @@ import { getUniqueValues, formatPrice } from "../utils/helpers";
 
 const Filters = () => {
   const {
-    filters: { text, category, company, min_price, max_price, price },
+    filters: { text, category, company, price },
     clearFilters,
     updateFilters,
     all_shops,
   } = useFilterContext();
 
-  const categories = getUniqueValues(all_shops, "category");
+  // const categories = getUniqueValues(all_shops, "category");
+  const categories = ["category1", "category2"];
   const companies = getUniqueValues(all_shops, "company");
 
   return (
@@ -80,14 +81,7 @@ const Filters = () => {
           {/* Price */}
           <h5>price</h5>
           <p className="price">{formatPrice(price)}</p>
-          <input
-            type="range"
-            name="price"
-            onChange={updateFilters}
-            min={min_price}
-            max={max_price}
-            value={price}
-          />
+          <input type="range" name="price" onChange={updateFilters} />
           {/* Price end */}
         </form>
         <button type="button" className="clear-btn" onClick={clearFilters}>

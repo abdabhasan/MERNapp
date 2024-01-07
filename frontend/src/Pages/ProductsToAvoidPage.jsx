@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import ProductsToAvoidSearchbar from "../Components/Searchbars/ProductsToAvoidSearchbar";
+import { Title } from "../Components";
 
 const ProductsToAvoidPage = () => {
   return (
     <Wrapper className="page-100 products-to-avoid">
       <section className="container">
-        <div className="title">
-          <h2>products to avoid</h2>
-          <div className="underline"></div>
-        </div>
+        <Title name="products to avoid" />
         <div className="desc">
           <h5>
             Use the search box below to check if a product/company is actively

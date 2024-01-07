@@ -2,17 +2,35 @@ import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Shop = ({ image, name, id }) => {
+const Shop = ({
+  image,
+  _id,
+  businessName,
+  ownerFirstName,
+  businessType,
+  city,
+  state,
+  email,
+}) => {
   return (
     <Wrapper>
       <div className="container">
-        <img src={image} alt={name} />
-        <Link to={`/products/${id}`} className="link">
+        <img
+          src="https://deih43ym53wif.cloudfront.net/large_shutterstock_212292862.jpg_c15c6a1832.jpg"
+          alt={businessName}
+        />
+        <Link to={`/shops/${_id}`} className="link">
           <FaSearch />
         </Link>
       </div>
       <footer>
-        <h5>{name}</h5>
+        <h5>{businessName}</h5>
+        <p>{ownerFirstName}</p>
+        <p>{businessType}</p>
+        <p>{city}</p>
+        <p>{state}</p>
+        <p>{ownerFirstName}</p>
+        <p>{email}</p>
       </footer>
     </Wrapper>
   );

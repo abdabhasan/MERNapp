@@ -52,7 +52,7 @@ const AddBusinessForm = () => {
       });
 
       const response = await axios.post(
-        `${API_ENDPOINT}/add-business`,
+        `${API_ENDPOINT}/businesses`,
         businessData,
         {
           withCredentials: true,

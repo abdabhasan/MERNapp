@@ -1,10 +1,9 @@
+import { Title } from "../Components";
+
 const PricingPage = () => {
   return (
     <div>
-      <div className="title">
-        <h2>pricing page</h2>
-        <div className="underline"></div>
-      </div>
+      <Title name="pricing page" />
     </div>
   );
 };

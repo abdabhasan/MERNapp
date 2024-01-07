@@ -10,6 +10,7 @@ const FeaturedShops = () => {
     featured_shops: shops,
     shops_error: error,
   } = useShopsContext();
+
   if (loading) {
     return <LoadingSpinner />;
   }
@@ -20,7 +21,7 @@ const FeaturedShops = () => {
     <Wrapper className="section">
       <div className="section-center featured">
         {shops.slice(0, 3).map((shop) => {
-          return <Shop key={shop.id} {...shop} />;
+          return <Shop key={shop._id} {...shop} />;
         })}
       </div>
     </Wrapper>
