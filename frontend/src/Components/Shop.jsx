@@ -1,22 +1,24 @@
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 const Shop = ({
   image,
   _id,
   businessName,
-  ownerFirstName,
   businessType,
   city,
   state,
   email,
+  phone,
+  street,
 }) => {
   return (
     <Wrapper>
       <div className="container">
         <img
-          src="https://deih43ym53wif.cloudfront.net/large_shutterstock_212292862.jpg_c15c6a1832.jpg"
+          src="https://deih43ym53wif.cloudfront.net/large_aqsunqur-mosque-cairo-egypt-shutterstock_1409723105_becbce25e9.jpeg"
           alt={businessName}
         />
         <Link to={`/shops/${_id}`} className="link">
@@ -25,18 +27,32 @@ const Shop = ({
       </div>
       <footer>
         <h5>{businessName}</h5>
-        <p>{ownerFirstName}</p>
         <p>{businessType}</p>
-        <p>{city}</p>
-        <p>{state}</p>
-        <p>{ownerFirstName}</p>
-        <p>{email}</p>
+        <div className="underline"></div>
+        <div className="info-row">
+          <div className="address">
+            <p>{street}</p>
+            <p>
+              {state}, {city}
+            </p>
+          </div>
+          <div className="contact">
+            <p>{phone}</p>
+            <SocialMediaLinks
+              facebook="https://facebook.com"
+              instagram="https://instagram.com"
+              website="https://instagram.com"
+              other="https://instagram.com"
+            />
+          </div>
+        </div>
       </footer>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.article`
+  background-color: var(--clr-white);
   .container {
     position: relative;
     background: var(--clr-black);
@@ -47,6 +63,8 @@ const Wrapper = styled.article`
     display: block;
     object-fit: cover;
     border-radius: var(--radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     transition: var(--transition);
   }
   .link {
@@ -76,7 +94,45 @@ const Wrapper = styled.article`
     opacity: 1;
   }
   footer {
-    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: var(--radius);
+
+    h5,
+    p {
+      text-align: center;
+    }
+    p {
+      margin: 0;
+    }
+    .underline {
+      width: 100%;
+      height: 0.5px;
+      background-color: var(--clr-black);
+      margin: 0.5rem 0;
+    }
+    .info-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1rem;
+      margin-top: 1rem;
+      p {
+        margin: 0;
+        text-align: start;
+        font-size: 12px;
+      }
+      .contact {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        p {
+          text-align: end;
+        }
+      }
+    }
+
     h5 {
       margin-bottom: 0;
       font-weight: 400;

@@ -13,6 +13,13 @@ exports.getBusinesses = (req, res) => {
 
 exports.addBusiness = (req, res) => {
   const formData = req.body;
+
+  if (req.file) {
+    // If there's an image, add its path to formData
+    // or buffer, if using memory storage
+    formData.image = req.file.path;
+  }
+
   const newFormData = new BusinessModel(formData);
 
   newFormData

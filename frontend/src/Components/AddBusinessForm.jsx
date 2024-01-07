@@ -38,7 +38,11 @@ const AddBusinessForm = () => {
   };
 
   const handleChange = (e) => {
-    setBusinessData({ ...businessData, [e.target.name]: e.target.value });
+    if (e.target.name === "image") {
+      setBusinessData({ ...businessData, [e.target.name]: e.target.files });
+    } else {
+      setBusinessData({ ...businessData, [e.target.name]: e.target.value });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -51,10 +55,22 @@ const AddBusinessForm = () => {
         abortEarly: false,
       });
 
+      const formData = new FormData();
+      for (const key in businessData) {
+        if (key === "image") {
+          formData.append(key, businessData[key][0]); // Assuming image is a FileList
+        } else {
+          formData.append(key, businessData[key]);
+        }
+      }
+
       const response = await axios.post(
         `${API_ENDPOINT}/businesses`,
-        businessData,
+        formData,
         {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
           withCredentials: true,
         }
       );
@@ -71,10 +87,6 @@ const AddBusinessForm = () => {
       }
     } catch (error) {
       console.error("Error Adding Business:", error.message);
-
-      error.inner.forEach((err) => {
-        toast.error(err.message);
-      });
 
       toast.error(
         "An error occurred while Adding the business. Please try again later."

@@ -82,22 +82,7 @@ const filter_reducer = (state, action) => {
     if (category !== "all") {
       tempShops = tempShops.filter((shop) => shop.category === category);
     }
-    // company
-    if (company !== "all") {
-      tempShops = tempShops.filter((shop) => shop.company === company);
-    }
-    // colors
-    if (color !== "all") {
-      tempShops = tempShops.filter((shop) => {
-        return shop.colors.find((c) => c === color);
-      });
-    }
-    // price
-    tempShops = tempShops.filter((shop) => shop.price <= price);
     // shipping
-    if (shipping) {
-      tempShops = tempShops.filter((shop) => shop.shipping === true);
-    }
 
     return { ...state, filtered_shops: tempShops };
   }

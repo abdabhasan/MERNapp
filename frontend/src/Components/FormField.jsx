@@ -29,6 +29,8 @@ const FormField = ({
   );
 };
 
+export default FormField;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,5 +55,3 @@ const Wrapper = styled.div`
     }
   }
 `;
-
-export default FormField;

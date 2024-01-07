@@ -10,9 +10,7 @@ const Filters = () => {
     all_shops,
   } = useFilterContext();
 
-  // const categories = getUniqueValues(all_shops, "category");
-  const categories = ["category1", "category2"];
-  const companies = getUniqueValues(all_shops, "company");
+  const categories = getUniqueValues(all_shops, "businessType");
 
   return (
     <Wrapper>
@@ -55,28 +53,6 @@ const Filters = () => {
           </div>
 
           {/* categories end */}
-
-          {/* companies */}
-
-          <div className="form-control">
-            <h5>company</h5>
-            <select
-              name="company"
-              value={company}
-              onChange={updateFilters}
-              className="company"
-            >
-              {companies.map((item, index) => {
-                return (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-
-          {/* companies end */}
 
           {/* Price */}
           <h5>price</h5>
