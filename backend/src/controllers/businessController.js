@@ -1,4 +1,7 @@
 const BusinessModel = require("../models/businessModel");
+const multer = require("multer");
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 exports.getBusinesses = (req, res) => {
   BusinessModel.find()
@@ -15,9 +18,7 @@ exports.addBusiness = (req, res) => {
   const formData = req.body;
 
   if (req.file) {
-    // If there's an image, add its path to formData
-    // or buffer, if using memory storage
-    formData.image = req.file.path;
+    formData.image = req.file.buffer;
   }
 
   const newFormData = new BusinessModel(formData);

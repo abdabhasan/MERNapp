@@ -4,7 +4,7 @@ import { getUniqueValues, formatPrice } from "../utils/helpers";
 
 const Filters = () => {
   const {
-    filters: { text, category, company, price },
+    filters: { text, category, company, distance },
     clearFilters,
     updateFilters,
     all_shops,
@@ -55,9 +55,9 @@ const Filters = () => {
           {/* categories end */}
 
           {/* Price */}
-          <h5>price</h5>
-          <p className="price">{formatPrice(price)}</p>
-          <input type="range" name="price" onChange={updateFilters} />
+          <h5>distance</h5>
+          <p className="distance">{distance}</p>
+          <input type="range" name="distance" onChange={updateFilters} />
           {/* Price end */}
         </form>
         <button type="button" className="clear-btn" onClick={clearFilters}>

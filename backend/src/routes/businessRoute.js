@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const businessController = require("../controllers/businessController");
-const upload = require("../middlewares/upload");
+
+const multer = require("multer");
+const upload = multer({ storage: multer.memoryStorage() });
 
 router.get("/businesses", businessController.getBusinesses);
 router.post(

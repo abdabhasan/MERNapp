@@ -24,7 +24,7 @@ const initialState = {
     color: "all",
     min_price: 0,
     max_price: 0,
-    price: 0,
+    distance: 0,
     shipping: false,
   },
 };

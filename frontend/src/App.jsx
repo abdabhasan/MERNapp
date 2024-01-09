@@ -9,6 +9,7 @@ import {
   AddBusiness,
   Pricing,
   Register,
+  SingleShop,
 } from "./Pages";
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
               {
                 path: "shop-local",
                 element: <ShopLocal />,
+              },
+              {
+                path: "shop-local/shops/:id",
+                element: <SingleShop />,
               },
               {
                 path: "products-to-avoid",

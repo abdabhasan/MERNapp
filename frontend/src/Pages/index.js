@@ -6,3 +6,4 @@ export { default as AddBusiness } from "./AddBusinessPage";
 export { default as AddProfessional } from "./AddProfessionalPage";
 export { default as ProductsToAvoid } from "./ProductsToAvoidPage";
 export { default as Register } from "./RegisterPage";
+export { default as SingleShop } from "./SingleShopPage";

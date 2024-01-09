@@ -22,7 +22,6 @@ const corsOptions = {
 // MIDLEWARES
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
-app.use("/uploads", express.static("uploads"));
 
 app.use("/api/v1/", productsToAvoidRoute);
 app.use("/api/v1/", businessRoute);

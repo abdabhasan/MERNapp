@@ -38,8 +38,8 @@ const AddBusinessForm = () => {
   };
 
   const handleChange = (e) => {
-    if (e.target.name === "image") {
-      setBusinessData({ ...businessData, [e.target.name]: e.target.files });
+    if (e.target.type === "file") {
+      setBusinessData({ ...businessData, [e.target.name]: e.target.files[0] });
     } else {
       setBusinessData({ ...businessData, [e.target.name]: e.target.value });
     }
@@ -51,26 +51,26 @@ const AddBusinessForm = () => {
     try {
       setIsLoading(true);
 
+      // validation
       await businessValidationSchema.validate(businessData, {
         abortEarly: false,
       });
 
       const formData = new FormData();
-      for (const key in businessData) {
-        if (key === "image") {
-          formData.append(key, businessData[key][0]); // Assuming image is a FileList
+
+      Object.keys(businessData).forEach((key) => {
+        if (key === "image" && businessData[key]) {
+          formData.append(key, businessData[key]);
         } else {
           formData.append(key, businessData[key]);
         }
-      }
+      });
 
       const response = await axios.post(
         `${API_ENDPOINT}/businesses`,
         formData,
         {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+          headers: { "Content-Type": "multipart/form-data" },
           withCredentials: true,
         }
       );
@@ -148,10 +148,10 @@ const AddBusinessForm = () => {
           {renderFields([
             {
               label: "Upload Image",
-              type: "file",
+              type: "text",
               name: "image",
               required: true,
-              accept: "image/*",
+              // accept: "image/*",
             },
             {
               label: "Subscribe",
@@ -161,7 +161,6 @@ const AddBusinessForm = () => {
             },
           ])}
           {isLoading ? <LoadingSpinner /> : <SubmitBtn />}
-          {}
         </form>
       </div>
     </Wrapper>

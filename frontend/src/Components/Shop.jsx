@@ -17,10 +17,7 @@ const Shop = ({
   return (
     <Wrapper>
       <div className="container">
-        <img
-          src="https://deih43ym53wif.cloudfront.net/large_aqsunqur-mosque-cairo-egypt-shutterstock_1409723105_becbce25e9.jpeg"
-          alt={businessName}
-        />
+        <img src={image} alt={businessName} />
         <Link to={`/shops/${_id}`} className="link">
           <FaSearch />
         </Link>

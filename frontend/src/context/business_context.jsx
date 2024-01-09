@@ -13,6 +13,7 @@ const initialBusinessData = {
   city: "",
   street: "",
   image: "",
+  bio: "some bio",
   subscribe: false,
 };
 

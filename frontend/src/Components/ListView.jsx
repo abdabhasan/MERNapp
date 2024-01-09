@@ -1,21 +1,35 @@
 import styled from "styled-components";
-import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
 
 const ListView = ({ shops }) => {
   return (
     <Wrapper>
       {shops.map((shop) => {
-        const { id, image, name, price, description } = shop;
-        return (
-          <article key={id}>
-            <img src={image} alt={name} />
-            <div>
-              <h4>{name}</h4>
-              <h5 className="price">{formatPrice(price)}</h5>
+        const {
+          _id,
+          image,
+          businessName,
+          businessType,
+          state,
+          city,
+          street,
+          bio,
+        } = shop;
 
-              <p>{description.substring(0, 150)}...</p>
-              <Link to={`/shops/${id}`} className="btn">
+        return (
+          <article key={_id}>
+            <img src={image} alt={businessName} />
+            <div>
+              <h4>{businessName}</h4>
+              <h5 className="business-type">{businessType}</h5>
+              <div className="address">
+                <p>
+                  {state} ,{city}, {street}
+                </p>
+              </div>
+
+              {bio && <p>{bio.substring(0, 150)}...</p>}
+              <Link to={`/shops/${_id}`} className="btn">
                 Details
               </Link>
             </div>
@@ -42,7 +56,7 @@ const Wrapper = styled.section`
   h4 {
     margin-bottom: 0.5rem;
   }
-  .price {
+  .business-type {
     color: var(--clr-primary-6);
     margin-bottom: 0.75rem;
   }
@@ -50,6 +64,12 @@ const Wrapper = styled.section`
     max-width: 45em;
     margin-bottom: 1rem;
   }
+  .address {
+    p {
+      margin: 0 0 0.5rem;
+    }
+  }
+
   .btn {
     font-size: 0.5rem;
     padding: 0.25rem 0.5rem;
