@@ -32,7 +32,6 @@ export const ShopsProvider = ({ children }) => {
     try {
       const response = await axios(url);
       const shops = response.data;
-      console.log("shops", shops);
       dispatch({ type: GET_SHOPS_SUCCESS, payload: shops });
     } catch (error) {
       dispatch({ type: GET_SHOPS_ERROR });
@@ -44,6 +43,7 @@ export const ShopsProvider = ({ children }) => {
     try {
       const response = await axios(url);
       const singleShop = response.data;
+      console.log("single shop", singleShop);
       dispatch({ type: GET_SINGLE_SHOP_SUCCESS, payload: singleShop });
     } catch (error) {
       dispatch({ type: GET_SINGLE_SHOP_ERROR });

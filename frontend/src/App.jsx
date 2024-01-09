@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 element: <ShopLocal />,
               },
               {
-                path: "shop-local/shops/:id",
+                path: "shops/:id",
                 element: <SingleShop />,
               },
               {

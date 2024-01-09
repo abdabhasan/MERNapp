@@ -1,12 +1,26 @@
 const BusinessModel = require("../models/businessModel");
-const multer = require("multer");
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
 
 exports.getBusinesses = (req, res) => {
   BusinessModel.find()
     .then((businesses) => {
       res.status(200).json(businesses);
+    })
+    .catch((err) => {
+      console.error("Error fetching data from database:", err);
+      res.status(500).send("Error fetching data from database");
+    });
+};
+
+exports.getBusinessById = (req, res) => {
+  const businessId = req.params.id;
+
+  BusinessModel.findById(businessId)
+    .then((business) => {
+      if (business) {
+        res.status(200).json(business);
+      } else {
+        res.status(404).send("Business not found");
+      }
     })
     .catch((err) => {
       console.error("Error fetching data from database:", err);

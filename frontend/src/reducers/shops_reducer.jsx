@@ -40,7 +40,7 @@ const shops_reducer = (state, action) => {
   if (action.type === GET_SINGLE_SHOP_SUCCESS) {
     return {
       ...state,
-      single_SHOP_loading: false,
+      single_shop_loading: false,
       single_shop: action.payload,
     };
   }

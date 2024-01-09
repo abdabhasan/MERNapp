@@ -13,6 +13,8 @@ import Filters from "./Filters";
 import ShopList from "./ShopList";
 import Sort from "./Sort";
 import Title from "./Title";
+import LoadingSpinner from "./LoadingSpinner";
+
 export {
   Navbar,
   Sidebar,
@@ -29,4 +31,5 @@ export {
   ShopList,
   Sort,
   Title,
+  LoadingSpinner,
 };

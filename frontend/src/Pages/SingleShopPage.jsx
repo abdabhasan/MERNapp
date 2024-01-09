@@ -1,18 +1,11 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useShopsContext } from "../context/shops_context";
-import { single_product_url as url } from "../utils/constants";
-import { formatPrice } from "../utils/helpers";
-import {
-  LoadingSpinner,
-  Error,
-  ProductImages,
-  AddToCart,
-  Stars,
-  PageHero,
-} from "../Components";
+import { API_ENDPOINT } from "../utils/constants";
+import { LoadingSpinner } from "../Components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import SocialMediaLinks from "../Components/SocialMediaLinks";
 
 const SingleShopPage = () => {
   const { id } = useParams();
@@ -26,7 +19,7 @@ const SingleShopPage = () => {
   } = useShopsContext();
 
   useEffect(() => {
-    fetchSingleShop(`${url}${id}`);
+    fetchSingleShop(`${API_ENDPOINT}/businesses/${id}`);
   }, []);
 
   // Error and Loading handling
@@ -50,7 +43,23 @@ const SingleShopPage = () => {
     );
   }
 
-  const { _id, businessName, bio, image } = shop;
+  const {
+    _id,
+    businessName,
+    businessType,
+    bio,
+    image,
+    state,
+    city,
+    street,
+    ownerFirstName,
+    ownerLastName,
+    email,
+    phone,
+    links,
+  } = shop;
+  console.log(links);
+  // console.log(links.socialMedia1);
 
   return (
     <Wrapper>
@@ -60,24 +69,43 @@ const SingleShopPage = () => {
         </Link>
         <div className="shop-center">
           {/* <ProductImages images={images} /> */}
+          <img src={image} alt="main image" className="main" />
+
           <section className="content">
             <h2>{businessName}</h2>
+            <p>{businessType}</p>
             {/* <Stars stars={stars} reviews={reviews} /> */}
-            <p className="desc">{bio}</p>
-            {/* <p className="info">
-              <span>Available :</span>
-              {stock > 0 ? "In stock" : "out of stock"}
-            </p> */}
-            {/* <p className="info">
-              <span>SKU :</span>
-              {sku}
+            <p className="bio">
+              {bio}
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque
+              vel dolores, corporis, ut voluptate rerum quaerat dolorum maiores
+              perspiciatis odio suscipit repellat adipisci voluptatem
+              repellendus sapiente illum obcaecati alias similique?
             </p>
-            <p className="info">
-              <span>Brand :</span>
-              {company}
-            </p>
-            <hr />
-            {stock > 0 && <AddToCart product={product} />} */}
+
+            <div className="info">
+              <p>
+                Owner : {ownerFirstName} {ownerLastName}
+              </p>
+
+              <p className="contact">
+                {email}
+                <br /> {phone}
+              </p>
+              <p>
+                <p className="address">
+                  {state}, {city}, {street}
+                </p>
+              </p>
+              <p>
+                <SocialMediaLinks
+                  facebook="https://facebook.com"
+                  instagram="https://instagram.com"
+                  website="https://instagram.com"
+                  other="https://instagram.com"
+                />
+              </p>
+            </div>
           </section>
         </div>
       </div>
@@ -86,35 +114,59 @@ const SingleShopPage = () => {
 };
 
 const Wrapper = styled.main`
-  .product-center {
+  .shop-center {
     display: grid;
     gap: 4rem;
     margin-top: 2rem;
   }
-  .price {
+
+  .main {
+    height: 600px;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+  }
+  h2 {
     color: var(--clr-primary-5);
   }
-  .desc {
+  .bio {
     line-height: 2;
     max-width: 45em;
   }
   .info {
     text-transform: capitalize;
-    width: 300px;
-    display: grid;
-    grid-template-columns: 125px 1fr;
-    span {
-      font-weight: 700;
+    .contact {
+      text-transform: none;
+      max-width: 250px;
+    }
+    .address {
+      margin-top: 1rem;
+    }
+    .social-media-links {
+      margin-top: 1rem;
+      a {
+        width: 1rem;
+      }
     }
   }
 
   @media (min-width: 992px) {
-    .product-center {
+    .shop-center {
       grid-template-columns: 1fr 1fr;
       align-items: center;
     }
-    .price {
-      font-size: 1.25rem;
+    .main {
+      height: 500px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .main {
+      height: 300px;
     }
   }
 `;
