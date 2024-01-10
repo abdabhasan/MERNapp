@@ -16,16 +16,11 @@ const initialState = {
   filtered_shops: [],
   all_shops: [],
   grid_view: true,
-  sort: "name-lowest",
+  sort: "name-a",
   filters: {
     text: "",
-    company: "all",
     category: "all",
-    color: "all",
-    min_price: 0,
-    max_price: 0,
-    distance: 0,
-    shipping: false,
+    distance: 10,
   },
 };
 
@@ -63,10 +58,6 @@ export const FilterProvider = ({ children }) => {
     let value = e.target.value;
     if (name === "category") {
       value = e.target.textContent;
-    }
-
-    if (name === "price") {
-      value = Number(value);
     }
 
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { dropdown_options } from "../utils/constants";
+import { dropdown_options } from "../../utils/constants";
 import styled from "styled-components";
 
 const Dropdown = () => {

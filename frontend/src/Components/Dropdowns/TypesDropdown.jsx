@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { businessTypes } from "../utils/constants";
+import { businessTypes } from "../../utils/constants";
 
 const TypesDropdown = ({ label, name, value, onChange }) => {
   return (

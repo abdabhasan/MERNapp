@@ -10,7 +10,6 @@ const Shop = ({
   businessType,
   city,
   state,
-  email,
   phone,
   street,
 }) => {

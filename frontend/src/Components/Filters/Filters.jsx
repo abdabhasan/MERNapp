@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { useFilterContext } from "../context/filter_context";
-import { getUniqueValues, formatPrice } from "../utils/helpers";
+import { useFilterContext } from "../../context/filter_context";
+import { getUniqueValues } from "../../utils/helpers";
 
 const Filters = () => {
   const {
-    filters: { text, category, company, distance },
+    filters: { text, category, distance },
     clearFilters,
     updateFilters,
     all_shops,
@@ -42,7 +42,9 @@ const Filters = () => {
                     name="category"
                     onClick={updateFilters}
                     className={`${
-                      category === item.toLowerCase() ? "active" : null
+                      category.toLowerCase() === item.toLowerCase()
+                        ? "active"
+                        : null
                     }`}
                   >
                     {item}
@@ -54,11 +56,17 @@ const Filters = () => {
 
           {/* categories end */}
 
-          {/* Price */}
+          {/* distance */}
           <h5>distance</h5>
           <p className="distance">{distance}</p>
-          <input type="range" name="distance" onChange={updateFilters} />
-          {/* Price end */}
+          <input
+            type="range"
+            name="distance"
+            min="0"
+            max="10"
+            onChange={updateFilters}
+          />
+          {/* distance end */}
         </form>
         <button type="button" className="clear-btn" onClick={clearFilters}>
           clear filters
@@ -98,33 +106,11 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
     cursor: pointer;
   }
-  .active {
-    border-color: var(--clr-grey-5);
-  }
-  .company {
-    background: var(--clr-grey-10);
-    border-radius: var(--radius);
-    border-color: transparent;
-    padding: 0.25rem;
-  }
 
-  .all-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0.5rem;
-    opacity: 0.5;
-  }
   .active {
     opacity: 1;
     color: var(--clr-black);
-  }
-  .all-btn .active {
-    text-decoration: underline;
-  }
-
-  .price {
-    margin-bottom: 0.25rem;
+    border-color: var(--clr-grey-5);
   }
 
   .clear-btn {
@@ -137,6 +123,7 @@ const Wrapper = styled.section`
       background: var(--clr-red-light);
     }
   }
+
   @media (min-width: 768px) {
     .content {
       position: sticky;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { useSidebar } from "../context/sidebar_context";
+import { useSidebar } from "../../context/sidebar_context";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { links } from "../utils/constants";
-import Dropdown from "./Dropdown";
-import Logo from "./Logo";
-import LoginBtn from "./Btns/LoginBtn";
+import { links } from "../../utils/constants";
+import Dropdown from "../Dropdowns/Dropdown";
+import Logo from "../Logo";
+import LoginBtn from "../Btns/LoginBtn";
 
 const Navbar = () => {
   const { openSidebar } = useSidebar();

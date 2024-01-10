@@ -1,17 +1,16 @@
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import Navbar from "./Bars/Navbar";
+import Sidebar from "./Bars/Sidebar";
+import Footer from "./Bars/Footer";
 import Hero from "./Hero";
-import Dropdown from "./Dropdown";
-import Searchbar from "./Searchbar";
+import Dropdown from "./Dropdowns/Dropdown";
 import Logo from "./Logo";
-import AddProfessionalForm from "./AddProfessionalForm";
-import AddBusinessForm from "./AddBusinessForm";
-import FormField from "./FormField";
+import AddProfessionalForm from "./Forms/AddProfessionalForm";
+import AddBusinessForm from "./Forms/AddBusinessForm";
+import FormField from "./Forms/FormField";
 import FeaturedShops from "./FeaturedShops";
-import Filters from "./Filters";
-import ShopList from "./ShopList";
-import Sort from "./Sort";
+import Filters from "./Filters/Filters";
+import ShopList from "./Views/ShopList";
+import Sort from "./Filters/Sort";
 import Title from "./Title";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -21,7 +20,6 @@ export {
   Footer,
   Hero,
   Dropdown,
-  Searchbar,
   Logo,
   AddProfessionalForm,
   AddBusinessForm,

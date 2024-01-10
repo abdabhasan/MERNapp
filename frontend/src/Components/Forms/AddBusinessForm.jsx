@@ -1,16 +1,16 @@
 import { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { API_ENDPOINT } from "../utils/constants";
+import { API_ENDPOINT } from "../../utils/constants";
 import { toast } from "react-toastify";
-import { useBusinessContext } from "../context/business_context";
+import { useBusinessContext } from "../../context/business_context";
 
-import businessValidationSchema from "../validation/businessValidation";
+import businessValidationSchema from "../../validation/businessValidation";
 import FormField from "./FormField";
-import SubmitBtn from "./SubmitBtn";
-import AddressFields from "./Address/AddressFields";
-import LoadingSpinner from "./LoadingSpinner";
-import TypesDropdown from "./TypesDropdown";
+import SubmitBtn from "../Btns/SubmitBtn";
+import AddressFields from "../Forms/AddressFields";
+import LoadingSpinner from "../LoadingSpinner";
+import TypesDropdown from "../Dropdowns/TypesDropdown";
 
 const AddBusinessForm = () => {
   const { businessData, setBusinessData, initialBusinessData } =

@@ -13,14 +13,11 @@ const filter_reducer = (state, action) => {
   // Loading start
 
   if (action.type === LOAD_SHOPS) {
-    let maxPrice = action.payload.map((shop) => shop.price);
-    maxPrice = Math.max(...maxPrice);
-
     return {
       ...state,
       all_shops: [...action.payload],
       filtered_shops: [...action.payload],
-      filters: { ...state.filters, max_price: maxPrice, price: maxPrice },
+      filters: { ...state.filters },
     };
   }
   // Loading end
@@ -39,21 +36,20 @@ const filter_reducer = (state, action) => {
     return { ...state, sort: action.payload };
   }
 
+  // ! change businessName prop to name to include proffesional and masjids also
   if (action.type === SORT_SHOPS) {
     const { sort, filtered_shops } = state;
     let tempShops = [...filtered_shops];
 
-    if (sort === "price-lowest") {
-      tempShops = tempShops.sort((a, b) => a.price - b.price);
-    }
-    if (sort === "price-highest") {
-      tempShops = tempShops.sort((a, b) => b.price - a.price);
-    }
     if (sort === "name-a") {
-      tempShops = tempShops.sort((a, b) => a.name.localeCompare(b.name));
+      tempShops = tempShops.sort((a, b) =>
+        a.businessName.localeCompare(b.businessName)
+      );
     }
     if (sort === "name-z") {
-      tempShops = tempShops.sort((a, b) => b.name.localeCompare(a.name));
+      tempShops = tempShops.sort((a, b) =>
+        b.businessName.localeCompare(a.businessName)
+      );
     }
 
     return { ...state, filtered_shops: tempShops };
@@ -66,41 +62,40 @@ const filter_reducer = (state, action) => {
     const { name, value } = action.payload;
     return { ...state, filters: { ...state.filters, [name]: value } };
   }
+  // ! change businessName prop to name to include proffesional and masjids also
 
   if (action.type === FILTER_SHOPS) {
     const { all_shops } = state;
-    const { text, category, company, color, price, shipping } = state.filters;
+    const { text, category, distance } = state.filters;
 
     let tempShops = [...all_shops];
+
     // text
     if (text) {
       tempShops = tempShops.filter((shop) => {
-        return shop.name.toLowerCase().startsWith(text);
+        return shop.businessName.toLowerCase().startsWith(text);
       });
     }
     // category
     if (category !== "all") {
-      tempShops = tempShops.filter((shop) => shop.category === category);
+      tempShops = tempShops.filter((shop) => shop.businessType === category);
     }
-    // shipping
 
     return { ...state, filtered_shops: tempShops };
   }
+
   if (action.type === CLEAR_FILTERS) {
     return {
       ...state,
       filters: {
         ...state.filters,
         text: "",
-        company: "all",
         category: "all",
-        color: "all",
-
-        price: state.filters.max_price,
-        shipping: false,
+        distance: 10,
       },
     };
   }
+
   // Filters end
   throw new Error(`No Matching "${action.type}" - action type`);
 };

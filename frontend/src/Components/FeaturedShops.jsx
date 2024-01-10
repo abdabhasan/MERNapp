@@ -18,7 +18,12 @@ const FeaturedShops = () => {
     return <Error />;
   }
   return (
-    <Wrapper className="section">
+    <Wrapper className="section section-center">
+      <div className="title">
+        {/* <h4>Featured</h4> */}
+        <p>Featured </p>
+        <hr />
+      </div>
       <div className="section-center featured">
         {shops.slice(0, 3).map((shop) => {
           return <Shop key={shop._id} {...shop} />;
@@ -40,12 +45,19 @@ const Wrapper = styled.section`
       height: 225px;
     }
   }
-  .btn {
-    display: block;
-    width: 148px;
-    margin: 0 auto;
+  .title {
     text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    p {
+      margin: 0;
+    }
+    hr {
+      width: 100%;
+    }
   }
+
   @media (min-width: 576px) {
     .featured {
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));

@@ -65,7 +65,7 @@ const SingleShopPage = () => {
     <Wrapper>
       <div className="section section-center page">
         <Link to="/shop-local" className="btn">
-          back to shops list
+          back to results
         </Link>
         <div className="shop-center">
           {/* <ProductImages images={images} /> */}
@@ -73,14 +73,10 @@ const SingleShopPage = () => {
 
           <section className="content">
             <h2>{businessName}</h2>
-            <p>{businessType}</p>
+            <p>sub-title here, will be added if the business accepted</p>
             {/* <Stars stars={stars} reviews={reviews} /> */}
             <p className="bio">
-              {bio}
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque
-              vel dolores, corporis, ut voluptate rerum quaerat dolorum maiores
-              perspiciatis odio suscipit repellat adipisci voluptatem
-              repellendus sapiente illum obcaecati alias similique?
+              bio here, will be added if the business accepted
             </p>
 
             <div className="info">

@@ -1,8 +1,5 @@
 import * as Yup from "yup";
 
-const FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
-
 const businessValidationSchema = Yup.object().shape({
   businessName: Yup.string()
     .required("Business Name is required")

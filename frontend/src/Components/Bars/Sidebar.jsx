@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { useSidebar } from "../context/sidebar_context";
+import { useSidebar } from "../../context/sidebar_context";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
-import { sidebar_links } from "../utils/constants";
+import { sidebar_links } from "../../utils/constants";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useSidebar();

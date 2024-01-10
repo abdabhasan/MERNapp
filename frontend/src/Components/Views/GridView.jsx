@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Shop from "./Shop";
+import Shop from "../Shop";
 
 const GridView = ({ shops }) => {
   return (

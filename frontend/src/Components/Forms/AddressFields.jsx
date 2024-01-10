@@ -1,7 +1,7 @@
 import { allStates, citiesByState } from "../../utils/constants";
-import AddressStateDropdown from "./AddressStateDropdown";
-import AddressCityDropdown from "./AddressCityDropdown";
-import FormField from "../FormField";
+import AddressStateDropdown from "../Dropdowns/AddressStateDropdown";
+import AddressCityDropdown from "../Dropdowns/AddressCityDropdown";
+import FormField from "./FormField";
 import { useBusinessContext } from "../../context/business_context";
 
 const AddressFields = () => {
@@ -12,6 +12,8 @@ const AddressFields = () => {
   };
 
   const handleStateSelect = (value) => {
+    console.log(citiesByState[businessData.state]);
+
     setBusinessData((prevData) => ({ ...prevData, state: value }));
   };
 
