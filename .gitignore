@@ -1,3 +1,50 @@
+# Dependency directories
 node_modules/
-exCourse/
-.gitignore
+
+# Environment configuration files
+.env
+
+# Build outputs
+/dist
+/build
+
+# Log files
+*.log
+npm-debug.log*
+
+# Editor directories and files
+.idea
+*.swp
+*.swo
+.vscode/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache & logs
+.npm
+.npmrc
+.npm-debug.log*
+
+# Optional eslint cache
+.eslintcache
+
+# Optional: MacOS Finder
+.DS_Store
+
+# Optional: Windows thumbnail cache
+Thumbs.db
+
+# Optional: Yarn Integrity file
+.yarn-integrity
+
+# Optional: dotenv environment variables file
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# MongoDB data directory
+/mongodb-data
+
