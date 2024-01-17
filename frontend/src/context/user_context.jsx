@@ -36,14 +36,11 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   const register = async (userData) => {
-    setAuthState({
-      ...authState,
-      loading: true,
-    });
     try {
       const response = await axios.post(
         `${API_ENDPOINT}/users/register`,
-        userData
+        userData,
+        { withCredentials: true }
       );
 
       setAuthState((prevState) => ({
@@ -105,8 +102,25 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const logout = async () => {
+    try {
+      await axios.get(`${API_ENDPOINT}/users/logout`, {
+        withCredentials: true,
+      });
+      setAuthState({
+        isAuthenticated: false,
+        loading: false,
+      });
+      console.log("LOGGED OUT SUCCESSFULLY");
+    } catch (error) {
+      console.error("Logout error:", error.message);
+    }
+  };
+
   return (
-    <UserContext.Provider value={{ authState, setAuthState, register, login }}>
+    <UserContext.Provider
+      value={{ authState, setAuthState, register, login, logout }}
+    >
       {children}
     </UserContext.Provider>
   );

@@ -14,8 +14,7 @@ const initialState = {
 const Register = () => {
   const { register, login, authState } = useUser();
   const [userData, setUserData] = useState(initialState);
-
-  const isLoading = false;
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigate = useNavigate();
 
@@ -31,18 +30,23 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password, isMember } = userData;
-    if (!email || !password) {
+    if (!email || !password || (!isMember && !confirmPassword)) {
       toast.error("Please fill out all fields");
       return;
     }
     if (isMember) {
-      const success = await login(userData);
+      const success = await login({ email, password });
       if (success) {
         navigate("/");
       }
       return;
     }
-    const success = await register(userData);
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+    // if not a memeber
+    const success = await register({ email, password });
     if (success) {
       navigate("/");
     }
@@ -80,12 +84,16 @@ const Register = () => {
             label="confirm password"
             type="password"
             name="confirm-password"
-            value={userData.password}
-            onChange={handleChange}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         )}
-        <button className="btn btn-block" type="submit" disabled={isLoading}>
-          {isLoading ? "loading..." : "submit"}
+        <button
+          className="btn btn-block"
+          type="submit"
+          disabled={authState.loading}
+        >
+          {authState.loading ? "loading..." : "submit"}
         </button>
 
         <p>

@@ -5,18 +5,21 @@ import styled from "styled-components";
 import { useUser } from "../../context/user_context";
 
 const LoginBtn = () => {
-  const { authState } = useUser();
-  console.log("User from navbar:", authState);
+  const { authState, logout } = useUser();
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const handleLoginBtn = async () => {
     if (authState.isAuthenticated) {
-      console.log("User is authenticated");
-    } else {
-      console.log("User is not authenticated");
+      navigate("/");
+      logout();
+      return;
     }
-  }, [authState]);
+    if (!authState.isAuthenticated) {
+      navigate("/register");
+      return;
+    }
+  };
 
   return (
     <Wrapper>
@@ -25,7 +28,7 @@ const LoginBtn = () => {
           type="button"
           className="auth-btn"
           onClick={() => {
-            navigate("/");
+            handleLoginBtn();
           }}
         >
           logout <FaUserMinus />
@@ -35,7 +38,7 @@ const LoginBtn = () => {
           type="button"
           className="auth-btn"
           onClick={() => {
-            navigate("/register");
+            handleLoginBtn();
           }}
         >
           Login <FaUserPlus />

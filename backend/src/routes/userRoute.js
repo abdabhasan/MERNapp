@@ -30,4 +30,6 @@ router.post(
 
 router.get("/checkSession", userController.checkSession);
 
+router.get("/logout", userController.logout);
+
 module.exports = router;

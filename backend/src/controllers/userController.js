@@ -41,7 +41,7 @@ exports.register = async (req, res) => {
       if (err) throw err;
       res.cookie("user", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production", // use secure flag in production
+        secure: process.env.NODE_ENV === "production",
         maxAge: 3600000,
       });
       res.status(200).json({ message: "User registered successfully" });
@@ -112,4 +112,9 @@ exports.checkSession = (req, res) => {
       return res.json({ isAuthenticated: true, user: decoded.user });
     }
   });
+};
+
+exports.logout = (req, res) => {
+  res.clearCookie("user");
+  res.status(200).json({ message: "Logged out successfully" });
 };
