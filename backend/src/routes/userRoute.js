@@ -28,4 +28,6 @@ router.post(
   userController.login
 );
 
+router.get("/checkSession", userController.checkSession);
+
 module.exports = router;

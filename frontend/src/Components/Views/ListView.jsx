@@ -6,7 +6,7 @@ const ListView = ({ shops }) => {
     <Wrapper>
       {shops.map((shop) => {
         const {
-          _id,
+          id,
           image,
           businessName,
           businessType,
@@ -17,7 +17,7 @@ const ListView = ({ shops }) => {
         } = shop;
 
         return (
-          <article key={_id}>
+          <article key={id}>
             <img src={image} alt={businessName} />
             <div>
               <h4>{businessName}</h4>
@@ -29,7 +29,7 @@ const ListView = ({ shops }) => {
               </div>
 
               {bio && <p>{bio.substring(0, 150)}...</p>}
-              <Link to={`/shops/${_id}`} className="btn">
+              <Link to={`/shops/${id}`} className="btn">
                 Details
               </Link>
             </div>

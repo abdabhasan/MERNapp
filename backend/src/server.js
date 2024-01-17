@@ -39,8 +39,8 @@ app.use(cookieParser());
 // ROUTES
 app.use("/api/users", userRoute);
 // ///////////////////////////////////
-app.use("/api/v1/", productsToAvoidRoute);
-app.use("/api/v1/", businessRoute);
+app.use("/api/products-to-avoid", productsToAvoidRoute);
+app.use("/api/businesses", businessRoute);
 
 // Error handling middleware
 app.use(errorHandler);

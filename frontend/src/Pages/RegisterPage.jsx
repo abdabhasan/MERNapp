@@ -1,89 +1,86 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FormField } from "../Components";
+import { useUser } from "../context/user_context";
+import { FormField, LoadingSpinner } from "../Components";
 import { toast } from "react-toastify";
 import styled from "styled-components";
-// import { registerUser, loginUser } from "../features/user/userSlice";
-// import { useDispatch, useSelector } from "react-redux";
 
 const initialState = {
-  name: "",
   email: "",
   password: "",
-  isMember: false,
+  isMember: true,
 };
 
 const Register = () => {
-  const [values, setValues] = useState(initialState);
-  // const { user, isLoading } = useSelector((store) => store.user);
+  const { register, login, authState } = useUser();
+  const [userData, setUserData] = useState(initialState);
+
   const isLoading = false;
-  const user = "AAAA";
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setValues({
-      ...values,
+    setUserData({
+      ...userData,
       [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password, isMember } = values;
-    if (!email || !password || (!isMember && !name)) {
+    const { email, password, isMember } = userData;
+    if (!email || !password) {
       toast.error("Please fill out all fields");
       return;
     }
     if (isMember) {
-      // dispatch(loginUser({ email: email, password: password }));
-      console.log("isMember", { email: email, password: password });
+      const success = await login(userData);
+      if (success) {
+        navigate("/");
+      }
       return;
     }
-    // dispatch(registerUser({ name, email, password }));
-    console.log("registerUser", { email: email, password: password });
+    const success = await register(userData);
+    if (success) {
+      navigate("/");
+    }
   };
 
   const toggleMember = () => {
-    setValues({ ...values, isMember: !values.isMember });
+    setUserData({ ...userData, isMember: !userData.isMember });
   };
 
-  // useEffect(() => {
-  //   if (user) {
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 2500);
-  //   }
-  // }, [user, navigate]);
+  if (authState.loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <Wrapper className="full-page">
       <form className="form" onSubmit={handleSubmit}>
-        <h2>{values.isMember ? "login" : "register"}</h2>
+        <h2>{userData.isMember ? "login" : "register"}</h2>
 
         <FormField
           label="email"
           type="email"
           name="email"
-          value={values.email}
+          value={userData.email}
           onChange={handleChange}
         />
         <FormField
           label="password"
           type="password"
           name="password"
-          value={values.password}
+          value={userData.password}
           onChange={handleChange}
         />
-        {!values.isMember && (
+        {!userData.isMember && (
           <FormField
-            label="repeat password"
+            label="confirm password"
             type="password"
-            name="repeat-password"
-            value={values.password}
+            name="confirm-password"
+            value={userData.password}
             onChange={handleChange}
           />
         )}
@@ -92,9 +89,9 @@ const Register = () => {
         </button>
 
         <p>
-          {values.isMember ? "Not a member yet? " : "Already a member? "}
+          {userData.isMember ? "Not a member yet? " : "Already a member? "}
           <button type="button" onClick={toggleMember} className="member-btn">
-            {values.isMember ? "Register" : "Login"}
+            {userData.isMember ? "Register" : "Login"}
           </button>
         </p>
       </form>

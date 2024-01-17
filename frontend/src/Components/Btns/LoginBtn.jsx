@@ -1,15 +1,26 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserMinus, FaUserPlus } from "react-icons/fa";
 import styled from "styled-components";
+import { useUser } from "../../context/user_context";
 
 const LoginBtn = () => {
-  const myUser = false;
+  const { authState } = useUser();
+  console.log("User from navbar:", authState);
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (authState.isAuthenticated) {
+      console.log("User is authenticated");
+    } else {
+      console.log("User is not authenticated");
+    }
+  }, [authState]);
+
   return (
     <Wrapper>
-      {myUser ? (
+      {authState.isAuthenticated ? (
         <button
           type="button"
           className="auth-btn"

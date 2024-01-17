@@ -39,7 +39,7 @@ exports.register = async (req, res) => {
 
     jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, (err, token) => {
       if (err) throw err;
-      res.cookie("token", token, {
+      res.cookie("user", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production", // use secure flag in production
         maxAge: 3600000,
@@ -82,18 +82,34 @@ exports.login = async (req, res) => {
 
     jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, (err, token) => {
       if (err) throw err;
-      jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, (err, token) => {
-        if (err) throw err;
-        res.cookie("token", token, {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          maxAge: 3600000,
-        });
-        res.status(200).json({ message: "Logged in successfully" });
+      res.cookie("user", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 3600000,
       });
+      res.status(200).json({ message: "Logged in successfully" });
     });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
   }
+};
+
+exports.checkSession = (req, res) => {
+  const token = req.cookies.user;
+
+  if (!token) {
+    return res.json({ isAuthenticated: false });
+  }
+
+  jwt.verify(token, jwtSecret, (err, decoded) => {
+    if (err) {
+      // Token is not valid
+      return res.json({ isAuthenticated: false });
+    } else {
+      // Token is valid
+      // Optionally, you can also return user information from the decoded token
+      return res.json({ isAuthenticated: true, user: decoded.user });
+    }
+  });
 };
