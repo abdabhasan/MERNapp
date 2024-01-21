@@ -8,6 +8,7 @@ import { ProductsToAvoidProvider } from "./context/products_to_avoid_context.jsx
 import { ShopsProvider } from "./context/shops_context.jsx";
 import { FilterProvider } from "./context/filter_context.jsx";
 import { UserProvider } from "./context/user_context.jsx";
+import { AddressProvider } from "./context/address_context.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -16,9 +17,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <ShopsProvider>
           <FilterProvider>
             <BusinessProvider>
-              <ProductsToAvoidProvider>
-                <App />
-              </ProductsToAvoidProvider>
+              <AddressProvider>
+                <ProductsToAvoidProvider>
+                  <App />
+                </ProductsToAvoidProvider>
+              </AddressProvider>
             </BusinessProvider>
           </FilterProvider>
         </ShopsProvider>

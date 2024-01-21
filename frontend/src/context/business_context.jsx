@@ -9,20 +9,43 @@ const initialBusinessData = {
   ownerLastName: "",
   email: "",
   phone: "",
-  state: "",
-  city: "",
-  street: "",
+  address: {
+    name: "",
+    lat: 0,
+    lon: 0,
+  },
   image: "",
+  termsAccepted: false,
   bio: "some bio",
-  subscribe: false,
+  links: {
+    link1: "",
+    link2: "",
+    link3: "",
+    link4: "",
+  },
 };
 
 export const BusinessProvider = ({ children }) => {
   const [businessData, setBusinessData] = useState(initialBusinessData);
 
+  const updateBusinessAddress = (newAddress) => {
+    setBusinessData((prevData) => ({
+      ...prevData,
+      address: {
+        ...prevData.address,
+        ...newAddress,
+      },
+    }));
+  };
+
   return (
     <BusinessContext.Provider
-      value={{ initialBusinessData, businessData, setBusinessData }}
+      value={{
+        initialBusinessData,
+        businessData,
+        setBusinessData,
+        updateBusinessAddress,
+      }}
     >
       {children}
     </BusinessContext.Provider>

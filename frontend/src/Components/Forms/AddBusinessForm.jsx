@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { API_ENDPOINT } from "../../utils/constants";
@@ -8,14 +8,21 @@ import { useBusinessContext } from "../../context/business_context";
 import businessValidationSchema from "../../validation/businessValidation";
 import FormField from "./FormField";
 import SubmitBtn from "../Btns/SubmitBtn";
-import AddressFields from "../Forms/AddressFields";
+import AddressAutocomplete from "./AddressAutocomplete.jsx";
 import LoadingSpinner from "../LoadingSpinner";
 import TypesDropdown from "../Dropdowns/TypesDropdown";
+import { useUser } from "../../context/user_context";
 
 const AddBusinessForm = () => {
   const { businessData, setBusinessData, initialBusinessData } =
     useBusinessContext();
   const [isLoading, setIsLoading] = useState(false);
+  const { isAuthenticated, checkSession } = useUser();
+  const [file, setFile] = useState(null);
+
+  useEffect(() => {
+    checkSession();
+  }, [isAuthenticated]);
 
   const renderFields = (fields) => {
     return fields.map(({ name, className, label, type, required, accept }) => (
@@ -37,16 +44,75 @@ const AddBusinessForm = () => {
     setBusinessData(initialBusinessData);
   };
 
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   const handleChange = (e) => {
-    if (e.target.type === "file") {
-      setBusinessData({ ...businessData, [e.target.name]: e.target.files[0] });
-    } else {
-      setBusinessData({ ...businessData, [e.target.name]: e.target.value });
-    }
+    const { name, value } = e.target;
+    const keys = name.split("."); // Split the name by dots to get nested keys
+
+    setBusinessData((businessData) => {
+      let data = { ...businessData }; // Copy the current state
+      let lastKeyIndex = keys.length - 1;
+
+      // Iterate through the keys and update the nested state
+      keys.forEach((key, index) => {
+        if (index === lastKeyIndex) {
+          data[key] = value; // Set the value for the last key
+        } else {
+          if (!data[key]) data[key] = {}; // Initialize nested object if necessary
+          data = data[key]; // Drill down into the nested state
+        }
+      });
+
+      return data;
+    });
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+
+    setBusinessData((prevState) => ({
+      ...prevState,
+      [name]: checked,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // can not submit if not authenticated
+    if (!checkSession()) {
+      toast.error("Please login to add a business");
+      return;
+    }
+
+    // Check if the agreement checkbox is checked
+    if (!businessData.termsAccepted) {
+      toast.error("You must agree to the terms to submit the form.");
+      return;
+    }
+
+    // const formData = new FormData();
+    // // Append the file
+    // formData.append("image", file);
+    // Object.keys(businessData).forEach((key) => {
+    //   formData.append(key, businessData[key]);
+    // });
+
+    const formData = new FormData();
+    formData.append("image", file);
+
+    Object.keys(businessData).forEach((key) => {
+      if (typeof businessData[key] === "object" && businessData[key] !== null) {
+        // Convert the nested object to a JSON string
+        formData.append(key, JSON.stringify(businessData[key]));
+      } else {
+        // Append regular data as is
+        formData.append(key, businessData[key]);
+      }
+    });
 
     try {
       setIsLoading(true);
@@ -54,16 +120,6 @@ const AddBusinessForm = () => {
       // validation
       await businessValidationSchema.validate(businessData, {
         abortEarly: false,
-      });
-
-      const formData = new FormData();
-
-      Object.keys(businessData).forEach((key) => {
-        if (key === "image" && businessData[key]) {
-          formData.append(key, businessData[key]);
-        } else {
-          formData.append(key, businessData[key]);
-        }
       });
 
       const response = await axios.post(
@@ -142,24 +198,32 @@ const AddBusinessForm = () => {
           ])}
           {/* address fields */}
           <>
-            <AddressFields />
+            <AddressAutocomplete />
           </>
           {/* img and subcrb fields */}
           {renderFields([
             {
               label: "Upload Image",
-              type: "text",
+              type: "file",
               name: "image",
               required: true,
-              // accept: "image/*",
-            },
-            {
-              label: "Subscribe",
-              type: "checkbox",
-              name: "subscribe",
-              className: "checkbox",
+              accept: "image/*",
             },
           ])}
+          <div className="checkbox">
+            <input
+              id="termsAccepted"
+              type="checkbox"
+              name="termsAccepted"
+              value={businessData.termsAccepted}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="termsAccepted">
+              I acknowledge that this platform is intended exclusively for the
+              promotion of Muslim-owned businesses and professionals.
+              Submissions that do not meet this criteria will be removed.
+            </label>
+          </div>
           {isLoading ? <LoadingSpinner /> : <SubmitBtn />}
         </form>
       </div>
@@ -179,13 +243,18 @@ const Wrapper = styled.section`
       flex-direction: column;
 
       .checkbox {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 12px auto;
+        align-items: center;
+        gap: 1rem;
         label {
           margin: 0;
+          font-size: 0.65rem;
         }
         input {
           margin: 0 0.5rem;
+          width: 12px;
+          height: 12px;
         }
       }
     }

@@ -3,6 +3,7 @@ import { useSidebar } from "../../context/sidebar_context";
 import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { sidebar_links } from "../../utils/constants";
+import LoginBtn from "../Btns/LoginBtn";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useSidebar();
@@ -16,6 +17,9 @@ const Sidebar = () => {
           <button type="button" className="close-btn" onClick={closeSidebar}>
             <FaTimes />
           </button>
+        </div>
+        <div className="sidebar-login">
+          <LoginBtn />
         </div>
         <ul className="links">
           {sidebar_links.map(({ id, url, text }) => {
@@ -81,6 +85,15 @@ const SidebarContainer = styled.div`
     transform: translate(0);
     z-index: 999;
   }
+  .sidebar-login {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 1.75rem;
+    }
+  }
+
   @media screen and (min-width: 992px) {
     .sidebar {
       display: none;

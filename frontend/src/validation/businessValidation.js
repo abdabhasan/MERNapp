@@ -23,6 +23,9 @@ const businessValidationSchema = Yup.object().shape({
   phone: Yup.string()
     .matches(/^\d{10}$/, "Invalid phone number")
     .required("Phone Number is required"),
+  termsAccepted: Yup.boolean()
+    .required("You must agree to the terms and conditions")
+    .oneOf([true], "You must agree to the terms and conditions"),
 });
 
 export default businessValidationSchema;

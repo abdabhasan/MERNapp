@@ -33,12 +33,12 @@ const AboutPage = () => {
           <br /> At Muslim Local, we aim to realize this vision by providing a
           platform where Muslim businesses and professionals can better promote
           themselves in our community, while the rest of us can make sure our
-          money contributes to growth and good, rather than greed and harm. At
-          this stage in development, we are building our database of businesses,
-          services, professionals, skilled workers, and entrepreneurs. So if
-          you, a friend or family member have something to provide, please
-          submit the form below. May Allah help us, forgive us, and Free
-          Palestine.
+          money contributes to growth and good, rather than greed and harm.
+          <br /> At this stage in development, we are building our database of
+          businesses, services, professionals, skilled workers, and
+          entrepreneurs. So if you, a friend or family member have something to
+          provide, please submit the form below. May Allah help us, forgive us,
+          and Free Palestine.
         </q>
       </div>
     </Wrapper>

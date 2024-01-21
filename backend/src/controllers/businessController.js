@@ -1,4 +1,12 @@
 const BusinessModel = require("../models/businessModel");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" }); // Temporary storage
+const { Storage } = require("@google-cloud/storage");
+
+const storage = new Storage({
+  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+});
+const bucket = storage.bucket("businesses-images");
 
 exports.getBusinesses = (req, res) => {
   BusinessModel.find()
@@ -28,22 +36,33 @@ exports.getBusinessById = (req, res) => {
     });
 };
 
-exports.addBusiness = (req, res) => {
+exports.addBusiness = async (req, res) => {
   const formData = req.body;
 
-  if (req.file) {
-    formData.image = req.file.buffer;
+  try {
+    let imageUrl = "";
+
+    if (req.file) {
+      const blob = bucket.file(req.file.originalname);
+      const blobStream = blob.createWriteStream();
+
+      await new Promise((resolve, reject) => {
+        blobStream.on("error", (err) => reject(err));
+        blobStream.on("finish", () => {
+          imageUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+          resolve();
+        });
+        blobStream.end(req.file.buffer);
+      });
+    }
+
+    formData.image = imageUrl;
+    const newBusiness = new BusinessModel(formData);
+
+    await newBusiness.save();
+    res.status(200).send("Business added successfully");
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Error saving business");
   }
-
-  const newFormData = new BusinessModel(formData);
-
-  newFormData
-    .save()
-    .then(() => {
-      res.status(200).send("Form data saved successfully");
-    })
-    .catch((err) => {
-      console.error("Error saving to database:", err);
-      res.status(500).send("Error saving to database");
-    });
 };

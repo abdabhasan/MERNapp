@@ -27,34 +27,34 @@ export const sidebar_links = [
   },
   {
     id: 2,
+    text: "About us",
+    url: "/about",
+  },
+  {
+    id: 3,
     text: "Shop local",
     url: "/shop-local",
   },
   {
-    id: 3,
+    id: 4,
     text: "Products to avoid",
     url: "/products-to-avoid",
   },
   {
-    id: 4,
+    id: 5,
     text: "add a business",
     url: "/add-business",
   },
-  {
-    id: 5,
-    text: "add a professional",
-    url: "/add-professional",
-  },
-  {
-    id: 6,
-    text: "pricing",
-    url: "/pricing",
-  },
-  {
-    id: 7,
-    text: "About us",
-    url: "/about",
-  },
+  // {
+  //   id: 6,
+  //   text: "add a professional",
+  //   url: "/add-professional",
+  // },
+  // {
+  //   id: 7,
+  //   text: "pricing",
+  //   url: "/pricing",
+  // },
 ];
 
 export const dropdown_options = [
@@ -63,16 +63,16 @@ export const dropdown_options = [
     text: "add a business",
     url: "/add-business",
   },
-  {
-    id: 4,
-    text: "add a professional",
-    url: "/add-professional",
-  },
-  {
-    id: 5,
-    text: "pricing",
-    url: "/pricing",
-  },
+  // {
+  //   id: 4,
+  //   text: "add a professional",
+  //   url: "/add-professional",
+  // },
+  // {
+  //   id: 5,
+  //   text: "pricing",
+  //   url: "/pricing",
+  // },
   {
     id: 6,
     text: "products to avoid",

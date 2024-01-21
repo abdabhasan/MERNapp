@@ -22,18 +22,16 @@ export const UserProvider = ({ children }) => {
         isAuthenticated: response.data.isAuthenticated,
         loading: false,
       });
+      if (authState.isAuthenticated) return true;
     } catch (error) {
       console.error("Session check error:", error.message);
       setAuthState({
         isAuthenticated: false,
         loading: false,
       });
+      if (!authState.isAuthenticated) return false;
     }
   };
-
-  useEffect(() => {
-    checkSession();
-  }, []);
 
   const register = async (userData) => {
     try {
@@ -49,7 +47,8 @@ export const UserProvider = ({ children }) => {
         loading: false,
       }));
 
-      console.log("REGISTERED SUCCESSFULLY");
+      toast.success("Registered Successfully");
+
       return true;
     } catch (error) {
       const errorMsg = error.response
@@ -85,13 +84,12 @@ export const UserProvider = ({ children }) => {
         loading: false,
       }));
 
-      console.log("LOGGED IN SUCCESSFULLY");
+      toast.success("Logged In Successfully");
       return true;
     } catch (error) {
       const errorMsg = error.response
         ? error.response.data.errors.map((err) => err.msg).join(", ")
         : error.message;
-      console.error("Login error:", errorMsg);
       toast.error(errorMsg);
       setAuthState((prevState) => ({
         ...prevState,
@@ -111,15 +109,19 @@ export const UserProvider = ({ children }) => {
         isAuthenticated: false,
         loading: false,
       });
-      console.log("LOGGED OUT SUCCESSFULLY");
+      toast.success("Logged Out Successfully");
     } catch (error) {
       console.error("Logout error:", error.message);
     }
   };
 
+  useEffect(() => {
+    checkSession();
+  }, []);
+
   return (
     <UserContext.Provider
-      value={{ authState, setAuthState, register, login, logout }}
+      value={{ authState, setAuthState, register, login, logout, checkSession }}
     >
       {children}
     </UserContext.Provider>

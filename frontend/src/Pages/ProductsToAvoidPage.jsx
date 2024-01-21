@@ -9,13 +9,13 @@ const ProductsToAvoidPage = () => {
         <Title name="products to avoid" />
         <div className="desc">
           <h5>
-            Use the search box below to check if a product/company is actively
-            contributing to the occupation of Palestine.
+            check if a product/company is actively contributing to the
+            occupation of Palestine.
           </h5>
           <br />
           <p>
-            You can also find the reasons for avoiding certain products and
-            companies by visiting.
+            You can find the reasons for avoiding many products and companies by
+            visiting:
             <a target="_blank" href="https://boycott.thewitness.news/browse/1">
               The Witness.
             </a>

@@ -26,21 +26,19 @@ const BusinessSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  state: {
-    type: String,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  street: {
-    type: String,
-    default: "",
+  address: {
+    name: {
+      type: String,
+    },
+    lat: {
+      type: Number,
+    },
+    lon: {
+      type: Number,
+    },
   },
   image: {
     type: String,
-    required: true,
     default: "",
   },
   bio: {
@@ -68,10 +66,6 @@ const BusinessSchema = new mongoose.Schema({
       type: String,
       default: "",
     },
-  },
-  subscribe: {
-    type: Boolean,
-    default: false,
   },
 });
 

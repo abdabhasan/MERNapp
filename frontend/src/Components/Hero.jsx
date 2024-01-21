@@ -7,16 +7,13 @@ const Hero = () => {
     <Wrapper>
       <div className="hero-container">
         <div className="hero-bg"></div>
-        <h1 className="hero-title">
-          Connecting Faith with Commerce <br />
-          The Marketplace for Muslims
-        </h1>
+        <h1 className="hero-title">The Marketplace for Muslims</h1>
         <div className="btns">
           <Link to="/shop-local">
             <button className="btn custom"> shop local </button>
           </Link>
-          <Link to="/products-to-avoid">
-            <button className="btn">Products to avoid</button>
+          <Link to="/about">
+            <button className="btn">about us</button>
           </Link>
         </div>
       </div>
@@ -79,9 +76,13 @@ const Wrapper = styled.section`
     align-items: center;
 
     margin-top: 1rem;
+    a {
+      width: 100%;
+    }
     button {
       margin-bottom: 1rem;
       display: block;
+      width: 100%;
     }
     .custom {
       padding-left: 2.85rem;
