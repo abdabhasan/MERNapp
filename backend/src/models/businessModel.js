@@ -27,15 +27,13 @@ const BusinessSchema = new mongoose.Schema({
     required: true,
   },
   address: {
-    name: {
-      type: String,
-    },
-    lat: {
-      type: Number,
-    },
-    lon: {
-      type: Number,
-    },
+    type: String,
+  },
+  lat: {
+    type: Number,
+  },
+  lon: {
+    type: Number,
   },
   image: {
     type: String,
@@ -45,27 +43,25 @@ const BusinessSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
-  links: {
-    website: {
-      type: String,
-      default: "",
-    },
-    socialMedia1: {
-      type: String,
-      default: "",
-    },
-    socialMedia2: {
-      type: String,
-      default: "",
-    },
-    socialMedia3: {
-      type: String,
-      default: "",
-    },
-    socialMedia4: {
-      type: String,
-      default: "",
-    },
+  website: {
+    type: String,
+    default: "",
+  },
+  instagram: {
+    type: String,
+    default: "",
+  },
+  facebook: {
+    type: String,
+    default: "",
+  },
+  website: {
+    type: String,
+    default: "",
+  },
+  otherLink: {
+    type: String,
+    default: "",
   },
 });
 

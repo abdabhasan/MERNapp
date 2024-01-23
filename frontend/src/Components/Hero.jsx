@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import bgImage from "../assets/hero-bg.jpg";
-import { Link } from "react-router-dom";
+import NavigateBtn from "./Btns/NavigateBtn";
+
+const bgImage = import.meta.env.VITE_HERO_BACKGROUND;
 
 const Hero = () => {
   return (
@@ -9,12 +10,8 @@ const Hero = () => {
         <div className="hero-bg"></div>
         <h1 className="hero-title">The Marketplace for Muslims</h1>
         <div className="btns">
-          <Link to="/shop-local">
-            <button className="btn custom"> shop local </button>
-          </Link>
-          <Link to="/about">
-            <button className="btn">about us</button>
-          </Link>
+          <NavigateBtn to="shop-local" text="shop local" />
+          <NavigateBtn to="about" text="about us" />
         </div>
       </div>
     </Wrapper>
@@ -53,12 +50,7 @@ const Wrapper = styled.section`
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.5
-        ); /* Black overlay with 50% opacity */
+        background-color: rgba(0, 0, 0, 0.5);
       }
     }
   }
@@ -74,20 +66,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin-top: 1rem;
-    a {
-      width: 100%;
-    }
-    button {
-      margin-bottom: 1rem;
-      display: block;
-      width: 100%;
-    }
-    .custom {
-      padding-left: 2.85rem;
-      padding-right: 2.85rem;
-    }
   }
 
   @media (max-width: 992px) {

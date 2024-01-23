@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import aboutVedio from "../assets/aboutVideo.mp4";
-import { Title } from "../Components";
+import { Title, NavigateBtn } from "../Components";
+
+const aboutVedio = import.meta.env.VITE_ABOUT_VIDEO;
 
 const AboutPage = () => {
   return (
@@ -34,12 +35,16 @@ const AboutPage = () => {
           platform where Muslim businesses and professionals can better promote
           themselves in our community, while the rest of us can make sure our
           money contributes to growth and good, rather than greed and harm.
-          <br /> At this stage in development, we are building our database of
-          businesses, services, professionals, skilled workers, and
+          <br /> <br /> At this stage in development, we are building our
+          database of businesses, services, professionals, skilled workers, and
           entrepreneurs. So if you, a friend or family member have something to
           provide, please submit the form below. May Allah help us, forgive us,
           and Free Palestine.
         </q>
+      </div>
+      <div className="btns">
+        <NavigateBtn to="add-business" text="add business" />
+        <NavigateBtn to="add-professional" text="add professional" />
       </div>
     </Wrapper>
   );
@@ -64,5 +69,12 @@ const Wrapper = styled.section`
       font-size: 16px;
       line-height: 1.5;
     }
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
   }
 `;

@@ -163,10 +163,9 @@ p {
   animation: spinner 0.6s linear infinite;
 }
 
-.btn {
+.btn,
+.btn-black {
   text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-black);
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;
@@ -178,9 +177,21 @@ p {
   border-radius: var(--radius);
   border-color: transparent;
 }
+.btn {
+  background: var(--clr-primary-5);
+  color: var(--clr-black);
+}
 .btn:hover {
   color: var(--clr-primary-5);
   background: var(--clr-black);
+}
+.btn-black {
+  color: var(--clr-primary-5);
+  background: var(--clr-black);
+}
+.btn-black:hover {
+  color: var(--clr-black);
+  background: var(--clr-grey-10);
 }
 
 .page-100 {

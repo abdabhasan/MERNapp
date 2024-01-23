@@ -41,6 +41,7 @@ const Wrapper = styled.div`
   }
 
   input {
+    background-color: var(--clr-white);
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 2px solid var(--clr-primary-5);

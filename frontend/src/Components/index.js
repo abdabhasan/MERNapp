@@ -13,6 +13,8 @@ import ShopList from "./Views/ShopList";
 import Sort from "./Filters/Sort";
 import Title from "./Title";
 import LoadingSpinner from "./LoadingSpinner";
+import NavigateBtn from "./Btns/NavigateBtn";
+import PricingCard from "./PricingCard";
 
 export {
   Navbar,
@@ -30,4 +32,6 @@ export {
   Sort,
   Title,
   LoadingSpinner,
+  NavigateBtn,
+  PricingCard,
 };
