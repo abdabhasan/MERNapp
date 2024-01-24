@@ -1,6 +1,4 @@
 const BusinessModel = require("../models/businessModel");
-const multer = require("multer");
-const upload = multer({ dest: "uploads/" }); // Temporary storage
 const { Storage } = require("@google-cloud/storage");
 
 const storage = new Storage({
@@ -43,16 +41,22 @@ exports.addBusiness = async (req, res) => {
     let imageUrl = "";
 
     if (req.file) {
-      const blob = bucket.file(req.file.originalname);
-      const blobStream = blob.createWriteStream();
-
-      await new Promise((resolve, reject) => {
-        blobStream.on("error", (err) => reject(err));
-        blobStream.on("finish", () => {
-          imageUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-          resolve();
+      return new Promise((resolve, reject) => {
+        const { originalname, buffer } = file;
+        const blob = bucket.file(originalname);
+        const blobStream = blob.createWriteStream({
+          resumable: false,
         });
-        blobStream.end(req.file.buffer);
+
+        blobStream
+          .on("finish", () => {
+            const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+            resolve(publicUrl);
+          })
+          .on("error", (e) => {
+            reject(e);
+          })
+          .end(buffer);
       });
     }
 

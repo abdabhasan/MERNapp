@@ -1,4 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "normalize.css";
+
 import { Layout, HomeLayout, PrivateRoute } from "./Pages/Layouts";
 import {
   Home,
