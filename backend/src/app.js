@@ -47,12 +47,12 @@ app.use("/api/places", placesRoute);
 // Error handling middleware
 app.use(errorHandler);
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+// // Serve static files from the React app
+// app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
-// The "catchall" handler for serving the React app
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
-});
+// // The "catchall" handler for serving the React app
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+// });
 
 module.exports = app;

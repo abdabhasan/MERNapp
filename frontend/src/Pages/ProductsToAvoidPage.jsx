@@ -9,7 +9,7 @@ const ProductsToAvoidPage = () => {
         <Title name="products to avoid" />
         <div className="desc">
           <h5>
-            check if a product/company is actively contributing to the
+            Check if a product/company is actively contributing to the
             occupation of Palestine.
           </h5>
           <br />

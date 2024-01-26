@@ -1,17 +1,15 @@
+import { useEffect } from "react";
 import styled from "styled-components";
-
 import { useProductsToAvoidContext } from "../../context/products_to_avoid_context";
 import CompaniesContainer from "../Containers/CompaniesContainer";
 
 const ProductsToAvoidSearchbar = () => {
-  const {
-    data,
-    setFilteredData,
-    isCompaniesContainerOpen,
-    setIsCompaniesContainerOpen,
-    searchQuery,
-    setSearchQuery,
-  } = useProductsToAvoidContext();
+  const { data, setFilteredData, searchQuery, setSearchQuery, fetchData } =
+    useProductsToAvoidContext();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleSearch = () => {
     const filteredResults = data.filter((item) =>
@@ -23,7 +21,7 @@ const ProductsToAvoidSearchbar = () => {
 
   const handelChange = (e) => {
     setSearchQuery(e.target.value);
-    handleSearch();
+    if (searchQuery.length > 1) handleSearch();
   };
 
   return (
@@ -37,9 +35,8 @@ const ProductsToAvoidSearchbar = () => {
         className="search-input search-bar"
         value={searchQuery}
         onChange={handelChange}
-        onClick={() => setIsCompaniesContainerOpen(true)}
       />
-      {isCompaniesContainerOpen && <CompaniesContainer />}
+      {searchQuery.length > 1 && <CompaniesContainer />}
     </Wrapper>
   );
 };

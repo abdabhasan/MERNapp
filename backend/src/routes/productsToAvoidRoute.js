@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const productsToAvoidController = require("../controllers/productsToAvoidController");
 
-const jsonData = require("../../public/boycott.json");
-
-router.get("/", (req, res) => {
-  res.json(jsonData);
-});
+router.get("/", productsToAvoidController.getAllProducts);
 
 module.exports = router;

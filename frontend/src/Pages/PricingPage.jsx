@@ -8,6 +8,11 @@ const PricingPage = () => {
       <Title name="pricing page" />
       <div className="notes section-center">
         <p>
+          <span>⁃</span> Muslim Local is free for all users until March 1st.
+          Business and Professional profiles will then be asked to pay a modest
+          monthly membership fee.
+        </p>
+        <p>
           <span>⁃</span> The first month of all new member fees will be given as
           sadaqa to The United Nations Relief and Works Agency for Palestine
           Refugees in the Near East (UNRWA).
@@ -20,7 +25,7 @@ const PricingPage = () => {
         </p>
         <p>
           <span>⁃</span> For information on advertising opportunities, you can
-          reach us at comtact@muslimlocal.net
+          reach us at contact@muslimlocal.net
         </p>
       </div>
       <div className="container section-center">

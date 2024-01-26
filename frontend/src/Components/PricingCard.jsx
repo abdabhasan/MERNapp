@@ -8,7 +8,8 @@ const PricingCard = ({ title, price, features }) => {
           <h3>{title}</h3>
         </div>
         <div className="card-body">
-          <p className="price">${price}/month</p>
+          {/* <p className="price">$ {price}/month</p> */}
+          <p className="price">$ {price}</p>
           <ul className="features-list">
             {features.map((feature, index) => (
               <li key={index}>{feature}</li>

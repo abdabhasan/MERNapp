@@ -63,6 +63,10 @@ const BusinessSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const BusinessModel = mongoose.model("Business", BusinessSchema);

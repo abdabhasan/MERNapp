@@ -45,11 +45,11 @@ export const sidebar_links = [
     text: "add a business",
     url: "/add-business",
   },
-  // {
-  //   id: 6,
-  //   text: "add a professional",
-  //   url: "/add-professional",
-  // },
+  {
+    id: 6,
+    text: "add a professional",
+    url: "/add-professional",
+  },
   {
     id: 7,
     text: "pricing",
@@ -63,11 +63,11 @@ export const dropdown_options = [
     text: "add a business",
     url: "/add-business",
   },
-  // {
-  //   id: 4,
-  //   text: "add a professional",
-  //   url: "/add-professional",
-  // },
+  {
+    id: 4,
+    text: "add a professional",
+    url: "/add-professional",
+  },
   {
     id: 5,
     text: "pricing",
@@ -105,12 +105,12 @@ export const businessTypes = [
 export const pricingPlans = [
   {
     title: "Business",
-    price: "10",
+    price: "Free",
     features: ["Feature 1", "Feature 2", "Feature 3"],
   },
   {
     title: "professional",
-    price: "5",
+    price: "Free",
     features: ["Feature 1", "Feature 2", "Feature 3"],
   },
   // {
