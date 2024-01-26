@@ -36,7 +36,7 @@ const ProductsToAvoidSearchbar = () => {
         value={searchQuery}
         onChange={handelChange}
       />
-      {searchQuery.length > 1 && <CompaniesContainer />}
+      {searchQuery.length > 2 && <CompaniesContainer />}
     </Wrapper>
   );
 };

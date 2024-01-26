@@ -4,6 +4,9 @@ import { toast } from "react-toastify";
 import { API_ENDPOINT } from "../utils/constants";
 import businessValidationSchema from "../validation/businessValidation";
 import { ValidationError } from "yup";
+import { useUser } from "../context/user_context";
+
+const BUSINESSES_ENDPOINT = "/businesses";
 
 const BusinessContext = createContext();
 
@@ -30,6 +33,8 @@ const initialBusinessData = {
 export const BusinessProvider = ({ children }) => {
   const [businessData, setBusinessData] = useState(initialBusinessData);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { checkUserSession } = useUser();
 
   const clearBusinessData = () => {
     setBusinessData(initialBusinessData);
@@ -59,11 +64,19 @@ export const BusinessProvider = ({ children }) => {
     try {
       setIsLoading(true);
 
+      const isAuthenticated = await checkUserSession();
+      console.log("sessionData: ", isAuthenticated);
+      if (!isAuthenticated) {
+        toast.error("Please log in to add a business");
+        setIsLoading(false);
+        return;
+      }
+
       // validation
       await businessValidationSchema.validate(businessData);
 
       const response = await axios.post(
-        `${API_ENDPOINT}/businesses`,
+        `${API_ENDPOINT}${BUSINESSES_ENDPOINT}`,
         businessData,
         {
           withCredentials: true,
@@ -83,7 +96,7 @@ export const BusinessProvider = ({ children }) => {
     } catch (error) {
       if (error instanceof ValidationError) {
         // Handle validation errors
-        toast.error("Validation Error: " + error.message);
+        toast.error(error.message);
       } else {
         // Handle other types of errors
         console.error("Error Adding Business:", error.message);
@@ -96,23 +109,12 @@ export const BusinessProvider = ({ children }) => {
     }
   };
 
-  const updateBusinessAddress = (newAddress) => {
-    setBusinessData((prevData) => ({
-      ...prevData,
-      address: {
-        ...prevData.address,
-        ...newAddress,
-      },
-    }));
-  };
-
   return (
     <BusinessContext.Provider
       value={{
         initialBusinessData,
         businessData,
         setBusinessData,
-        updateBusinessAddress,
         handleChange,
         handleSubmit,
         isLoading,

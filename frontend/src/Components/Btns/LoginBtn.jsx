@@ -5,9 +5,12 @@ import styled from "styled-components";
 import { useUser } from "../../context/user_context";
 
 const LoginBtn = () => {
-  const { authState, logout } = useUser();
-
+  const { authState, logout, checkUserSession } = useUser();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    checkUserSession();
+  }, []);
 
   const handleLoginBtn = async () => {
     if (authState.isAuthenticated) {

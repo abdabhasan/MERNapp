@@ -2,34 +2,39 @@ import { useState, useEffect, createContext, useContext } from "react";
 import axios from "axios";
 import { API_ENDPOINT } from "../utils/constants";
 import { toast } from "react-toastify";
+const CHECK_SESSION_ENDPOINT = "/users/checkSession";
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [authState, setAuthState] = useState({
     isAuthenticated: false,
-    loading: true,
+    loading: false,
   });
 
-  const checkSession = async () => {
+  const checkUserSession = async () => {
     try {
-      const response = await axios.get(`${API_ENDPOINT}/users/checkSession`, {
-        withCredentials: true,
-      });
-      // Update authState based on response
-      console.log("res.data:", response.data);
-      setAuthState({
-        isAuthenticated: response.data.isAuthenticated,
-        loading: false,
-      });
-      if (authState.isAuthenticated) return true;
+      const response = await axios.get(
+        `${API_ENDPOINT}${CHECK_SESSION_ENDPOINT}`,
+        {
+          withCredentials: true,
+        }
+      );
+
+      const data = response.data;
+
+      if (data.isAuthenticated) {
+        setAuthState({ isAuthenticated: true, loading: false });
+        return true;
+      } else {
+        console.log("User is not authenticated");
+        setAuthState({ isAuthenticated: false, loading: false });
+        return false;
+      }
     } catch (error) {
-      console.error("Session check error:", error.message);
-      setAuthState({
-        isAuthenticated: false,
-        loading: false,
-      });
-      if (!authState.isAuthenticated) return false;
+      console.error("Error checking user session:", error);
+      setAuthState({ isAuthenticated: false, loading: false });
+      return false;
     }
   };
 
@@ -66,10 +71,6 @@ export const UserProvider = ({ children }) => {
   };
 
   const login = async (credentials) => {
-    setAuthState({
-      ...authState,
-      loading: true,
-    });
     try {
       const response = await axios.post(
         `${API_ENDPOINT}/users/login`,
@@ -78,11 +79,7 @@ export const UserProvider = ({ children }) => {
           withCredentials: true,
         }
       );
-      setAuthState((prevState) => ({
-        ...prevState,
-        isAuthenticated: true,
-        loading: false,
-      }));
+      setAuthState({ isAuthenticated: true, loading: false });
 
       toast.success("Logged In Successfully");
       return true;
@@ -112,16 +109,23 @@ export const UserProvider = ({ children }) => {
       toast.success("Logged Out Successfully");
     } catch (error) {
       console.error("Logout error:", error.message);
+      setAuthState({
+        isAuthenticated: false,
+        loading: false,
+      });
     }
   };
 
-  useEffect(() => {
-    checkSession();
-  }, []);
-
   return (
     <UserContext.Provider
-      value={{ authState, setAuthState, register, login, logout, checkSession }}
+      value={{
+        authState,
+        setAuthState,
+        register,
+        login,
+        logout,
+        checkUserSession,
+      }}
     >
       {children}
     </UserContext.Provider>

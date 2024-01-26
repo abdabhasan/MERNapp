@@ -6,6 +6,8 @@ const cors = require("cors");
 require("./config/database");
 const passport = require("passport");
 
+const CORS_ORIGIN = process.env.CORS_ORIGIN;
+
 // MODELS
 const BusinessModel = require("./models/businessModel");
 
@@ -30,7 +32,7 @@ app.use(bodyParser.json());
 
 // CORS
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: CORS_ORIGIN,
   credentials: true,
 };
 app.use(cors(corsOptions));
