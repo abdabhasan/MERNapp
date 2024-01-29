@@ -2,7 +2,7 @@ import { useState, useEffect, createContext, useContext } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 const CHECK_SESSION_ENDPOINT = "/users/checkSession";
-const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 const UserContext = createContext();
 

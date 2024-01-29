@@ -5,7 +5,7 @@
 // import styled from "styled-components";
 // import { Link } from "react-router-dom";
 // import SocialMediaLinks from "../Components/SocialMediaLinks";
-// const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+// const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 // const SingleShopPage = () => {
 //   const { id } = useParams();

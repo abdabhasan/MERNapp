@@ -5,7 +5,7 @@ import businessValidationSchema from "../validation/businessValidation";
 import { ValidationError } from "yup";
 import { useUser } from "../context/user_context";
 
-const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 const BUSINESSES_ENDPOINT = "/businesses";
 

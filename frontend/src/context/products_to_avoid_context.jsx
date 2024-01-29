@@ -3,7 +3,7 @@ import axios from "axios";
 
 const ProductsToAvoidContext = createContext();
 const PRODUCTS_TO_AVOID_ENDPOINT = "/products-to-avoid";
-const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 export const ProductsToAvoidProvider = ({ children }) => {
   const [data, setData] = useState([]);

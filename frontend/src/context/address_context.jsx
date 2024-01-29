@@ -9,7 +9,7 @@ import {
 import axios from "axios";
 import { useBusinessContext } from "./business_context";
 
-const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 const AddressContext = createContext();
 
