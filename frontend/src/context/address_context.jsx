@@ -8,7 +8,8 @@ import {
 } from "react";
 import axios from "axios";
 import { useBusinessContext } from "./business_context";
-import { API_ENDPOINT } from "../utils/constants";
+
+const API_ENDPOINT = import.meta.env.API_ENDPOINT;
 
 const AddressContext = createContext();
 

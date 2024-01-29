@@ -1,11 +1,11 @@
 // import { useEffect } from "react";
 // import { useParams, useNavigate } from "react-router-dom";
 // import { useShopsContext } from "../context/shops_context";
-// import { API_ENDPOINT } from "../utils/constants";
 // import { LoadingSpinner } from "../Components";
 // import styled from "styled-components";
 // import { Link } from "react-router-dom";
 // import SocialMediaLinks from "../Components/SocialMediaLinks";
+// const API_ENDPOINT = import.meta.env.API_ENDPOINT;
 
 // const SingleShopPage = () => {
 //   const { id } = useParams();

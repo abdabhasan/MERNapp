@@ -1,10 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { API_ENDPOINT } from "../utils/constants";
 import professionalValidationSchema from "../validation/professionalValidation";
 import { ValidationError } from "yup";
 import { useUser } from "../context/user_context";
+const API_ENDPOINT = import.meta.env.API_ENDPOINT;
 
 const PROFESSIONALS_ENDPOINT = "/professionals";
 

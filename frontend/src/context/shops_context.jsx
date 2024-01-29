@@ -1,7 +1,7 @@
 // import axios from "axios";
 // import React, { useContext, useEffect, useReducer } from "react";
 // import reducer from "../reducers/shops_reducer";
-// import { API_ENDPOINT } from "../utils/constants";
+// const API_ENDPOINT = import.meta.env.API_ENDPOINT;
 
 // import {
 //   GET_SHOPS_BEGIN,

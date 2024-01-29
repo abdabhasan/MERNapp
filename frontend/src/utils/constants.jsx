@@ -145,5 +145,3 @@ export const pricingPlans = [
   //   features: ["Feature 1", "Feature 2", "Feature 3"],
   // },
 ];
-
-export const API_ENDPOINT = "http://localhost:5000/api";
