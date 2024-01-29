@@ -4,7 +4,7 @@ import { useBusinessContext } from "../../context/business_context";
 import FormField from "./FormField";
 import SubmitBtn from "../Btns/SubmitBtn";
 import Checkbox from "../Btns/Checkbox";
-import AddressAutocomplete from "./AddressAutocomplete.jsx";
+import BusinessAddressComponent from "./BusinessAddressComponent.jsx";
 import LoadingSpinner from "../LoadingSpinner";
 import TypesDropdown from "../Dropdowns/TypesDropdown";
 
@@ -78,7 +78,7 @@ const AddBusinessForm = () => {
           ])}
           {/* address fields */}
           <>
-            <AddressAutocomplete />
+            <BusinessAddressComponent />
           </>
           {/* img and subcrb fields */}
           {renderFields([
@@ -95,7 +95,7 @@ const AddBusinessForm = () => {
           <>
             <Checkbox
               name="subscribeMailinglist"
-              value={businessData.termsAccepted}
+              value={businessData.mailinglist}
               handleChange={handleChange}
               labelText="Subscribe to our mailing list"
             />

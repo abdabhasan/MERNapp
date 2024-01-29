@@ -12,22 +12,22 @@ import { API_ENDPOINT } from "../utils/constants";
 
 const AddressContext = createContext();
 
-export const AddressProvider = ({ children }) => {
+export const AddressProvider = ({ children, data, setData }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [debounceTimeout, setDebounceTimeout] = useState(null);
   const { businessData, setBusinessData } = useBusinessContext();
   const wrapperRef = useRef(null);
 
   const handleSelectSuggestion = (description, placeId) => {
-    setBusinessData({ ...businessData, address: description });
+    setData({ ...data, address: description });
     setSuggestions([]);
   };
 
   const handleSearch = useCallback(() => {
-    if (businessData.address.length > 1) {
+    if (data.address.length > 1) {
       axios
         .get(`${API_ENDPOINT}/places/autocomplete`, {
-          params: { address: businessData.address },
+          params: { address: data.address },
         })
         .then((response) => {
           setSuggestions(response.data.predictions);
@@ -38,11 +38,11 @@ export const AddressProvider = ({ children }) => {
     } else {
       setSuggestions([]);
     }
-  }, [businessData.address]);
+  }, [data.address]);
 
   const handleChange = (e) => {
     clearTimeout(debounceTimeout);
-    setBusinessData({ ...businessData, address: e.target.value });
+    setData({ ...data, address: e.target.value });
     setDebounceTimeout(setTimeout(() => handleSearch(), 500));
   };
 

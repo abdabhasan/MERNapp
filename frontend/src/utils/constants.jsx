@@ -102,6 +102,32 @@ export const businessTypes = [
   "Other",
 ];
 
+export const professions = [
+  "Art/Photography",
+  "Auto/Transportation",
+  "Child Care",
+  "Cleaning",
+  "Contractor/Trade",
+  "Counseling",
+  "Design",
+  "Education/Training",
+  "Financial",
+  "Accounting/Taxes",
+  "Banking",
+  "Consulting/Advising",
+  "Beauty",
+  "Fitness/Nutrition",
+  "Housing",
+  "Real Estate Agents",
+  "For Rent/Sale",
+  "Legal",
+  "Maintenance/Handyman",
+  "Medical",
+  "Music/Media",
+  "Tech/Computer Services",
+  "Other",
+];
+
 export const pricingPlans = [
   {
     title: "Business",

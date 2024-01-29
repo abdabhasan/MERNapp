@@ -2,24 +2,23 @@ import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { API_ENDPOINT } from "../utils/constants";
-import businessValidationSchema from "../validation/businessValidation";
+import professionalValidationSchema from "../validation/professionalValidation";
 import { ValidationError } from "yup";
 import { useUser } from "../context/user_context";
 
-const BUSINESSES_ENDPOINT = "/businesses";
+const PROFESSIONALS_ENDPOINT = "/professionals";
 
-const BusinessContext = createContext();
+const ProfessionalContext = createContext();
 
-const initialBusinessData = {
-  businessName: "",
-  businessType: "",
-  ownerFirstName: "",
-  ownerLastName: "",
+const initialProfessionalData = {
+  profession: "",
+  type: "",
+  firstName: "",
+  lastName: "",
+  yearsInProfession: "",
   email: "",
   phone: "",
   address: "",
-  lat: 0,
-  lon: 0,
   bg: "",
   termsAccepted: false,
   mailinglist: false,
@@ -30,14 +29,16 @@ const initialBusinessData = {
   otherLink: "",
 };
 
-export const BusinessProvider = ({ children }) => {
-  const [businessData, setBusinessData] = useState(initialBusinessData);
+export const ProfessionalProvider = ({ children }) => {
+  const [professionalData, setProfessionalData] = useState(
+    initialProfessionalData
+  );
   const [isLoading, setIsLoading] = useState(false);
 
   const { checkUserSession } = useUser();
 
-  const clearBusinessData = () => {
-    setBusinessData(initialBusinessData);
+  const clearProfessionalData = () => {
+    setProfessionalData(initialProfessionalData);
   };
 
   const handleChange = (event) => {
@@ -45,21 +46,21 @@ export const BusinessProvider = ({ children }) => {
 
     // For boolean values like checkboxes
     if (type === "checkbox") {
-      setBusinessData({
-        ...businessData,
+      setProfessionalData({
+        ...professionalData,
         [name]: checked,
       });
     } else if (type === "file") {
       // For file inputs, store the file object
       const selectedImage = event.target.files[0];
-      setBusinessData({
-        ...businessData,
+      setProfessionalData({
+        ...professionalData,
         bg: selectedImage,
       });
     } else {
       // For other types of inputs
-      setBusinessData({
-        ...businessData,
+      setProfessionalData({
+        ...professionalData,
         [name]: value,
       });
     }
@@ -75,23 +76,23 @@ export const BusinessProvider = ({ children }) => {
       const isAuthenticated = await checkUserSession();
       console.log("sessionData: ", isAuthenticated);
       if (!isAuthenticated) {
-        toast.error("Please log in to add a business");
+        toast.error("Please log in to add a professional");
         setIsLoading(false);
         return;
       }
 
       // validation
-      await businessValidationSchema.validate(businessData);
+      await professionalValidationSchema.validate(professionalData);
 
       const formData = new FormData();
 
-      // Append businessData fields to formData
-      Object.keys(businessData).forEach((key) => {
-        formData.append(key, businessData[key]);
+      // Append setProfessionalData fields to formData
+      Object.keys(professionalData).forEach((key) => {
+        formData.append(key, professionalData[key]);
       });
 
       const response = await axios.post(
-        `${API_ENDPOINT}${BUSINESSES_ENDPOINT}`,
+        `${API_ENDPOINT}${PROFESSIONALS_ENDPOINT}`,
         formData,
         {
           withCredentials: true,
@@ -102,10 +103,10 @@ export const BusinessProvider = ({ children }) => {
       );
 
       if (response.status === 200) {
-        toast.success("Business Submitted");
+        toast.success("Professional Submitted");
         console.log(response.data);
         // clear fields
-        clearBusinessData();
+        clearProfessionalData();
         e.target.reset();
       } else {
         // Handle unexpected response status
@@ -117,9 +118,9 @@ export const BusinessProvider = ({ children }) => {
         toast.error(error.message);
       } else {
         // Handle other types of errors
-        console.error("Error Adding Business:", error.message);
+        console.error("Error Adding Professional:", error.message);
         toast.error(
-          "An error occurred while Adding the business. Please try again later."
+          "An error occurred while Adding the Professional. Please try again later."
         );
       }
     } finally {
@@ -128,18 +129,18 @@ export const BusinessProvider = ({ children }) => {
   };
 
   return (
-    <BusinessContext.Provider
+    <ProfessionalContext.Provider
       value={{
-        businessData,
-        setBusinessData,
         handleChange,
         handleSubmit,
         isLoading,
+        professionalData,
+        setProfessionalData,
       }}
     >
       {children}
-    </BusinessContext.Provider>
+    </ProfessionalContext.Provider>
   );
 };
 
-export const useBusinessContext = () => useContext(BusinessContext);
+export const useProfessionalContext = () => useContext(ProfessionalContext);

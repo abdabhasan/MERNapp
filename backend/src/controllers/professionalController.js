@@ -1,6 +1,6 @@
-const BusinessModel = require("../models/businessModel");
+const Professional = require("../models/Professional");
 const { Storage } = require("@google-cloud/storage");
-const bucketName = "businesses-images";
+const bucketName = "professionals-images";
 const jwt = require("jsonwebtoken");
 const { jwtSecret } = require("../config/keys");
 
@@ -8,35 +8,35 @@ const storage = new Storage({
   keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
 });
 
-exports.getBusinesses = (req, res) => {
-  BusinessModel.find()
-    .then((businesses) => {
-      res.status(200).json(businesses);
-    })
-    .catch((err) => {
-      console.error("Error fetching data from database:", err);
-      res.status(500).send("Error fetching data from database");
-    });
-};
+// exports.getProfessionals = (req, res) => {
+//   BusinessModel.find()
+//     .then((businesses) => {
+//       res.status(200).json(businesses);
+//     })
+//     .catch((err) => {
+//       console.error("Error fetching data from database:", err);
+//       res.status(500).send("Error fetching data from database");
+//     });
+// };
 
-exports.getBusinessById = (req, res) => {
-  const businessId = req.params.id;
+// exports.getProfessionalById = (req, res) => {
+//   const businessId = req.params.id;
 
-  BusinessModel.findById(businessId)
-    .then((business) => {
-      if (business) {
-        res.status(200).json(business);
-      } else {
-        res.status(404).send("Business not found");
-      }
-    })
-    .catch((err) => {
-      console.error("Error fetching data from database:", err);
-      res.status(500).send("Error fetching data from database");
-    });
-};
+//   BusinessModel.findById(businessId)
+//     .then((business) => {
+//       if (business) {
+//         res.status(200).json(business);
+//       } else {
+//         res.status(404).send("Business not found");
+//       }
+//     })
+//     .catch((err) => {
+//       console.error("Error fetching data from database:", err);
+//       res.status(500).send("Error fetching data from database");
+//     });
+// };
 
-exports.addBusiness = async (req, res) => {
+exports.addProfessional = async (req, res) => {
   try {
     const formData = req.body;
     let imageUrl = "";
@@ -85,12 +85,12 @@ exports.addBusiness = async (req, res) => {
     formData.user = decoded.user.id;
 
     //  save the formData to MongoDB
-    const newBusiness = new BusinessModel(formData);
-    await newBusiness.save();
+    const newProfessional = new Professional(formData);
+    await newProfessional.save();
 
-    res.status(200).send("Business added successfully");
+    res.status(200).send("Professional added successfully");
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).send("Error saving business");
+    res.status(500).send("Error saving professional");
   }
 };

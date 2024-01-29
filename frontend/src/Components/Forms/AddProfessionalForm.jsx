@@ -1,125 +1,118 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { useProfessionalContext } from "../../context/professional_context";
+
 import FormField from "./FormField";
+import SubmitBtn from "../Btns/SubmitBtn";
+import Checkbox from "../Btns/Checkbox";
+import ProfessionalAddressComponent from "./ProfessionalAddressComponent.jsx";
+import LoadingSpinner from "../LoadingSpinner";
+import TypesDropdown from "../Dropdowns/TypesDropdown";
 
 const AddProfessionalForm = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    city: "",
-    state: "",
-    yearsInProfession: "",
-    image: "",
-  });
+  const { professionalData, handleChange, handleSubmit, isLoading } =
+    useProfessionalContext();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+  const renderFields = (fields) => {
+    return fields.map(({ name, className, label, type, required, accept }) => (
+      <FormField
+        key={name}
+        className={className}
+        label={label}
+        type={type}
+        name={name}
+        required={required}
+        accept={accept}
+        value={professionalData[name]}
+        onChange={handleChange}
+      />
+    ));
   };
 
   return (
     <Wrapper>
       <div className="container">
         <form className="form" onSubmit={handleSubmit}>
-          <FormField
-            label="Title/Profession"
-            type="text"
-            name="title"
-            required={true}
-            value={formData.title}
-            onChange={handleChange}
-          />
-          <FormField
-            label="First Name"
-            type="text"
-            name="firstName"
-            required={true}
-            value={formData.firstName}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Last Name"
-            type="text"
-            name="firstName"
-            required={true}
-            value={formData.lastName}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Email"
-            type="email"
-            name="email"
-            required={true}
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Phone"
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-          />
-          <FormField
-            label="City"
-            type="text"
-            name="city"
-            required={true}
-            value={formData.city}
-            onChange={handleChange}
-          />
-          <FormField
-            label="State"
-            type="text"
-            name="state"
-            required={true}
-            value={formData.state}
-            onChange={handleChange}
-          />
-          <FormField
-            label="Upload Image"
-            type="file"
-            name="image"
-            required={true}
-            accept="image/*"
-            onChange={handleChange}
-          />
-          <FormField
-            label="Subscribe"
-            type="checkbox"
-            name="subscribe"
-            className="checkbox"
+          {renderFields([
+            {
+              label: "profession",
+              type: "text",
+              name: "profession",
+              required: true,
+            },
+          ])}
+          <TypesDropdown
+            professional={true}
+            label="profession type"
+            name="type"
+            value={professionalData.type}
             onChange={handleChange}
           />
 
-          <button type="submit" className="btn">
-            Submit
-          </button>
+          {renderFields([
+            {
+              label: "years in profession",
+              type: "number",
+              name: "yearsInProfession",
+              required: true,
+            },
+            {
+              label: "first name",
+              type: "text",
+              name: "firstName",
+              required: true,
+            },
+            {
+              label: "last name",
+              type: "text",
+              name: "lastName",
+              required: true,
+            },
+            {
+              label: "email",
+              type: "email",
+              name: "email",
+              required: true,
+            },
+            {
+              label: "Phone  ",
+              type: "tel",
+              name: "phone",
+              required: true,
+            },
+          ])}
+          {/* address fields */}
+          <>
+            <ProfessionalAddressComponent />
+          </>
+          {renderFields([
+            {
+              label: "Upload Image",
+              type: "file",
+              name: "image",
+              required: true,
+              accept: "image/*",
+            },
+          ])}
+          {/* checkboxes */}
+          <>
+            <Checkbox
+              name="subscribeMailinglist"
+              value={professionalData.mailinglist}
+              handleChange={handleChange}
+              labelText="Subscribe to our mailing list"
+            />
+            <Checkbox
+              name="termsAccepted"
+              value={professionalData.termsAccepted}
+              required
+              handleChange={handleChange}
+              labelText="I acknowledge that this platform is intended exclusively for the
+              promotion of Muslim-owned businesses and professionals.
+              Submissions that do not meet this criteria will be removed."
+            />
+          </>
+          {isLoading ? <LoadingSpinner /> : <SubmitBtn />}
         </form>
-        {/* 
-        <SubscribeBox>
-          <h2>Subscribe to our Newsletter</h2>
-         Add subscription form elements here  
-        </SubscribeBox>
-
-        <ShareBox>
-          <p>
-            Share your experience with others. Click{" "}
-            <ShareLink href="#">here</ShareLink> to share.
-          </p>
-        </ShareBox> */}
       </div>
     </Wrapper>
   );
@@ -135,21 +128,9 @@ const Wrapper = styled.section`
     .form {
       display: flex;
       flex-direction: column;
-
-      .checkbox {
-        display: flex;
-        flex-direction: row;
-        label {
-          margin: 0;
-        }
-        input {
-          margin: 0 0.5rem;
-        }
-      }
-      button {
-        margin-top: 1rem;
-        padding: 0.5rem;
-      }
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 70vw;
     }
   }
 `;

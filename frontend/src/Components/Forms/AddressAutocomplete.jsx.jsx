@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import { useAddressContext } from "../../context/address_context";
-import { useBusinessContext } from "../../context/business_context";
 
-const AddressAutocomplete = () => {
+const AddressAutocomplete = ({ data }) => {
   const { handleSelectSuggestion, handleChange, suggestions, wrapperRef } =
     useAddressContext();
-  const { businessData } = useBusinessContext();
-  const { address } = businessData;
 
   return (
     <Wrapper ref={wrapperRef}>
@@ -16,7 +13,7 @@ const AddressAutocomplete = () => {
         type="text"
         name="address"
         autoComplete="off"
-        value={address}
+        value={data.address}
         onChange={handleChange}
       />
       <ul

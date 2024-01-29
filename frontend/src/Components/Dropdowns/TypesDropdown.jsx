@@ -1,15 +1,23 @@
 import styled from "styled-components";
-import { businessTypes } from "../../utils/constants";
+import { businessTypes, professions } from "../../utils/constants";
 
-const TypesDropdown = ({ label, name, value, onChange }) => {
+const TypesDropdown = ({
+  label,
+  name,
+  value,
+  onChange,
+  professional = false,
+}) => {
+  const types = professional ? professions : businessTypes;
+
   return (
     <Wrapper>
       <label htmlFor={name}>{label}:</label>
       <select id={name} name={name} value={value} onChange={onChange}>
-        <option value="">Select Type</option>
-        {businessTypes.map((business) => (
-          <option key={business} value={business}>
-            {business}
+        <option value="">Select Type </option>
+        {types.map((item) => (
+          <option key={item} value={item}>
+            {item}
           </option>
         ))}
       </select>

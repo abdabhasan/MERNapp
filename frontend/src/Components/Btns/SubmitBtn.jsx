@@ -11,6 +11,6 @@ const SubmitBtn = () => {
 export default SubmitBtn;
 
 const SubmitButton = styled.button`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding: 0.5rem;
 `;

@@ -15,6 +15,7 @@ const BusinessModel = require("./models/businessModel");
 const userRoute = require("./routes/userRoute");
 const productsToAvoidRoute = require("./routes/productsToAvoidRoute");
 const businessRoute = require("./routes/businessRoute");
+const professionalRoute = require("./routes/professionalRoute");
 const placesRoute = require("./routes/placesRoute");
 // MIDLEWARES
 const errorHandler = require("./middlewares/errorHandler");
@@ -44,6 +45,7 @@ app.use(cookieParser());
 app.use("/api/users", userRoute);
 app.use("/api/products-to-avoid", productsToAvoidRoute);
 app.use("/api/businesses", businessRoute);
+app.use("/api/professionals", professionalRoute);
 app.use("/api/places", placesRoute);
 
 // Error handling middleware
