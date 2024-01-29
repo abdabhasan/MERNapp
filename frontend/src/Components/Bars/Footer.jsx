@@ -7,7 +7,7 @@ const Footer = () => {
       </a>
       <h5>
         &copy; {new Date().getFullYear()}
-        <span> Muslim Local</span> - All Rights Reserve
+        <span> Muslim Local</span>
       </h5>
     </Wrapper>
   );

@@ -27,18 +27,18 @@ const Wrapper = styled.div`
     text-transform: capitalize;
   }
   select {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    background-color: var(--clr-white);
+    margin-bottom: 1rem !important;
+    padding: 0.5rem !important;
+    background-color: var(--clr-white) !important;
 
-    border: 2px solid var(--clr-primary-5);
-    border-radius: 5px;
-    outline: none;
-    box-shadow: var(--light-shadow);
+    border: 2px solid var(--clr-primary-5) !important;
+    border-radius: 5px !important;
+    outline: none !important;
+    box-shadow: var(--light-shadow) !important;
   }
   @media screen and (max-width: 768px) {
     option {
-      font-size: 10px;
+      font-size: 10px !important;
     }
   }
 `;

@@ -106,12 +106,12 @@ export const pricingPlans = [
   {
     title: "Business",
     price: "Free",
-    features: ["Feature 1", "Feature 2", "Feature 3"],
+    features: ["Free ", "Free ", "Free "],
   },
   {
     title: "professional",
     price: "Free",
-    features: ["Feature 1", "Feature 2", "Feature 3"],
+    features: ["Free ", "Free ", "Free "],
   },
   // {
   //   title: "Basic Plan",

@@ -31,7 +31,11 @@ const AddBusinessForm = () => {
   return (
     <Wrapper>
       <div className="container">
-        <form className="form" onSubmit={handleSubmit}>
+        <form
+          className="form"
+          onSubmit={handleSubmit}
+          encType="multipart/form-data"
+        >
           {renderFields([
             {
               label: "Business Name",

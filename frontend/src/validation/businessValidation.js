@@ -26,6 +26,13 @@ const businessValidationSchema = Yup.object().shape({
   termsAccepted: Yup.boolean()
     .required("You must agree to the terms and conditions")
     .oneOf([true], "You must agree to the terms and conditions"),
+  bg: Yup.mixed()
+    .required("The image is required")
+    .test(
+      "fileSize",
+      "The maximum image size is 5MB",
+      (value) => value && value.size <= 5242880 // 5MB in byte
+    ),
 });
 
 export default businessValidationSchema;

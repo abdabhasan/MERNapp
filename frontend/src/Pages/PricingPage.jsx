@@ -7,26 +7,27 @@ const PricingPage = () => {
     <Wrapper className="page-100">
       <Title name="pricing page" />
       <div className="notes section-center">
-        <p>
-          <span>⁃</span> Muslim Local is free for all users until March 1st.
-          Business and Professional profiles will then be asked to pay a modest
-          monthly membership fee.
-        </p>
-        <p>
-          <span>⁃</span> The first month of all new member fees will be given as
-          sadaqa to The United Nations Relief and Works Agency for Palestine
-          Refugees in the Near East (UNRWA).
-        </p>
-        <p>
-          <span>⁃</span> 10% of all future fees will also be donated until the
-          occupation has ended inshallah. To contribute more to the UNRWA’s
-          efforts on the ground, please visit their site at
-          https://donate.unrwa.org/gaza
-        </p>
-        <p>
-          <span>⁃</span> For information on advertising opportunities, you can
-          reach us at contact@muslimlocal.net
-        </p>
+        <ul>
+          <li>
+            Muslim Local is free for all users until March 1st. Business and
+            Professional profiles will then be asked to pay a modest monthly
+            membership fee.
+          </li>
+          <li>
+            The first month of all new member fees will be given as sadaqa to
+            The United Nations Relief and Works Agency for Palestine Refugees in
+            the Near East (UNRWA).
+          </li>
+          <li>
+            10% of all future fees will also be donated until the occupation has
+            ended inshallah. To contribute more to the UNRWA’s efforts on the
+            ground, please visit their site at https://donate.unrwa.org/gaza
+          </li>
+          <li>
+            For information on advertising opportunities, you can reach us at
+            contact@muslimlocal.net
+          </li>
+        </ul>
       </div>
       <div className="container section-center">
         {pricingPlans.map((option, index) => (
@@ -51,12 +52,28 @@ const Wrapper = styled.main`
     span {
       color: var(--clr-primary-5);
     }
+    ul {
+      list-style: initial;
+      li {
+        margin: 0.75rem 0;
+      }
+    }
   }
 
   .container {
     display: flex;
+    gap: 2rem;
     padding-top: 3rem;
     padding-bottom: 5rem;
     justify-content: space-evenly;
+  }
+  @media screen and (max-width: 992px) {
+    ul {
+      margin: 0 3rem;
+    }
+    .container {
+      width: 75vw;
+      flex-direction: column;
+    }
   }
 `;

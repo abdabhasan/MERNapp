@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { API_ENDPOINT } from "../utils/constants";
@@ -20,7 +20,7 @@ const initialBusinessData = {
   address: "",
   lat: 0,
   lon: 0,
-  image: "",
+  bg: "",
   termsAccepted: false,
   subscribeMailinglist: false,
   bio: "some bio",
@@ -41,13 +41,20 @@ export const BusinessProvider = ({ children }) => {
   };
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type, checked, files } = event.target;
 
     // For boolean values like checkboxes
     if (type === "checkbox") {
       setBusinessData({
         ...businessData,
         [name]: checked,
+      });
+    } else if (type === "file") {
+      // For file inputs, store the file object
+      const selectedImage = event.target.files[0];
+      setBusinessData({
+        ...businessData,
+        bg: selectedImage,
       });
     } else {
       // For other types of inputs
@@ -64,6 +71,7 @@ export const BusinessProvider = ({ children }) => {
     try {
       setIsLoading(true);
 
+      // check user session
       const isAuthenticated = await checkUserSession();
       console.log("sessionData: ", isAuthenticated);
       if (!isAuthenticated) {
@@ -75,11 +83,21 @@ export const BusinessProvider = ({ children }) => {
       // validation
       await businessValidationSchema.validate(businessData);
 
+      const formData = new FormData();
+
+      // Append businessData fields to formData
+      Object.keys(businessData).forEach((key) => {
+        formData.append(key, businessData[key]);
+      });
+
       const response = await axios.post(
         `${API_ENDPOINT}${BUSINESSES_ENDPOINT}`,
-        businessData,
+        formData,
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
       );
 

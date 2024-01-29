@@ -30,7 +30,6 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     padding: 1.5rem;
     text-align: center;
-    min-width: 350px;
     min-height: 400px;
     margin: auto;
     background-color: var(--clr-primary-5);
@@ -61,6 +60,11 @@ const Wrapper = styled.section`
       button {
         margin-top: 3rem;
       }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .pricing-card {
+      min-width: 350px;
     }
   }
 `;
