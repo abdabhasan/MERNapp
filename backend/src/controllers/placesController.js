@@ -6,7 +6,7 @@ exports.getAutocompleteSuggestions = async (req, res) => {
       `https://maps.googleapis.com/maps/api/place/autocomplete/json`,
       {
         params: {
-          input: req.query.input,
+          input: req.query.address,
           components: "country:us",
           key: process.env.GOOGLE_PLACES_API_KEY,
         },

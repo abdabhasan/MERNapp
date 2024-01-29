@@ -67,6 +67,10 @@ const BusinessSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const BusinessModel = mongoose.model("Business", BusinessSchema);

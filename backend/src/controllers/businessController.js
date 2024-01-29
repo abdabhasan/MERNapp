@@ -1,10 +1,12 @@
 const BusinessModel = require("../models/businessModel");
 const { Storage } = require("@google-cloud/storage");
+const bucketName = "businesses-images";
+const jwt = require("jsonwebtoken");
+const { jwtSecret } = require("../config/keys");
 
 const storage = new Storage({
   keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
 });
-const bucket = storage.bucket("businesses-images");
 
 exports.getBusinesses = (req, res) => {
   BusinessModel.find()
@@ -35,23 +37,26 @@ exports.getBusinessById = (req, res) => {
 };
 
 exports.addBusiness = async (req, res) => {
-  const formData = req.body;
-
   try {
+    const formData = req.body;
     let imageUrl = "";
 
     if (req.file) {
-      return new Promise((resolve, reject) => {
-        const { originalname, buffer } = file;
-        const blob = bucket.file(originalname);
-        const blobStream = blob.createWriteStream({
-          resumable: false,
-        });
+      // Initialize Google Cloud Storage
+      const storage = new Storage();
+      const bucket = storage.bucket(bucketName);
 
+      const { uniqueName, buffer } = req.file;
+      const blob = bucket.file(uniqueName);
+      const blobStream = blob.createWriteStream({
+        resumable: false,
+      });
+
+      await new Promise((resolve, reject) => {
         blobStream
           .on("finish", () => {
-            const publicUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
-            resolve(publicUrl);
+            imageUrl = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
+            resolve();
           })
           .on("error", (e) => {
             reject(e);
@@ -61,9 +66,30 @@ exports.addBusiness = async (req, res) => {
     }
 
     formData.image = imageUrl;
-    const newBusiness = new BusinessModel(formData);
 
+    // Extract user ID from the token
+    const token = req.cookies.user;
+    console.log("token", token);
+    if (!token) {
+      return res.status(401).send("Unauthorized: No token provided");
+    }
+
+    let decoded;
+    try {
+      console.log("decoding...", decoded);
+      decoded = jwt.verify(token, jwtSecret);
+      console.log("decoded...", decoded);
+    } catch (err) {
+      return res.status(401).send("Unauthorized: Invalid token");
+    }
+
+    // Add the user ID to formData
+    formData.user = decoded.user.id;
+
+    //  save the formData to MongoDB
+    const newBusiness = new BusinessModel(formData);
     await newBusiness.save();
+
     res.status(200).send("Business added successfully");
   } catch (error) {
     console.error("Error:", error);
