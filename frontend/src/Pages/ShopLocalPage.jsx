@@ -1,5 +1,6 @@
-import { FeaturedShops, Title } from "../Components";
-import ShopsContainer from "../Components/Containers/ShopsContainer";
+// import { FeaturedShops, Title } from "../Components";
+import { Title } from "../Components";
+// import ShopsContainer from "../Components/Containers/ShopsContainer";
 import styled from "styled-components";
 
 const ShopLocalPage = () => {

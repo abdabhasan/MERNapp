@@ -7,10 +7,10 @@ import Logo from "./Logo";
 import AddProfessionalForm from "./Forms/AddProfessionalForm";
 import AddBusinessForm from "./Forms/AddBusinessForm";
 import FormField from "./Forms/FormField";
-import FeaturedShops from "./FeaturedShops";
-import Filters from "./Filters/Filters";
-import ShopList from "./Views/ShopList";
-import Sort from "./Filters/Sort";
+// import FeaturedShops from "./FeaturedShops";
+// import Filters from "./Filters/Filters";
+// import ShopList from "./Views/ShopList";
+// import Sort from "./Filters/Sort";
 import Title from "./Title";
 import LoadingSpinner from "./LoadingSpinner";
 import NavigateBtn from "./Btns/NavigateBtn";
@@ -26,12 +26,13 @@ export {
   AddProfessionalForm,
   AddBusinessForm,
   FormField,
-  FeaturedShops,
-  Filters,
-  ShopList,
-  Sort,
   Title,
   LoadingSpinner,
   NavigateBtn,
   PricingCard,
 };
+
+// Filters,
+// Sort,
+// ShopList,
+// FeaturedShops,
