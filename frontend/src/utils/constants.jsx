@@ -52,7 +52,7 @@ export const sidebar_links = [
   },
   {
     id: 7,
-    text: "pricing",
+    text: "Member Pricing",
     url: "/pricing",
   },
 ];
@@ -70,7 +70,7 @@ export const dropdown_options = [
   },
   {
     id: 5,
-    text: "pricing",
+    text: "Member Pricing",
     url: "/pricing",
   },
   {

@@ -11,6 +11,11 @@ export const UserProvider = ({ children }) => {
     isAuthenticated: false,
     loading: false,
   });
+  const [mailingList, setMailingList] = useState(false);
+
+  const handleMailingListChange = (event) => {
+    setMailingList(event.target.checked);
+  };
 
   const checkUserSession = async () => {
     try {
@@ -125,6 +130,9 @@ export const UserProvider = ({ children }) => {
         login,
         logout,
         checkUserSession,
+        mailingList,
+        setMailingList,
+        handleMailingListChange,
       }}
     >
       {children}

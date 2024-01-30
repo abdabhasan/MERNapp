@@ -7,10 +7,12 @@ import Checkbox from "../Btns/Checkbox";
 import BusinessAddressComponent from "./BusinessAddressComponent.jsx";
 import LoadingSpinner from "../LoadingSpinner";
 import TypesDropdown from "../Dropdowns/TypesDropdown";
+import { useUser } from "../../context/user_context";
 
 const AddBusinessForm = () => {
   const { businessData, handleChange, handleSubmit, isLoading } =
     useBusinessContext();
+  const { mailinglist, handleMailingListChange } = useUser();
 
   const renderFields = (fields) => {
     return fields.map(({ name, className, label, type, required, accept }) => (
@@ -95,8 +97,8 @@ const AddBusinessForm = () => {
           <>
             <Checkbox
               name="subscribeMailinglist"
-              value={businessData.mailinglist}
-              handleChange={handleChange}
+              value={mailinglist}
+              handleChange={handleMailingListChange}
               labelText="Subscribe to our mailing list"
             />
             <Checkbox

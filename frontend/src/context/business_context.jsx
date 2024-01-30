@@ -23,7 +23,6 @@ const initialBusinessData = {
   lon: 0,
   bg: "",
   termsAccepted: false,
-  mailinglist: false,
   bio: "some bio",
   instagram: "",
   facebook: "",

@@ -5,7 +5,7 @@ import styled from "styled-components";
 const PricingPage = () => {
   return (
     <Wrapper className="page-100">
-      <Title name="pricing page" />
+      <Title name="Member Pricing" />
       <div className="notes section-center">
         <ul>
           <li>
@@ -21,7 +21,11 @@ const PricingPage = () => {
           <li>
             10% of all future fees will also be donated until the occupation has
             ended inshallah. To contribute more to the UNRWA’s efforts on the
-            ground, please visit their site at https://donate.unrwa.org/gaza
+            ground, please visit their site
+            <a href="https://donate.unrwa.org/gaza" target="_blank">
+              {" "}
+              here
+            </a>
           </li>
           <li>
             For information on advertising opportunities, you can reach us at
@@ -30,14 +34,14 @@ const PricingPage = () => {
         </ul>
       </div>
       <div className="container section-center">
-        {pricingPlans.map((option, index) => (
+        {/* {pricingPlans.map((option, index) => (
           <PricingCard
             key={index}
             title={option.title}
             price={option.price}
             features={option.features}
           />
-        ))}
+        ))} */}
       </div>
     </Wrapper>
   );
@@ -56,6 +60,15 @@ const Wrapper = styled.main`
       list-style: initial;
       li {
         margin: 0.75rem 0;
+        a {
+          color: var(--clr-black);
+          text-decoration: underline;
+          &:hover {
+            color: var(--clr-primary-5);
+            background-color: var(--clr-black);
+            transition: var(--transition);
+          }
+        }
       }
     }
   }

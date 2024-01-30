@@ -12,3 +12,9 @@ SHOP LOCAL
 3 \*users will have an option to leave positive feedback by giving the business/professional a ⭐️
 
 \*\*\*Their submission is sent for review and once approved all this info automatically populates their profile. They get an automatic email once accepted and are encouraged to write a short bio and to connect social media links to complete their profile. They can only edit the bio, links, and profile image. They will be prompted to add a credit card for payment (not mandatory yet).
+
+In order of priority:
+
+1. When adding a biz/pro it makes you go back to register first. Can we merge the registration into the form submission?
+
+2. Also add a subscribe checkbox to this form please.
