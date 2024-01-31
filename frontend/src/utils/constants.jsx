@@ -52,7 +52,7 @@ export const sidebar_links = [
   },
   {
     id: 7,
-    text: "pricing",
+    text: "Member Pricing",
     url: "/pricing",
   },
 ];
@@ -70,7 +70,7 @@ export const dropdown_options = [
   },
   {
     id: 5,
-    text: "pricing",
+    text: "Member Pricing",
     url: "/pricing",
   },
   {
@@ -145,5 +145,3 @@ export const pricingPlans = [
   //   features: ["Feature 1", "Feature 2", "Feature 3"],
   // },
 ];
-
-export const API_ENDPOINT = "http://35.239.61.90:5000/api";

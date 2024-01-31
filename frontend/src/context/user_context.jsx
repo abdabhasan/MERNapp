@@ -1,8 +1,8 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import axios from "axios";
-import { API_ENDPOINT } from "../utils/constants";
 import { toast } from "react-toastify";
 const CHECK_SESSION_ENDPOINT = "/users/checkSession";
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 const UserContext = createContext();
 
@@ -11,6 +11,11 @@ export const UserProvider = ({ children }) => {
     isAuthenticated: false,
     loading: false,
   });
+  const [mailingList, setMailingList] = useState(false);
+
+  const handleMailingListChange = (event) => {
+    setMailingList(event.target.checked);
+  };
 
   const checkUserSession = async () => {
     try {
@@ -125,6 +130,9 @@ export const UserProvider = ({ children }) => {
         login,
         logout,
         checkUserSession,
+        mailingList,
+        setMailingList,
+        handleMailingListChange,
       }}
     >
       {children}

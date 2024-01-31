@@ -1,9 +1,9 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios";
-import { API_ENDPOINT } from "../utils/constants";
 
 const ProductsToAvoidContext = createContext();
 const PRODUCTS_TO_AVOID_ENDPOINT = "/products-to-avoid";
+const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
 export const ProductsToAvoidProvider = ({ children }) => {
   const [data, setData] = useState([]);

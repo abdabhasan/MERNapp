@@ -4,6 +4,7 @@ import { useUser } from "../context/user_context";
 import { FormField, LoadingSpinner } from "../Components";
 import { toast } from "react-toastify";
 import styled from "styled-components";
+import Checkbox from "../Components/Btns/Checkbox";
 
 const initialState = {
   email: "",
@@ -12,7 +13,8 @@ const initialState = {
 };
 
 const Register = () => {
-  const { register, login, authState } = useUser();
+  const { register, login, authState, mailinglist, handleMailingListChange } =
+    useUser();
   const [userData, setUserData] = useState(initialState);
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -80,13 +82,21 @@ const Register = () => {
           onChange={handleChange}
         />
         {!userData.isMember && (
-          <FormField
-            label="confirm password"
-            type="password"
-            name="confirm-password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
+          <>
+            <FormField
+              label="confirm password"
+              type="password"
+              name="confirm-password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <Checkbox
+              name="subscribeMailinglist"
+              value={mailinglist}
+              handleChange={handleMailingListChange}
+              labelText="Subscribe to our mailing list"
+            />
+          </>
         )}
         <button
           className="btn btn-block"
@@ -162,6 +172,14 @@ const Wrapper = styled.section`
     color: var(--clr-primary-5);
     cursor: pointer;
     letter-spacing: var(--spacing);
+  }
+
+  .checkbox {
+    margin: 0;
+    gap: 0.5rem;
+    input {
+      margin: 0;
+    }
   }
 
   @media screen and (max-width: 992px) {
