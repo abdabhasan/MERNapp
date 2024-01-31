@@ -146,4 +146,4 @@ export const pricingPlans = [
   // },
 ];
 
-export const API_ENDPOINT = "http://localhost:5000/api";
+export const API_ENDPOINT = "http://35.239.61.90:5000/api";
