@@ -7,7 +7,7 @@ const ProfessionalAddressComponent = () => {
 
   return (
     <AddressProvider data={professionalData} setData={setProfessionalData}>
-      <AddressAutocomplete data={professionalData} />
+      <AddressAutocomplete data={professionalData} professional={true} />
     </AddressProvider>
   );
 };

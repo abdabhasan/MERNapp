@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { useAddressContext } from "../../context/address_context";
 
-const AddressAutocomplete = ({ data }) => {
+const AddressAutocomplete = ({ data, professional = false }) => {
   const { handleSelectSuggestion, handleChange, suggestions, wrapperRef } =
     useAddressContext();
 
   return (
     <Wrapper ref={wrapperRef}>
-      <label htmlFor="address">Address</label>
+      <label htmlFor="address">{professional ? "Address (min. City/State)" : "Address" }</label>
       <input
         id="address"
         type="text"

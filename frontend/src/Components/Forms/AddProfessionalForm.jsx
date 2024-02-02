@@ -34,7 +34,7 @@ const AddProfessionalForm = () => {
         <form className="form" onSubmit={handleSubmit}>
           {renderFields([
             {
-              label: "profession",
+              label: "profession/service",
               type: "text",
               name: "profession",
               required: true,
