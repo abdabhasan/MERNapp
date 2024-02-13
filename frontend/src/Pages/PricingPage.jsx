@@ -28,8 +28,8 @@ const PricingPage = () => {
             </a>
           </li>
           <li>
-            For information on advertising opportunities, you can reach us at
-            <a href="contact@muslimlocal.net">contact@muslimlocal.net</a>
+            For information on advertising opportunities, you can reach us at 
+            <a href="contact@muslimlocal.net"> contact@muslimlocal.net</a>
           </li>
         </ul>
       </div>
