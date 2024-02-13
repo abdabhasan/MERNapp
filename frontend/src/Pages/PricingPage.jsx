@@ -9,9 +9,10 @@ const PricingPage = () => {
       <div className="notes section-center">
         <ul>
           <li>
-            Muslim Local is free for all users until March 1st. Business and
-            Professional profiles will then be asked to pay a modest monthly
-            membership fee.
+            Muslim Local is free for all users at this time. At a later date, we
+            will humbly request that member businesses and professionals pay a
+            modest monthly fee to help cover ongoing administrative and
+            operating costs.
           </li>
           <li>
             The first month of all new member fees will be given as sadaqa to
