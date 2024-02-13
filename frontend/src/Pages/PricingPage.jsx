@@ -24,13 +24,12 @@ const PricingPage = () => {
             ended inshallah. To contribute more to the UNRWA’s efforts on the
             ground, please visit their site
             <a href="https://donate.unrwa.org/gaza" target="_blank">
-              {" "}
               here
             </a>
           </li>
           <li>
             For information on advertising opportunities, you can reach us at
-            contact@muslimlocal.net
+            <a href="contact@muslimlocal.net">contact@muslimlocal.net</a>
           </li>
         </ul>
       </div>
